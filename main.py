@@ -13,8 +13,8 @@ class Application:
     def create_primary_window_layout() -> list:
         """this method holds the specification of the layout of the primary window"""
         return [
-            [psg.Text('Browse:')]
-            , [psg.Output(size=(50, 10), key='-OUTPUT-')]
+              [psg.Text('Search'), psg.Input(size=(30, 1), enable_events=True, key='-INPUT-')]
+            , [psg.Listbox([], size=(50, 10), enable_events=True, key='-LIST-')]
             , [psg.Button('New Entry')]
         ]
 
@@ -48,7 +48,7 @@ class Application:
 
     def modify_dictionary_entry(self, entry) -> None:
         """inserts a new entry, or modifies an existing entry, in the program dict """
-        if entry['devname'] == '':
+        if 'user_quit' in entry and entry['user_quit']:
             return
         self.dict[entry['devname']] = entry
 
@@ -57,10 +57,7 @@ class Application:
 
         def refresh_output():
             """convenience method, not to be used outside of Application().run()"""
-            update_str = ''
-            for key in self.dict.keys():
-                update_str += key + ' : ' + self.dict[key]['tags'] + '\n'
-            self.window['-OUTPUT-'].update(update_str)
+            self.window['-LIST-'].update(self.dict.keys())
 
         def shutdown_sequence():
             """performs the application shutdown sequence"""
@@ -81,7 +78,6 @@ class Application:
                 continue
             # this one is the most important
             elif event in (psg.WIN_CLOSED, 'Quit'):
-                psg.Print(self.dict, do_not_reroute_stdout=False)
                 break
             elif event == 'New Entry':
                 data = sde.simple_data_entry_window_cycle()
