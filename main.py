@@ -79,8 +79,6 @@ class Application:
         while True:
             event, values = self.window.read(timeout=250)
 
-            #print('event: {0}, values: {1}'.format(event, values))
-
             # this one is going to happen the most
             if event == '__TIMEOUT__':
                 continue
@@ -109,9 +107,14 @@ class Application:
                 if '_LIST_' in values and values['_LIST_'] != []:
                     selection = values['_LIST_'][0]
                     if selection in self.dict.keys():
+                        # open currently selected item
                         entry = self.dict[selection]
                         data = sde.simple_data_entry_window_cycle(entry)
+                        # save changes
                         self.modify_dictionary_entry(data)
+                        # write changes to disk
+                        self.save_project_file(self.dict, self.save_file_path)
+
                         refresh_output()
 
             # RENAME
