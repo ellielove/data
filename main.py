@@ -14,7 +14,7 @@ class Application:
         """this method holds the specification of the layout of the primary window"""
         return [
               [psg.Text('Search'), psg.Input(size=(30, 1), enable_events=True, key='_SEARCH_')]
-            , [psg.Listbox([], size=(50, 10), enable_events=True, key='_LIST_')]
+            , [psg.Listbox([], size=(50, 30), enable_events=True, key='_LIST_')]
             , [
                   psg.Button('New')
                 , psg.Button('Edit')
@@ -45,10 +45,11 @@ class Application:
         self.save_file_path = 'fragments.project.json'
         self.theme = 'Reddit'
         self.selected_entry = ''
+        self.window_size = (400,600)
 
         psg.theme(self.theme)
         self.layout = self.create_primary_window_layout()
-        self.window = psg.Window(self.window_title, self.layout)
+        self.window = psg.Window(self.window_title, self.layout, size=self.window_size)
 
         self.dict = self.read_project_file(self.save_file_path)
 

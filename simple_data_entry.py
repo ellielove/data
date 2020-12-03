@@ -3,10 +3,10 @@ import PySimpleGUI as psg
 
 def create_layout():
     return [
-          [psg.Text('Dev Name'   , size=(15, 1)), psg.InputText(key='_DEVNAME_')]
-        , [psg.Text('Public Name', size=(15, 1)), psg.InputText(key='_PUBNAME_')]
-        , [psg.Text('Notes'      , size=(15, 1)), psg.InputText(key='_NOTES_')]
-        , [psg.Text('Tags'       , size=(15, 1)), psg.InputText(key='_TAGS_')]
+          [psg.Text('Dev Name'   , size=(15, 1)), psg.InputText(key='_DEVNAME_', size=(300,1))]
+        , [psg.Text('Public Name', size=(15, 1)), psg.Multiline(key='_PUBNAME_', size=(300,1))]
+        , [psg.Text('Notes'      , size=(15, 1)), psg.Multiline(key='_NOTES_', size=(300,8))]
+        , [psg.Text('Tags'       , size=(15, 1)), psg.InputText(key='_TAGS_', size=(300,1))]
         , [psg.Button('Save'), psg.Button('Cancel')]
     ]
 
@@ -19,7 +19,7 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
     if not layout:
         layout = create_layout()
 
-    window = psg.Window(title, layout)
+    window = psg.Window(title, layout, size=(600, 300))
 
     if entry:
         window.read(timeout=45)
