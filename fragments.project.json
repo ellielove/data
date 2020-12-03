@@ -1,0 +1,38 @@
+{
+    "almost_injury__inattentive_driver": {
+        "devname": "almost_injury__inattentive_driver",
+        "notes": "this is a sensate experience, with no time for self-reflective throught",
+        "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
+        "tags": "almost-injury, entos, car"
+    },
+    "darkness_unmastered_in_you": {
+        "devname": "darkness_unmastered_in_you",
+        "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
+        "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
+        "tags": "darkness, self-reflection"
+    },
+    "friend_of_failure": {
+        "devname": "friend_of_failure",
+        "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
+        "pubname": "Friend of Failure",
+        "tags": "failure, motivation, perspective"
+    },
+    "meme_church": {
+        "devname": "meme_church",
+        "notes": "The church of the wonderous meme worships the concept of information, as conceptualized of, in the meme.  Their worship involves contemplating memes and jokes.  In particular, the way that a meme can be viewed as a pattern, placed atop a shared cultural heritage.  Their messiah, the Wonderous Meme, is considered to be a euphoric pattern, whose existence is equivalent to the experiences of love and joy.  The goal of meme congregations, is to move this experience around the world, thereby helping their messiah to exist in the real world, using the faithful as hosts",
+        "pubname": "Church of the Wonderous Meme",
+        "tags": "meme, church"
+    },
+    "monk_milk": {
+        "devname": "monk_milk",
+        "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
+        "pubname": "Monk Milk; The great lactation distellery of Christ",
+        "tags": "milk"
+    },
+    "save_what_you_love": {
+        "devname": "save_what_you_love",
+        "notes": "This is mean to encapsulate the problems a person can run into, if they define themselves by what is wrong, or what they don't like, rather than by what they do like.  The difference, is: focusing on what you like generally results in the person experiencing more positive thoughts than otherwise",
+        "pubname": "Don't fight what you hate; save what you love",
+        "tags": "love, hate, fight"
+    }
+}
