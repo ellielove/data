@@ -3,11 +3,10 @@ import PySimpleGUI as psg
 
 def create_layout():
     return [
-          [psg.Text('New Entry: [Development Name, Public Name, Notes, Tags]')] # 0
-        , [psg.Text('devname'   , size=(15, 1)), psg.InputText()]               # 1
-        , [psg.Text('pubname'   , size=(15, 1)), psg.InputText()]               # 2
-        , [psg.Text('notes'     , size=(15, 1)), psg.InputText()]               # 3
-        , [psg.Text('tags'      , size=(15, 1)), psg.InputText()]               # 4
+          [psg.Text('Dev Name'   , size=(15, 1)), psg.InputText(key='_DEVNAME_')]
+        , [psg.Text('Public Name', size=(15, 1)), psg.InputText(key='_PUBNAME_')]
+        , [psg.Text('Notes'      , size=(15, 1)), psg.InputText(key='_NOTES_')]
+        , [psg.Text('Tags'       , size=(15, 1)), psg.InputText(key='_TAGS_')]
         , [psg.Button('Save'), psg.Button('Cancel')]
     ]
 
@@ -24,10 +23,10 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
 
     if entry:
         window.read(timeout=45)
-        layout[1][1].update(default_text=entry['devname'])
-        layout[2][1].update(default_text=entry['pubname'])
-        layout[3][1].update(default_text=entry['notes'])
-        layout[4][1].update(default_text=entry['tags'])
+        window['_DEVNAME_'].update(entry['devname'], disabled=True, text_color='gray')
+        window['_PUBNAME_'].update(entry['pubname'])
+        window['_NOTES_'].update(entry['notes'])
+        window['_TAGS_'].update(entry['tags'])
 
     while True:
         event, values = window.read(150)
@@ -39,10 +38,10 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
 
         if event == 'Save':
             result = {
-                  'devname' : values[0]
-                , 'pubname' : values[1]
-                , 'notes'   : values[2]
-                , 'tags'    : values[3]
+                  'devname' : values['_DEVNAME_']
+                , 'pubname' : values['_PUBNAME_']
+                , 'notes'   : values['_NOTES_']
+                , 'tags'    : values['_TAGS_']
             }
             window.close()
             return result
