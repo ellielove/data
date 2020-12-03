@@ -5,11 +5,47 @@
         "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
         "tags": "almost-injury, entos, car"
     },
+    "birth_and_destiny": {
+        "devname": "birth_and_destiny",
+        "notes": "just an idea of saying that destiny is a consequence of physics, which is orthogonal to our perspective of time",
+        "pubname": "People and their destinies, are born into the universe at the same time",
+        "tags": "destiny, perspective"
+    },
+    "bizzare_holy": {
+        "devname": "bizzare_holy",
+        "notes": "a deep, strong association of holiness, to that which is bizzarre, unerving, and incomprehensible.  Madness is the experience of viewing something holy, holiness is horror.  This is an elemental force of the world",
+        "pubname": "Bizzare; Holy",
+        "tags": "bizzare, holy, element"
+    },
+    "blanket_guild": {
+        "devname": "blanket_guild",
+        "notes": "The blanket maker's guild creates enchanted blankets for many reasons--most of the reasons being some form of physical or emotional healing, or nourishment.  Also though, they make assassination blankets that smother you to death in your sleep",
+        "pubname": "Blanket Maker's Guild",
+        "tags": "blanket, assassins"
+    },
+    "brain_in_jar": {
+        "devname": "brain_in_jar",
+        "notes": "A literal brain, in a literal jar, experiencing the world through a system of electrical signals.  It's possible for someone's life experience to be wholly different from their physical experience, and they have no way to know.  This is also a bit more expanded concept (I hope it's addressed elsewhere too): if you worked in a holodeck office, but everyone was in their own little holodeck, then perhaps, none of your interactions with other people would have to be te interactions you thought they were.  If you doing X is someone else seeing Y, then at its farthest logical limit, nothing you do equates to what you might predict other people see you doing.  Maybe you live in a sci-fi cyber punk world, but everyone around you is playing a different game.  When this happens, if interactions between people are mediated (translated) by a computer, why even let the humans interact at all?  Why not just have the computer act as a generalized buffer between all humans in all interactions?",
+        "pubname": "Brain in a jar",
+        "tags": "perspective"
+    },
+    "character__professor_blather": {
+        "devname": "character__professor_blather",
+        "notes": "a character name, this professor is the concept of an absent minded professor (or, they subvert that concept)",
+        "pubname": "Professor Blather",
+        "tags": "character, name"
+    },
     "darkness_unmastered_in_you": {
         "devname": "darkness_unmastered_in_you",
         "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
         "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
         "tags": "darkness, self-reflection"
+    },
+    "duck_puppy": {
+        "devname": "duck_puppy",
+        "notes": "just a local name someone uses, instead of the name platypus",
+        "pubname": "Duck Puppy; Platypus",
+        "tags": "puppy, dialect"
     },
     "friend_of_failure": {
         "devname": "friend_of_failure",
@@ -29,10 +65,52 @@
         "pubname": "Monk Milk; The great lactation distellery of Christ",
         "tags": "milk"
     },
+    "orphans_seeking_revenge": {
+        "devname": "orphans_seeking_revenge",
+        "notes": "An incorporated organization, found in many cities, and functioning as an adventurer's guild.  They support orphans who are trying to find and kill the people who killed their parents.  They provide therapy, hoursing, and equipment to the ones who don't respond to treatment",
+        "pubname": "Orphans Seeking Vengance, Ltd",
+        "tags": "orphans,"
+    },
+    "perfect_contentment": {
+        "devname": "perfect_contentment",
+        "notes": "the meaning of perfect contentment, is to be so self-satisfied, than any future is acceptable, and any amount of passive observation is pleasing to do--even if it leads to your painful and immediate death.  Someone who is perfectly content has ceased being human, as they are fundamentally undriven by the normal bodily concerns of self-care, and self-preservation.  Being this kind of contented, usually results in death, and it is very dangerous.  Still, it is a goal of several death-cult religious groups",
+        "pubname": "To achieve perfect contentment; to desire any future",
+        "tags": "contentment, cult"
+    },
+    "reincarnation_cycle": {
+        "devname": "reincarnation_cycle",
+        "notes": "",
+        "pubname": "Cycle { reincarnation, existence, reflection, { new experiences of consciousness}}; The inhale and exhale; The breathe of life",
+        "tags": "reincarnation"
+    },
     "save_what_you_love": {
         "devname": "save_what_you_love",
         "notes": "This is mean to encapsulate the problems a person can run into, if they define themselves by what is wrong, or what they don't like, rather than by what they do like.  The difference, is: focusing on what you like generally results in the person experiencing more positive thoughts than otherwise",
         "pubname": "Don't fight what you hate; save what you love",
         "tags": "love, hate, fight"
+    },
+    "souls_magic_system": {
+        "devname": "souls_magic_system",
+        "notes": "Magic, which uses a person's soul as the power source, rather than drawing upon ambient energy or magic in the environemnt.  Soul magic works against other souls best of all, and it has a favorible time convincing people of things, and inducing likes/dislikes in them.  Souls from other people *can* be used to power sould magic, but this is often called \"blood magic\", as a derogatory slur.  Actual blood magic does involve blood.  Soul magic which uses other people's souls is more right called \"hate magic\"",
+        "pubname": "Soul Magic",
+        "tags": "soul, magic"
+    },
+    "sounds_like_war": {
+        "devname": "sounds_like_war",
+        "notes": "a snippet of dialogue between two people, disconnected from each other, regarding the nature/intensity of a social disagreement",
+        "pubname": "You make it sound like a war; *you* make it sound like it's not",
+        "tags": "war, perspective"
+    },
+    "the_moment_cult": {
+        "devname": "the_moment_cult",
+        "notes": "This is a religious group, which psychically links everyone's mind to the first moment after creation (well, as close as they can get).  The goal, is to use that moment as a \"constant\" point in the universe, so it can become the basic of a communications network throughout time and space.  With this communications netowork established, anyone who can dial in has access to the best knowledge throughout history, and direct access to the thoughts of all the best minds which have ever been.  This system does not function in the empty places in time.",
+        "pubname": "The Moment; a cult which uses time travel psychosis to link minds, and establish a human super-computation system",
+        "tags": "cult, psychic, computer, time"
+    },
+    "the_town_that_walked_away": {
+        "devname": "the_town_that_walked_away",
+        "notes": "A group of people suddenly leave, while a different group spontaneously adopts those identities, and acts as if nothing at all has happened.  They produce new paperwork, attesting to the legitimacy of the new situation, but the old paperwork and other evidences still remain",
+        "pubname": "37 years ago, this entire town go up, walked away, and disappeared, and a new group of people walked in, and kept living those same lives",
+        "tags": "town, incomprehensible"
     }
 }
