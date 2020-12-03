@@ -1,6 +1,4 @@
 
-import array
-
 # tkinter
 import PySimpleGUI as psg
 
