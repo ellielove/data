@@ -114,6 +114,12 @@ class Application:
                         self.modify_dictionary_entry(data)
                         refresh_output()
 
+            # RENAME
+            elif event == 'Rename':
+                if '_LIST_' in values and values['_LIST_'] != []:
+                    selection = values['_LIST_'][0]
+                    # todo: ellie: add rename code here
+
             # DELETE
             elif event == 'Delete':
                 if '_LIST_' in values and values['_LIST_'] != []:
