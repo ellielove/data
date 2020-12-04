@@ -29,6 +29,18 @@
         "pubname": "Professor Blather",
         "tags": "character, name"
     },
+    "concept__limits_of_possible_experience": {
+        "devname": "concept__limits_of_possible_experience",
+        "notes": "Limits of possible experiences are interrelated with perception of your experiences.  While in truth, there are infinite different experiences which happen, the base reality is: you don't notice all of the possible variations, and each individual has a finite number of possible experiences, which they could discriminate between.\n\nTherefore, as far as someone is able to perceive: there is a limited number of experiences they could have\n\nrelated:\n\n1. life stages\n2. having needs\n3. fulfilling needs\n4. strategizing and future planning for the above\n",
+        "pubname": "What are the extents of your possible experiences",
+        "tags": "concept, experience"
+    },
+    "concept__time_travel_splinter_universe": {
+        "devname": "concept__time_travel_splinter_universe",
+        "notes": "\n\n",
+        "pubname": "Time Travel Splinter ",
+        "tags": ""
+    },
     "darkness_unmastered_in_you": {
         "devname": "darkness_unmastered_in_you",
         "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
@@ -41,6 +53,12 @@
         "pubname": "Duck Puppy; Platypus",
         "tags": "puppy, dialect"
     },
+    "eldritch_horror_school": {
+        "devname": "eldritch_horror_school",
+        "notes": "a high school that eldritch horrors go to, where they try to grow up, learn the social ropes, and just be okay in life\n",
+        "pubname": "School of Eldritch Horrors",
+        "tags": "eldritch, school"
+    },
     "element__bizzare_is_holy": {
         "devname": "element__bizzare_is_holy",
         "notes": "a deep, strong association of holiness, to that which is bizzarre, unerving, and incomprehensible.  Madness is the experience of viewing something holy, holiness is horror.  This is an elemental force of the world\n\nnote: this is *NOT* a pair of elements, this is a single element\n",
@@ -52,6 +70,12 @@
         "notes": "# todo: these are opposing elements, such as fire vs ice\t\n\nlogic opposes holiness\n",
         "pubname": "illogical, strange, driven by base passions; vs; logical, refined, normal",
         "tags": "element, pair"
+    },
+    "evil_pets_for_bad_people": {
+        "devname": "evil_pets_for_bad_people",
+        "notes": "the name of a pet store in hell\n",
+        "pubname": "objectively evil pets for very bad people",
+        "tags": "evil, pets"
     },
     "friend_of_failure": {
         "devname": "friend_of_failure",
@@ -70,6 +94,12 @@
         "notes": "# todo\n",
         "pubname": "Human Physical Frailty",
         "tags": "human"
+    },
+    "living_story_self_defense": {
+        "devname": "living_story_self_defense",
+        "notes": "this is the idea that a story would be alive, and aware it was being read, and it tries to kill the reader in self-defense; defending against a perception that the reader is trying to kill them\n",
+        "pubname": "a story that's trying to kill you in self-defense",
+        "tags": "living story, kill"
     },
     "meme_church": {
         "devname": "meme_church",
