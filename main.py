@@ -5,15 +5,29 @@ import os
 import PySimpleGUI as psg
 
 import simple_data_entry as sde
+import simple_rename as sr
 
 
 class Application:
 
     @staticmethod
+    def create_menu_bar_layout() -> list:
+        return [
+            ['&File', ['&Open', 'Save', '&SaveAs', '----', 'Settings', 'E&xit']]
+        ]
+
+    @staticmethod
+    def create_right_click_menu() -> list:
+        return [
+            ['Unused', ['Right', '!&Click', '&Menu', 'E&xit', 'Properties']]
+        ]
+
+    @staticmethod
     def create_primary_window_layout() -> list:
         """this method holds the specification of the layout of the primary window"""
         return [
-              [psg.Text('Search'), psg.Input(size=(30, 1), enable_events=True, key='_SEARCH_')]
+              [psg.Menu(Application.create_menu_bar_layout(), tearoff=False, pad=(400, 1))]
+            , [psg.Text('Search'), psg.Input(size=(50, 1), enable_events=True, key='_SEARCH_')]
             , [psg.Listbox([], size=(50, 30), enable_events=True, key='_LIST_')]
             , [
                   psg.Button('New')
@@ -45,11 +59,17 @@ class Application:
         self.save_file_path = 'fragments.project.json'
         self.theme = 'Reddit'
         self.selected_entry = ''
-        self.window_size = (400,600)
+        self.window_size = (400, 600)
+        self.save_every_n_ms = 180000  # 3 minutes in ms
+        self.time_since_last_save = 0
 
         psg.theme(self.theme)
         self.layout = self.create_primary_window_layout()
-        self.window = psg.Window(self.window_title, self.layout, size=self.window_size)
+        self.window = psg.Window(
+              self.window_title
+            , self.layout
+            , size=self.window_size
+        )
 
         self.dict = self.read_project_file(self.save_file_path)
 
@@ -79,14 +99,36 @@ class Application:
 
         while True:
             event, values = self.window.read(timeout=250)
+            self.time_since_last_save += 250
 
             # this one is going to happen the most
             if event == '__TIMEOUT__':
+                if self.time_since_last_save > self.save_every_n_ms:
+                    self.save_project_file(self.dict, self.save_file_path)
+                    self.time_since_last_save = 0
                 continue
 
             # this one is the most important
-            elif event in (psg.WIN_CLOSED, 'Quit'):
+            elif event in (psg.WIN_CLOSED, 'Quit', 'Exit'):
                 break
+
+            elif event == 'Save':
+                self.save_project_file(self.dict, self.save_file_path)
+                print('Save')
+
+            elif event == 'SaveAs':
+                # SaveAs file dialogue
+                print('SaveAs')
+                continue
+
+            elif event == 'Open':
+                psg.FileBrowse()
+                print('Open')
+                continue
+
+            elif event == 'Settings':
+                print('Settings')
+                continue
 
             # search bar interactions
             elif event == '_SEARCH_':
@@ -101,6 +143,7 @@ class Application:
             elif event == 'New':
                 data = sde.simple_data_entry_window_cycle()
                 self.modify_dictionary_entry(data)
+                self.save_project_file(self.dict, self.save_file_path)
                 refresh_output()
 
             # EDIT
@@ -122,7 +165,13 @@ class Application:
             elif event == 'Rename':
                 if '_LIST_' in values and values['_LIST_'] != []:
                     selection = values['_LIST_'][0]
-                    # todo: ellie: add rename code here
+                    if selection in self.dict.keys():
+                        entry = self.dict[selection]
+                        data = sr.simple_rename_window_cycle(entry)
+                        if 'devname' in data and len(data['devname']) > 0:
+                            self.dict[data['devname']] = data
+                            del self.dict[selection]
+                            refresh_output()
 
             # DELETE
             elif event == 'Delete':
