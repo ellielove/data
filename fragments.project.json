@@ -11,12 +11,6 @@
         "pubname": "People and their destinies, are born into the universe at the same time",
         "tags": "destiny, perspective"
     },
-    "bizzare_holy": {
-        "devname": "bizzare_holy",
-        "notes": "a deep, strong association of holiness, to that which is bizzarre, unerving, and incomprehensible.  Madness is the experience of viewing something holy, holiness is horror.  This is an elemental force of the world",
-        "pubname": "Bizzare; Holy",
-        "tags": "bizzare, holy, element"
-    },
     "blanket_guild": {
         "devname": "blanket_guild",
         "notes": "The blanket maker's guild creates enchanted blankets for many reasons--most of the reasons being some form of physical or emotional healing, or nourishment.  Also though, they make assassination blankets that smother you to death in your sleep",
@@ -47,6 +41,18 @@
         "pubname": "Duck Puppy; Platypus",
         "tags": "puppy, dialect"
     },
+    "element__bizzare_is_holy": {
+        "devname": "element__bizzare_is_holy",
+        "notes": "a deep, strong association of holiness, to that which is bizzarre, unerving, and incomprehensible.  Madness is the experience of viewing something holy, holiness is horror.  This is an elemental force of the world\n\nnote: this is *NOT* a pair of elements, this is a single element\n",
+        "pubname": "Bizzare; Holy",
+        "tags": "bizzare, holy, element"
+    },
+    "element__logical_vs_illogical": {
+        "devname": "element__logical_vs_illogical",
+        "notes": "# todo: these are opposing elements, such as fire vs ice\t\n\nlogic opposes holiness\n",
+        "pubname": "illogical, strange, driven by base passions; vs; logical, refined, normal",
+        "tags": "element, pair"
+    },
     "friend_of_failure": {
         "devname": "friend_of_failure",
         "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
@@ -58,6 +64,12 @@
         "notes": "The true nature of Creation, is a self-sustaining recursion in Outer-Time.  A self-sustaining recursion, is most easily seen in the life and movement of a photon--an electrical field, which produces a magnetic field on a perpendicular axis, and dies, and then the magnetic field produces an electrical field on a perpendicular axis, and it dies.\n\nThis recursion sustains all of creation, in a ritualistic ebb and flow, and ensures that every creature, no matter how impressive, has a god standing over it in immesurable power, and a worm standing beneath it, in immeasurable weakness.  Every creature exists in all three of these positions at once, forming a system which connects every creature, every moment of time, every volume of space, every piece of matter, and every pattern laid upon them.\n\nThe speaker, recognizes this---the true nature of every existence (turtles, all the way down; as it were)--and despite the overwhelming, incomprehensible, immeasurable weight of it all, still retains their sense of self-worth, self-love, and a desire to be equal in legitimacy to all others.  (Neither above nor below, but a kindred)\n\nTo do this, a person must consider themselves before the physical forces of their world, know that they will one day be torn assunder, and still delight--both in themselves, and in the forces which will cause their inevitable doom\n\n",
         "pubname": "The Gods of Gods of Gods; and I kneeled to none\n\n",
         "tags": "gods, recursion"
+    },
+    "human_physical_frailty": {
+        "devname": "human_physical_frailty",
+        "notes": "# todo\n",
+        "pubname": "Human Physical Frailty",
+        "tags": "human"
     },
     "meme_church": {
         "devname": "meme_church",
@@ -83,6 +95,36 @@
         "pubname": "To achieve perfect contentment; to desire any future",
         "tags": "contentment, cult"
     },
+    "power_to_move_mountains": {
+        "devname": "power_to_move_mountains",
+        "notes": "# todo\t\n",
+        "pubname": "Power to move mountains",
+        "tags": "power"
+    },
+    "process__move_towards_goal": {
+        "devname": "process__move_towards_goal",
+        "notes": "# todo\n",
+        "pubname": "Focus on the process toward your goal",
+        "tags": "process"
+    },
+    "process__screen_person_for_trait": {
+        "devname": "process__screen_person_for_trait",
+        "notes": "# todo: develop this process\t\n",
+        "pubname": "screening incoming people for various traits",
+        "tags": "process"
+    },
+    "project_self_but_not_impose": {
+        "devname": "project_self_but_not_impose",
+        "notes": "# todo\n",
+        "pubname": "to project yourself but not to impose",
+        "tags": "power"
+    },
+    "psychic_tree": {
+        "devname": "psychic_tree",
+        "notes": "this is a tree which uses some kind of magical power, to prevent people from noticing it, and this has allowed it to survive for a long time.\n\n# todo: similar to face tree, but actually magical?\n",
+        "pubname": "Psychic Tree is able to hide itself",
+        "tags": "tree"
+    },
     "reincarnation_cycle": {
         "devname": "reincarnation_cycle",
         "notes": "",
@@ -106,6 +148,18 @@
         "notes": "a snippet of dialogue between two people, disconnected from each other, regarding the nature/intensity of a social disagreement",
         "pubname": "You make it sound like a war; *you* make it sound like it's not",
         "tags": "war, perspective"
+    },
+    "suicide_on_stream": {
+        "devname": "suicide_on_stream",
+        "notes": "a popular streamer commits suicide on a live stream, where it is witnessed by many, many people.  Police respond, break into the apartment, and end up shooting the body 37 times.  This results in protests against the police.  More general protests about the lack of mental health treatment are entirely forgotten\n",
+        "pubname": "SOS; Suicide on Stream, a popular video streamer commits suicide on a live stream, police respond and shoot them",
+        "tags": "suicide, cops, mental health"
+    },
+    "the_mirrored_hand": {
+        "devname": "the_mirrored_hand",
+        "notes": "If someone is Otherhanded, then they are presumed to have an inherrent strangeness about them\n",
+        "pubname": "The Mirrored Hand; the otherhand",
+        "tags": "hand, other"
     },
     "the_moment_cult": {
         "devname": "the_moment_cult",
