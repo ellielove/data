@@ -156,9 +156,7 @@ class Application:
                         data = sde.simple_data_entry_window_cycle(entry)
                         # save changes
                         self.modify_dictionary_entry(data)
-                        # write changes to disk
                         self.save_project_file(self.dict, self.save_file_path)
-
                         refresh_output()
 
             # RENAME
