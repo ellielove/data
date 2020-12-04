@@ -2,3 +2,4 @@
 .idea/*
 *.pyc
 .fragments.project.json.swp
+.fragments.project.json.un~
