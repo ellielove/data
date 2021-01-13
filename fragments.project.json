@@ -1,4 +1,10 @@
 {
+    "academy_of_dubious_distinctions": {
+        "devname": "academy_of_dubious_distinctions",
+        "notes": "An large, well funded, prestigious organization, who's in the busienss of presenting people with medals and awards, for stupid things.\n",
+        "pubname": "The Academy of Dubious Distinctions",
+        "tags": "awards"
+    },
     "almost_injury__inattentive_driver": {
         "devname": "almost_injury__inattentive_driver",
         "notes": "this is a sensate experience, with no time for self-reflective throught",
@@ -10,6 +16,24 @@
         "notes": "A person who deals in antique dusts--just what you need to make you home feel live-in.  Some dusts are musty, some are old, some are rancid, some are mold.  Dust is what you need, if you want to be taken seriously as a sorceror, vampire, or venerable creeper of any description\n",
         "pubname": "Antique Dust Dealer",
         "tags": "dust, antique"
+    },
+    "automated_animal_ships": {
+        "devname": "automated_animal_ships",
+        "notes": "\n",
+        "pubname": "Automated ships as lumbering synthetic animal creatures",
+        "tags": "synthetic life"
+    },
+    "become_a_skeleton": {
+        "devname": "become_a_skeleton",
+        "notes": "\n",
+        "pubname": "Become a skeleton; tear the skin off of your body and die, and thereby become complete",
+        "tags": "skeleton"
+    },
+    "bible_farmer": {
+        "devname": "bible_farmer",
+        "notes": "\n",
+        "pubname": "I am a simple bible farmer, come to you from the great good lord",
+        "tags": "bible, farmer"
     },
     "birth_and_destiny": {
         "devname": "birth_and_destiny",
@@ -28,6 +52,18 @@
         "notes": "A literal brain, in a literal jar, experiencing the world through a system of electrical signals.  It's possible for someone's life experience to be wholly different from their physical experience, and they have no way to know.  This is also a bit more expanded concept (I hope it's addressed elsewhere too): if you worked in a holodeck office, but everyone was in their own little holodeck, then perhaps, none of your interactions with other people would have to be te interactions you thought they were.  If you doing X is someone else seeing Y, then at its farthest logical limit, nothing you do equates to what you might predict other people see you doing.  Maybe you live in a sci-fi cyber punk world, but everyone around you is playing a different game.  When this happens, if interactions between people are mediated (translated) by a computer, why even let the humans interact at all?  Why not just have the computer act as a generalized buffer between all humans in all interactions?\n\nsee also: https://en.wikipedia.org/wiki/Boltzmann_brain\n",
         "pubname": "Brain in a jar",
         "tags": "perspective"
+    },
+    "character__detective_noir": {
+        "devname": "character__detective_noir",
+        "notes": "\n",
+        "pubname": "Detective Noir: That is literally the name of the detective; a mantle, passed along to different people",
+        "tags": "detective, character"
+    },
+    "character__disappointed_streamer": {
+        "devname": "character__disappointed_streamer",
+        "notes": "a professional streamer who's gimmick is: they wait in line for something, and don't get it.  They just wait in line for nothing, as a job.\n",
+        "pubname": "Streamer { someone who stands in lines, but always arrives late, so whatever they're waiting for is always gone } ",
+        "tags": "streamer"
     },
     "character__professor_blather": {
         "devname": "character__professor_blather",
@@ -53,6 +89,24 @@
         "pubname": "Catharsis by proxy: audience gets catharsis from character living through their struggle",
         "tags": "recipe, catharsis"
     },
+    "concept__despiration_premise_recipe": {
+        "devname": "concept__despiration_premise_recipe",
+        "notes": "X is the thing you want to tell your story about.  You say this person was just really, really desperate, and that starting motivation allows you to ignore the reasons your character should do something other than following your story\n",
+        "pubname": "A person, who is desperate enough to try anything; So they try X",
+        "tags": "recipe, premise"
+    },
+    "concept__genetic_politics": {
+        "devname": "concept__genetic_politics",
+        "notes": "\n",
+        "pubname": "Genetic Politics: genetically pecifying personality profiles to dictate social-issue \"weather\", in the future",
+        "tags": "genetics, politics"
+    },
+    "concept__growing_up_story_recipe": {
+        "devname": "concept__growing_up_story_recipe",
+        "notes": "\n",
+        "pubname": "Growing Up Story { fear about the implications of growing up in a bullying society; encouragement about a young person's prospects; strategies for how to prepare iin advance }",
+        "tags": ""
+    },
     "concept__horror_recipe": {
         "devname": "concept__horror_recipe",
         "notes": "This is the feeling the reader should constantly have, when experiencing horror\n",
@@ -71,11 +125,23 @@
         "pubname": "Betrayal of senses; betrayal of thought; epitome of self-doubt",
         "tags": "recipe, horror"
     },
+    "concept__joke_recipe__misinterpretations_of_pop_culture": {
+        "devname": "concept__joke_recipe__misinterpretations_of_pop_culture",
+        "notes": "Showing popular culture, but giving it a clearly wrong explanation\n",
+        "pubname": "Misinterpretations of popular culture",
+        "tags": ""
+    },
     "concept__limits_of_possible_experience": {
         "devname": "concept__limits_of_possible_experience",
         "notes": "Limits of possible experiences are interrelated with perception of your experiences.  While in truth, there are infinite different experiences which happen, the base reality is: you don't notice all of the possible variations, and each individual has a finite number of possible experiences, which they could discriminate between.\n\nTherefore, as far as someone is able to perceive: there is a limited number of experiences they could have\n\nrelated:\n\n1. life stages\n2. having needs\n3. fulfilling needs\n4. strategizing and future planning for the above\n",
         "pubname": "What are the extents of your possible experiences",
         "tags": "concept, experience"
+    },
+    "concept__location__story__skyscraper_nightvale": {
+        "devname": "concept__location__story__skyscraper_nightvale",
+        "notes": "\n",
+        "pubname": "Welcome to nightvale, except it takes place in a closed off skyscraper after an apocylapse",
+        "tags": ""
     },
     "concept__perspective_recipe": {
         "devname": "concept__perspective_recipe",
@@ -83,10 +149,28 @@
         "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
         "tags": "recipe, perspective"
     },
+    "concept__resolving_paradoxes": {
+        "devname": "concept__resolving_paradoxes",
+        "notes": "\n",
+        "pubname": "Every paradox is resolvable, by moving to a higher level of abstraction",
+        "tags": ""
+    },
     "concept__time_travel_splinter_universe": {
         "devname": "concept__time_travel_splinter_universe",
         "notes": "\n\n",
         "pubname": "Time Travel Splinter ",
+        "tags": ""
+    },
+    "concept__to_check": {
+        "devname": "concept__to_check",
+        "notes": "Check(X): return X == true\n\n",
+        "pubname": "To Check: when you look, and see if something is true",
+        "tags": "logic"
+    },
+    "consumer_product__neverlearn": {
+        "devname": "consumer_product__neverlearn",
+        "notes": "a medication that prevents you from accidentally learning something you didn't want to believe\n",
+        "pubname": "Confidence is power! Neverlearn! It's not a suppositiory, but it still works that way",
         "tags": ""
     },
     "custom_screams": {
@@ -100,6 +184,12 @@
         "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
         "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
         "tags": "darkness, self-reflection"
+    },
+    "dev_practice__no_plot_point_explanations": {
+        "devname": "dev_practice__no_plot_point_explanations",
+        "notes": "People can explain a fraction of a plot point, but the player has to put all of the pieces together themselves.\n\n?\n",
+        "pubname": "No dialogue where someone explains a plot point",
+        "tags": ""
     },
     "duck_puppy": {
         "devname": "duck_puppy",
@@ -137,6 +227,24 @@
         "pubname": "objectively evil pets for very bad people",
         "tags": "evil, pets"
     },
+    "flesh_horse": {
+        "devname": "flesh_horse",
+        "notes": "a type of horse\n",
+        "pubname": "Flesh Horse",
+        "tags": "horror, horse"
+    },
+    "food_lasagnog": {
+        "devname": "food_lasagnog",
+        "notes": "\n",
+        "pubname": "Lasagnog: lasagna + egnog + holiday cheer",
+        "tags": ""
+    },
+    "food_types_dinosaur_burgers": {
+        "devname": "food_types_dinosaur_burgers",
+        "notes": "\n",
+        "pubname": "Dinosaur burgers; Mammoth steaks; Human chicken",
+        "tags": "foods"
+    },
     "forgotten_to_death": {
         "devname": "forgotten_to_death",
         "notes": "?\n",
@@ -155,11 +263,35 @@
         "pubname": "The Gods of Gods of Gods; and I kneeled to none\n\n",
         "tags": "gods, recursion"
     },
+    "historical_post_society": {
+        "devname": "historical_post_society",
+        "notes": "\n",
+        "pubname": "The Historical Post Society; Internet Archeology at its finest; the podcast of a group of digital-human archeologists, who talk about changing social norms",
+        "tags": "history, archeology"
+    },
+    "horridore": {
+        "devname": "horridore",
+        "notes": "\n",
+        "pubname": "The Horrible Corridore; Horridore",
+        "tags": "pun"
+    },
+    "household_pets_and_meat_printer": {
+        "devname": "household_pets_and_meat_printer",
+        "notes": "wagging their tails\n",
+        "pubname": "Household pets sit and wait expectantly in front of the meat printer",
+        "tags": "meat printer"
+    },
     "human_physical_frailty": {
         "devname": "human_physical_frailty",
         "notes": "# todo\n",
         "pubname": "Human Physical Frailty",
         "tags": "human"
+    },
+    "hunger_ghost": {
+        "devname": "hunger_ghost",
+        "notes": "\n",
+        "pubname": "Hunger ghost",
+        "tags": ""
     },
     "immediate_ruining_of_something_good": {
         "devname": "immediate_ruining_of_something_good",
@@ -172,6 +304,12 @@
         "notes": "\n",
         "pubname": "In hell, every job is a customer service job",
         "tags": "hell, customer service, job"
+    },
+    "life_vs_enlightment": {
+        "devname": "life_vs_enlightment",
+        "notes": "\n",
+        "pubname": "The nature of life is to grow; the nature of enlightenment is to surrender life",
+        "tags": "life, enlightenment"
     },
     "living_story_self_defense": {
         "devname": "living_story_self_defense",
@@ -190,6 +328,12 @@
         "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
         "pubname": "Monk Milk; The great lactation distellery of Christ",
         "tags": "milk"
+    },
+    "origin_of_earth_life": {
+        "devname": "origin_of_earth_life",
+        "notes": "\n",
+        "pubname": "Earth life comes from the illegal dumping of an ancient space toilet",
+        "tags": "life, origin, toilet"
     },
     "orphans_seeking_revenge": {
         "devname": "orphans_seeking_revenge",
@@ -233,6 +377,12 @@
         "pubname": "Psychic Tree is able to hide itself",
         "tags": "tree"
     },
+    "quotation_nightvale_e29": {
+        "devname": "quotation_nightvale_e29",
+        "notes": "\n",
+        "pubname": "Now, more than ever, we are full of blood, any honey",
+        "tags": "nightvale"
+    },
     "reincarnation_cycle": {
         "devname": "reincarnation_cycle",
         "notes": "",
@@ -251,6 +401,12 @@
         "pubname": "Don't fight what you hate; save what you love",
         "tags": "love, hate, fight"
     },
+    "seer_practice": {
+        "devname": "seer_practice",
+        "notes": "\n",
+        "pubname": "If you're not practicing seeing things, then you're going to be a bad seer",
+        "tags": "seer"
+    },
     "souls_magic_system": {
         "devname": "souls_magic_system",
         "notes": "Magic, which uses a person's soul as the power source, rather than drawing upon ambient energy or magic in the environemnt.  Soul magic works against other souls best of all, and it has a favorible time convincing people of things, and inducing likes/dislikes in them.  Souls from other people *can* be used to power sould magic, but this is often called \"blood magic\", as a derogatory slur.  Actual blood magic does involve blood.  Soul magic which uses other people's souls is more right called \"hate magic\"",
@@ -263,11 +419,23 @@
         "pubname": "You make it sound like a war; *you* make it sound like it's not",
         "tags": "war, perspective"
     },
+    "species__thrumming_shadowcast": {
+        "devname": "species__thrumming_shadowcast",
+        "notes": "\n",
+        "pubname": "Thrumming shadowcast; a 4D creature who casts a 3d shadow into our universel they make great waitstaff, b/c they can virtually disappear",
+        "tags": ""
+    },
     "suicide_on_stream": {
         "devname": "suicide_on_stream",
         "notes": "a popular streamer commits suicide on a live stream, where it is witnessed by many, many people.  Police respond, break into the apartment, and end up shooting the body 37 times.  This results in protests against the police.  More general protests about the lack of mental health treatment are entirely forgotten\n",
         "pubname": "SOS; Suicide on Stream, a popular video streamer commits suicide on a live stream, police respond and shoot them",
         "tags": "suicide, cops, mental health"
+    },
+    "the_demon_core": {
+        "devname": "the_demon_core",
+        "notes": "\n",
+        "pubname": "The Demon Core; a nefarious soul magic war project",
+        "tags": ""
     },
     "the_mirrored_hand": {
         "devname": "the_mirrored_hand",
@@ -281,6 +449,12 @@
         "pubname": "The Moment; a cult which uses time travel psychosis to link minds, and establish a human super-computation system",
         "tags": "cult, psychic, computer, time"
     },
+    "the_neo_eon": {
+        "devname": "the_neo_eon",
+        "notes": "Cyberpunk dystopia\n",
+        "pubname": "The Neon Eon; an ager of prosperous tyrrany and hate",
+        "tags": "wealth, inequality"
+    },
     "the_town_that_walked_away": {
         "devname": "the_town_that_walked_away",
         "notes": "A group of people suddenly leave, while a different group spontaneously adopts those identities, and acts as if nothing at all has happened.  They produce new paperwork, attesting to the legitimacy of the new situation, but the old paperwork and other evidences still remain",
@@ -292,6 +466,12 @@
         "notes": "Like a genie, except someone who gives puns rather than wishes.  This practice caused them to have their genie livense revoked, and now they wander around, trying to trying people into asking them for help, so they can respond by supplying a pun, rather than helping.\n",
         "pubname": "Unlicensed pun genie",
         "tags": "puns"
+    },
+    "wall_of_torment": {
+        "devname": "wall_of_torment",
+        "notes": "\n",
+        "pubname": "The Wall of Torment; a wall that appears in your way, preventing you from reaching your destination, which tells painful truths about yourself",
+        "tags": ""
     },
     "you_are_the_present_moment": {
         "devname": "you_are_the_present_moment",
