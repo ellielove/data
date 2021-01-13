@@ -5,6 +5,12 @@
         "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
         "tags": "almost-injury, entos, car"
     },
+    "antique_dust_dealer": {
+        "devname": "antique_dust_dealer",
+        "notes": "A person who deals in antique dusts--just what you need to make you home feel live-in.  Some dusts are musty, some are old, some are rancid, some are mold.  Dust is what you need, if you want to be taken seriously as a sorceror, vampire, or venerable creeper of any description\n",
+        "pubname": "Antique Dust Dealer",
+        "tags": "dust, antique"
+    },
     "birth_and_destiny": {
         "devname": "birth_and_destiny",
         "notes": "just an idea of saying that destiny is a consequence of physics, which is orthogonal to our perspective of time",
@@ -19,7 +25,7 @@
     },
     "brain_in_jar": {
         "devname": "brain_in_jar",
-        "notes": "A literal brain, in a literal jar, experiencing the world through a system of electrical signals.  It's possible for someone's life experience to be wholly different from their physical experience, and they have no way to know.  This is also a bit more expanded concept (I hope it's addressed elsewhere too): if you worked in a holodeck office, but everyone was in their own little holodeck, then perhaps, none of your interactions with other people would have to be te interactions you thought they were.  If you doing X is someone else seeing Y, then at its farthest logical limit, nothing you do equates to what you might predict other people see you doing.  Maybe you live in a sci-fi cyber punk world, but everyone around you is playing a different game.  When this happens, if interactions between people are mediated (translated) by a computer, why even let the humans interact at all?  Why not just have the computer act as a generalized buffer between all humans in all interactions?",
+        "notes": "A literal brain, in a literal jar, experiencing the world through a system of electrical signals.  It's possible for someone's life experience to be wholly different from their physical experience, and they have no way to know.  This is also a bit more expanded concept (I hope it's addressed elsewhere too): if you worked in a holodeck office, but everyone was in their own little holodeck, then perhaps, none of your interactions with other people would have to be te interactions you thought they were.  If you doing X is someone else seeing Y, then at its farthest logical limit, nothing you do equates to what you might predict other people see you doing.  Maybe you live in a sci-fi cyber punk world, but everyone around you is playing a different game.  When this happens, if interactions between people are mediated (translated) by a computer, why even let the humans interact at all?  Why not just have the computer act as a generalized buffer between all humans in all interactions?\n\nsee also: https://en.wikipedia.org/wiki/Boltzmann_brain\n",
         "pubname": "Brain in a jar",
         "tags": "perspective"
     },
@@ -29,17 +35,65 @@
         "pubname": "Professor Blather",
         "tags": "character, name"
     },
+    "character__sneaky_bushwack": {
+        "devname": "character__sneaky_bushwack",
+        "notes": "?\n",
+        "pubname": "Sneaky Bushwack",
+        "tags": "character, name"
+    },
+    "concept__boldness_recipe": {
+        "devname": "concept__boldness_recipe",
+        "notes": "anti-horror, is boldness\n",
+        "pubname": "Boldness by proxy: audience feels heartened by seeing someone continue on, regardless of the setbacks they experience",
+        "tags": "recipe, boldness"
+    },
+    "concept__catharsis_recipe": {
+        "devname": "concept__catharsis_recipe",
+        "notes": "\n",
+        "pubname": "Catharsis by proxy: audience gets catharsis from character living through their struggle",
+        "tags": "recipe, catharsis"
+    },
+    "concept__horror_recipe": {
+        "devname": "concept__horror_recipe",
+        "notes": "This is the feeling the reader should constantly have, when experiencing horror\n",
+        "pubname": "Horror: Something is wrong.  Did you see it?  Wait, what is wrong?  Something is wrong.",
+        "tags": "horror, recipe"
+    },
+    "concept__horror_recipe__places": {
+        "devname": "concept__horror_recipe__places",
+        "notes": "The places of horror, are the places where you make the best prey\n",
+        "pubname": "Places of disempowerment; Places of residual dread",
+        "tags": "horror, recipe"
+    },
+    "concept__horror_recipe__self_awareness": {
+        "devname": "concept__horror_recipe__self_awareness",
+        "notes": "these are the things you feel, when you are suffering horror\n",
+        "pubname": "Betrayal of senses; betrayal of thought; epitome of self-doubt",
+        "tags": "recipe, horror"
+    },
     "concept__limits_of_possible_experience": {
         "devname": "concept__limits_of_possible_experience",
         "notes": "Limits of possible experiences are interrelated with perception of your experiences.  While in truth, there are infinite different experiences which happen, the base reality is: you don't notice all of the possible variations, and each individual has a finite number of possible experiences, which they could discriminate between.\n\nTherefore, as far as someone is able to perceive: there is a limited number of experiences they could have\n\nrelated:\n\n1. life stages\n2. having needs\n3. fulfilling needs\n4. strategizing and future planning for the above\n",
         "pubname": "What are the extents of your possible experiences",
         "tags": "concept, experience"
     },
+    "concept__perspective_recipe": {
+        "devname": "concept__perspective_recipe",
+        "notes": "Seeing someone else's pain helps normalize your own pain.  (And if your pain isn't as much as the other person's, it also offers some relief of that pain, by minimizing it)\n",
+        "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
+        "tags": "recipe, perspective"
+    },
     "concept__time_travel_splinter_universe": {
         "devname": "concept__time_travel_splinter_universe",
         "notes": "\n\n",
         "pubname": "Time Travel Splinter ",
         "tags": ""
+    },
+    "custom_screams": {
+        "devname": "custom_screams",
+        "notes": "a business that specializes in providing recordings of differnet kinds of screams\n",
+        "pubname": "Build a bray; all of your custom animal scream needs",
+        "tags": "scream"
     },
     "darkness_unmastered_in_you": {
         "devname": "darkness_unmastered_in_you",
@@ -52,6 +106,12 @@
         "notes": "just a local name someone uses, instead of the name platypus",
         "pubname": "Duck Puppy; Platypus",
         "tags": "puppy, dialect"
+    },
+    "easy_life_to_leave": {
+        "devname": "easy_life_to_leave",
+        "notes": "A life that is fine, but you just don't care about it that much\n",
+        "pubname": "An easy life to leave",
+        "tags": "perspective"
     },
     "eldritch_horror_school": {
         "devname": "eldritch_horror_school",
@@ -77,6 +137,12 @@
         "pubname": "objectively evil pets for very bad people",
         "tags": "evil, pets"
     },
+    "forgotten_to_death": {
+        "devname": "forgotten_to_death",
+        "notes": "?\n",
+        "pubname": "Forgotten_to_death",
+        "tags": "death, memory"
+    },
     "friend_of_failure": {
         "devname": "friend_of_failure",
         "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
@@ -94,6 +160,18 @@
         "notes": "# todo\n",
         "pubname": "Human Physical Frailty",
         "tags": "human"
+    },
+    "immediate_ruining_of_something_good": {
+        "devname": "immediate_ruining_of_something_good",
+        "notes": "The moment you are given something good, you are also told exactly how easy it will be to ruin that thing.  You are also given some examples of how it could \"just happen\"\n",
+        "pubname": "X is wonderful! Press (A) to ruin X!",
+        "tags": "tragedy, ruin"
+    },
+    "jobs_in_hell_are_customer_service": {
+        "devname": "jobs_in_hell_are_customer_service",
+        "notes": "\n",
+        "pubname": "In hell, every job is a customer service job",
+        "tags": "hell, customer service, job"
     },
     "living_story_self_defense": {
         "devname": "living_story_self_defense",
@@ -161,6 +239,12 @@
         "pubname": "Cycle { reincarnation, existence, reflection, { new experiences of consciousness}}; The inhale and exhale; The breathe of life",
         "tags": "reincarnation"
     },
+    "santa_the_winter_lich": {
+        "devname": "santa_the_winter_lich",
+        "notes": "Santa Clause, except as a horrible ice lich\n",
+        "pubname": "Santa, The Winter Lich",
+        "tags": "lich, santa"
+    },
     "save_what_you_love": {
         "devname": "save_what_you_love",
         "notes": "This is mean to encapsulate the problems a person can run into, if they define themselves by what is wrong, or what they don't like, rather than by what they do like.  The difference, is: focusing on what you like generally results in the person experiencing more positive thoughts than otherwise",
@@ -202,5 +286,17 @@
         "notes": "A group of people suddenly leave, while a different group spontaneously adopts those identities, and acts as if nothing at all has happened.  They produce new paperwork, attesting to the legitimacy of the new situation, but the old paperwork and other evidences still remain",
         "pubname": "37 years ago, this entire town go up, walked away, and disappeared, and a new group of people walked in, and kept living those same lives",
         "tags": "town, incomprehensible"
+    },
+    "unlicensed_pun_genie": {
+        "devname": "unlicensed_pun_genie",
+        "notes": "Like a genie, except someone who gives puns rather than wishes.  This practice caused them to have their genie livense revoked, and now they wander around, trying to trying people into asking them for help, so they can respond by supplying a pun, rather than helping.\n",
+        "pubname": "Unlicensed pun genie",
+        "tags": "puns"
+    },
+    "you_are_the_present_moment": {
+        "devname": "you_are_the_present_moment",
+        "notes": "You, and your existence, are actually the time-concept called \"the present\".  Everything you see, feel, and experience in the world, is not you-moving-through-the-world, rather, it is you, the present moment, being drug against the universe.  The way you interpret this experience causes you to believe in the existence of free will, and also to believe you lack the power to define the nature of the universe.  The truth is sideways to what you have come to believe.\n\n",
+        "pubname": "You *are* the present moment",
+        "tags": "perspective, time, god"
     }
 }
