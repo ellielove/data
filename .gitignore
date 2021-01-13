@@ -3,3 +3,4 @@
 *.pyc
 .fragments.project.json.swp
 .fragments.project.json.un~
+backup.fragments.project.json
