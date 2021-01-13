@@ -11,6 +11,12 @@
         "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
         "tags": "almost-injury, entos, car"
     },
+    "always_spider": {
+        "devname": "always_spider",
+        "notes": "pretty sure this comes from an earlier nightvale episode\n",
+        "pubname": "You have a spider on your body at all times, but especially now",
+        "tags": ""
+    },
     "antique_dust_dealer": {
         "devname": "antique_dust_dealer",
         "notes": "A person who deals in antique dusts--just what you need to make you home feel live-in.  Some dusts are musty, some are old, some are rancid, some are mold.  Dust is what you need, if you want to be taken seriously as a sorceror, vampire, or venerable creeper of any description\n",
@@ -23,6 +29,12 @@
         "pubname": "Automated ships as lumbering synthetic animal creatures",
         "tags": "synthetic life"
     },
+    "bag_of_holy_dicks": {
+        "devname": "bag_of_holy_dicks",
+        "notes": "\n",
+        "pubname": "Eat a bag of Holy dicks",
+        "tags": ""
+    },
     "become_a_skeleton": {
         "devname": "become_a_skeleton",
         "notes": "\n",
@@ -34,6 +46,12 @@
         "notes": "\n",
         "pubname": "I am a simple bible farmer, come to you from the great good lord",
         "tags": "bible, farmer"
+    },
+    "bigfeels": {
+        "devname": "bigfeels",
+        "notes": "\n",
+        "pubname": "Bigfeels",
+        "tags": ""
     },
     "birth_and_destiny": {
         "devname": "birth_and_destiny",
@@ -53,6 +71,12 @@
         "pubname": "Brain in a jar",
         "tags": "perspective"
     },
+    "capitalist_talks_to_undead_slaves": {
+        "devname": "capitalist_talks_to_undead_slaves",
+        "notes": "\n",
+        "pubname": "Why would we pay you a \"living wage\" if none of you are living?",
+        "tags": ""
+    },
     "character__detective_noir": {
         "devname": "character__detective_noir",
         "notes": "\n",
@@ -64,6 +88,12 @@
         "notes": "a professional streamer who's gimmick is: they wait in line for something, and don't get it.  They just wait in line for nothing, as a job.\n",
         "pubname": "Streamer { someone who stands in lines, but always arrives late, so whatever they're waiting for is always gone } ",
         "tags": "streamer"
+    },
+    "character__poisoner_and_brewmaster": {
+        "devname": "character__poisoner_and_brewmaster",
+        "notes": "\n",
+        "pubname": "A poison-er, who is also a small town brewmaster",
+        "tags": ""
     },
     "character__professor_blather": {
         "devname": "character__professor_blather",
@@ -77,6 +107,12 @@
         "pubname": "Sneaky Bushwack",
         "tags": "character, name"
     },
+    "civilization_is_barbarism": {
+        "devname": "civilization_is_barbarism",
+        "notes": "\n",
+        "pubname": "A record of civilization is a record of barbarism",
+        "tags": ""
+    },
     "concept__boldness_recipe": {
         "devname": "concept__boldness_recipe",
         "notes": "anti-horror, is boldness\n",
@@ -88,6 +124,18 @@
         "notes": "\n",
         "pubname": "Catharsis by proxy: audience gets catharsis from character living through their struggle",
         "tags": "recipe, catharsis"
+    },
+    "concept__combat_paladin_favored_enemey": {
+        "devname": "concept__combat_paladin_favored_enemey",
+        "notes": "or X.op\n",
+        "pubname": "Paladin vs Undead == X vs X.specialty",
+        "tags": ""
+    },
+    "concept__crew_premise_recipe": {
+        "devname": "concept__crew_premise_recipe",
+        "notes": "\n",
+        "pubname": "A crew travels to an unknown land, on a desperate mission",
+        "tags": "recipe"
     },
     "concept__despiration_premise_recipe": {
         "devname": "concept__despiration_premise_recipe",
@@ -137,10 +185,22 @@
         "pubname": "What are the extents of your possible experiences",
         "tags": "concept, experience"
     },
+    "concept__location__bar__the_schemin_demon": {
+        "devname": "concept__location__bar__the_schemin_demon",
+        "notes": "\n",
+        "pubname": "The Schemin Demon; A pub in Hell",
+        "tags": ""
+    },
     "concept__location__story__skyscraper_nightvale": {
         "devname": "concept__location__story__skyscraper_nightvale",
         "notes": "\n",
         "pubname": "Welcome to nightvale, except it takes place in a closed off skyscraper after an apocylapse",
+        "tags": ""
+    },
+    "concept__nature_of_a_spiritual_connection": {
+        "devname": "concept__nature_of_a_spiritual_connection",
+        "notes": "\n",
+        "pubname": "A series of minor coincidences, which are thematically related to your thoughts; a spiritual connection",
         "tags": ""
     },
     "concept__perspective_recipe": {
@@ -167,10 +227,22 @@
         "pubname": "To Check: when you look, and see if something is true",
         "tags": "logic"
     },
+    "consumer_product__lookaway": {
+        "devname": "consumer_product__lookaway",
+        "notes": "drug lowers curiosity and empathy\n",
+        "pubname": "Look Away: a feel better drug; other people's problems are other people's problems; it doesn't have to hurt",
+        "tags": ""
+    },
     "consumer_product__neverlearn": {
         "devname": "consumer_product__neverlearn",
         "notes": "a medication that prevents you from accidentally learning something you didn't want to believe\n",
         "pubname": "Confidence is power! Neverlearn! It's not a suppositiory, but it still works that way",
+        "tags": ""
+    },
+    "corporation_saves_money": {
+        "devname": "corporation_saves_money",
+        "notes": "\n",
+        "pubname": "Corportation makes videos to thank workers, rather than pay them more",
         "tags": ""
     },
     "custom_screams": {
@@ -189,6 +261,12 @@
         "devname": "dev_practice__no_plot_point_explanations",
         "notes": "People can explain a fraction of a plot point, but the player has to put all of the pieces together themselves.\n\n?\n",
         "pubname": "No dialogue where someone explains a plot point",
+        "tags": ""
+    },
+    "dialogue__dead_raven": {
+        "devname": "dialogue__dead_raven",
+        "notes": "\n",
+        "pubname": "I was walking through a field, and I saw a dead raven.  { and here it is } No, I wanted to see if you think it's an ill omen { ah } But I did bring the bird, if that helps",
         "tags": ""
     },
     "duck_puppy": {
@@ -227,6 +305,24 @@
         "pubname": "objectively evil pets for very bad people",
         "tags": "evil, pets"
     },
+    "faculty_and_anti_faculty": {
+        "devname": "faculty_and_anti_faculty",
+        "notes": "pretty sure this idea comes from nightvale\n",
+        "pubname": "Faculty and anti-faculty",
+        "tags": ""
+    },
+    "father_of_history_father_of_lies": {
+        "devname": "father_of_history_father_of_lies",
+        "notes": "\n",
+        "pubname": "Father of History, Father of Lies",
+        "tags": ""
+    },
+    "festival_of_unnecessary_skills": {
+        "devname": "festival_of_unnecessary_skills",
+        "notes": "\n",
+        "pubname": "The festival of unnecessary skills",
+        "tags": ""
+    },
     "flesh_horse": {
         "devname": "flesh_horse",
         "notes": "a type of horse\n",
@@ -244,6 +340,12 @@
         "notes": "\n",
         "pubname": "Dinosaur burgers; Mammoth steaks; Human chicken",
         "tags": "foods"
+    },
+    "foods__pizza_vine": {
+        "devname": "foods__pizza_vine",
+        "notes": "\n",
+        "pubname": "Creeping Pizza Vine, Burrito Tree, Brunch-root",
+        "tags": ""
     },
     "forgotten_to_death": {
         "devname": "forgotten_to_death",
@@ -263,11 +365,23 @@
         "pubname": "The Gods of Gods of Gods; and I kneeled to none\n\n",
         "tags": "gods, recursion"
     },
+    "have_a_fiddle_with_it": {
+        "devname": "have_a_fiddle_with_it",
+        "notes": "\n",
+        "pubname": "Have a fiddle with it",
+        "tags": ""
+    },
     "historical_post_society": {
         "devname": "historical_post_society",
         "notes": "\n",
         "pubname": "The Historical Post Society; Internet Archeology at its finest; the podcast of a group of digital-human archeologists, who talk about changing social norms",
         "tags": "history, archeology"
+    },
+    "hope_is_not_a_strategy": {
+        "devname": "hope_is_not_a_strategy",
+        "notes": "\n",
+        "pubname": "Hope is not a strategy",
+        "tags": ""
     },
     "horridore": {
         "devname": "horridore",
@@ -280,6 +394,12 @@
         "notes": "wagging their tails\n",
         "pubname": "Household pets sit and wait expectantly in front of the meat printer",
         "tags": "meat printer"
+    },
+    "hug_god_paladin": {
+        "devname": "hug_god_paladin",
+        "notes": "\n",
+        "pubname": "Hugs for the Hug God",
+        "tags": ""
     },
     "human_physical_frailty": {
         "devname": "human_physical_frailty",
@@ -328,6 +448,12 @@
         "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
         "pubname": "Monk Milk; The great lactation distellery of Christ",
         "tags": "milk"
+    },
+    "mother_ocean": {
+        "devname": "mother_ocean",
+        "notes": "\n",
+        "pubname": "Mother ocean",
+        "tags": ""
     },
     "origin_of_earth_life": {
         "devname": "origin_of_earth_life",
@@ -437,6 +563,18 @@
         "pubname": "The Demon Core; a nefarious soul magic war project",
         "tags": ""
     },
+    "the_everburning_castle": {
+        "devname": "the_everburning_castle",
+        "notes": "\n",
+        "pubname": "The everburning castle",
+        "tags": "location"
+    },
+    "the_iron_price": {
+        "devname": "the_iron_price",
+        "notes": "\n",
+        "pubname": "The Iron Price",
+        "tags": ""
+    },
     "the_mirrored_hand": {
         "devname": "the_mirrored_hand",
         "notes": "If someone is Otherhanded, then they are presumed to have an inherrent strangeness about them\n",
@@ -455,6 +593,12 @@
         "pubname": "The Neon Eon; an ager of prosperous tyrrany and hate",
         "tags": "wealth, inequality"
     },
+    "the_new_poverty": {
+        "devname": "the_new_poverty",
+        "notes": "\n",
+        "pubname": "Jobs pay in: room + board + memes",
+        "tags": ""
+    },
     "the_town_that_walked_away": {
         "devname": "the_town_that_walked_away",
         "notes": "A group of people suddenly leave, while a different group spontaneously adopts those identities, and acts as if nothing at all has happened.  They produce new paperwork, attesting to the legitimacy of the new situation, but the old paperwork and other evidences still remain",
@@ -467,10 +611,22 @@
         "pubname": "Unlicensed pun genie",
         "tags": "puns"
     },
+    "vanished_without_a_trace": {
+        "devname": "vanished_without_a_trace",
+        "notes": "\n",
+        "pubname": "Vanished without a trace; without a struggle; without a sound",
+        "tags": ""
+    },
     "wall_of_torment": {
         "devname": "wall_of_torment",
         "notes": "\n",
         "pubname": "The Wall of Torment; a wall that appears in your way, preventing you from reaching your destination, which tells painful truths about yourself",
+        "tags": ""
+    },
+    "x_the_just": {
+        "devname": "x_the_just",
+        "notes": "\n",
+        "pubname": "What is your name? Just X.  ... X the just!",
         "tags": ""
     },
     "you_are_the_present_moment": {
