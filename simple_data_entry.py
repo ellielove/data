@@ -19,7 +19,7 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
     if not layout:
         layout = create_layout()
 
-    window = psg.Window(title, layout, size=(600, 300))
+    window = psg.Window(title, layout, size=(600, 300), return_keyboard_events=True, keep_on_top=True)
 
     if entry:
         window.read(timeout=45)
@@ -29,19 +29,19 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
         window['_TAGS_'].update(entry['tags'])
 
     while True:
-        event, values = window.read(150)
+        event, values = window.read(timeout=150)
 
         # quit without saving info
-        if event == 'Cancel' or event == psg.WINDOW_CLOSED:
+        if event == 'Cancel' or event == psg.WINDOW_CLOSED or event == 'Escape:27':
             window.close()
             return {'user_quit': True}
 
         if event == 'Save':
             result = {
-                  'devname' : values['_DEVNAME_']
-                , 'pubname' : values['_PUBNAME_']
-                , 'notes'   : values['_NOTES_']
-                , 'tags'    : values['_TAGS_']
+                  'devname': values['_DEVNAME_']
+                , 'pubname': values['_PUBNAME_']
+                , 'notes'  : values['_NOTES_']
+                , 'tags'   : values['_TAGS_']
             }
             window.close()
             return result
