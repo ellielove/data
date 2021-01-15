@@ -1,9 +1,9 @@
 {
-    "academy_of_dubious_distinctions": {
-        "devname": "academy_of_dubious_distinctions",
-        "notes": "An large, well funded, prestigious organization, who's in the busienss of presenting people with medals and awards, for stupid things.\n",
-        "pubname": "The Academy of Dubious Distinctions",
-        "tags": "awards"
+    "WYRD_HAS_BECOME": {
+        "devname": "WYRD_HAS_BECOME",
+        "notes": "This is the phrase used by people, to indicate that Wyrd has \"entered the building\".  When Wyrd arrives as \"the building\", the whole building becomes Wyrd.  The nature of life and the universe changes for a while, and then reverts back to normal (except for you) when Wyrd leaves\n",
+        "pubname": "Wyrd has become",
+        "tags": "wyrd"
     },
     "almost_injury__inattentive_driver": {
         "devname": "almost_injury__inattentive_driver",
@@ -41,12 +41,6 @@
         "pubname": "Become a skeleton; tear the skin off of your body and die, and thereby become complete",
         "tags": "skeleton"
     },
-    "bible_farmer": {
-        "devname": "bible_farmer",
-        "notes": "\n",
-        "pubname": "I am a simple bible farmer, come to you from the great good lord",
-        "tags": "bible, farmer"
-    },
     "bigfeels": {
         "devname": "bigfeels",
         "notes": "\n",
@@ -77,29 +71,35 @@
         "pubname": "Why would we pay you a \"living wage\" if none of you are living?",
         "tags": ""
     },
+    "character__bible_farmer": {
+        "devname": "character__bible_farmer",
+        "notes": "\n",
+        "pubname": "I am a simple bible farmer, come to you from the great good lord",
+        "tags": "bible, character, farmer"
+    },
     "character__detective_noir": {
         "devname": "character__detective_noir",
         "notes": "\n",
         "pubname": "Detective Noir: That is literally the name of the detective; a mantle, passed along to different people",
-        "tags": "detective, character"
+        "tags": "character, detective"
     },
     "character__disappointed_streamer": {
         "devname": "character__disappointed_streamer",
         "notes": "a professional streamer who's gimmick is: they wait in line for something, and don't get it.  They just wait in line for nothing, as a job.\n",
         "pubname": "Streamer { someone who stands in lines, but always arrives late, so whatever they're waiting for is always gone } ",
-        "tags": "streamer"
+        "tags": "character, streamer"
     },
     "character__poisoner_and_brewmaster": {
         "devname": "character__poisoner_and_brewmaster",
         "notes": "\n",
         "pubname": "A poison-er, who is also a small town brewmaster",
-        "tags": ""
+        "tags": "character, poison"
     },
     "character__professor_blather": {
         "devname": "character__professor_blather",
         "notes": "a character name, this professor is the concept of an absent minded professor (or, they subvert that concept)",
         "pubname": "Professor Blather",
-        "tags": "character, name"
+        "tags": "character, name, professor"
     },
     "character__sneaky_bushwack": {
         "devname": "character__sneaky_bushwack",
@@ -107,71 +107,23 @@
         "pubname": "Sneaky Bushwack",
         "tags": "character, name"
     },
-    "civilization_is_barbarism": {
-        "devname": "civilization_is_barbarism",
-        "notes": "\n",
-        "pubname": "A record of civilization is a record of barbarism",
-        "tags": ""
-    },
-    "concept__boldness_recipe": {
-        "devname": "concept__boldness_recipe",
-        "notes": "anti-horror, is boldness\n",
-        "pubname": "Boldness by proxy: audience feels heartened by seeing someone continue on, regardless of the setbacks they experience",
-        "tags": "recipe, boldness"
-    },
-    "concept__catharsis_recipe": {
-        "devname": "concept__catharsis_recipe",
-        "notes": "\n",
-        "pubname": "Catharsis by proxy: audience gets catharsis from character living through their struggle",
-        "tags": "recipe, catharsis"
-    },
     "concept__combat_paladin_favored_enemey": {
         "devname": "concept__combat_paladin_favored_enemey",
         "notes": "or X.op\n",
         "pubname": "Paladin vs Undead == X vs X.specialty",
         "tags": ""
     },
-    "concept__crew_premise_recipe": {
-        "devname": "concept__crew_premise_recipe",
-        "notes": "\n",
-        "pubname": "A crew travels to an unknown land, on a desperate mission",
-        "tags": "recipe"
-    },
-    "concept__despiration_premise_recipe": {
-        "devname": "concept__despiration_premise_recipe",
-        "notes": "X is the thing you want to tell your story about.  You say this person was just really, really desperate, and that starting motivation allows you to ignore the reasons your character should do something other than following your story\n",
-        "pubname": "A person, who is desperate enough to try anything; So they try X",
-        "tags": "recipe, premise"
+    "concept__fear_of_the_supernatural": {
+        "devname": "concept__fear_of_the_supernatural",
+        "notes": "(and not b/c it's coming to get you)\n\nFear of the supernatural, is fear of that which doesn't/cannot fit your mental model\n",
+        "pubname": "A real ghost is frightening; b/c it's a *real* ghost",
+        "tags": "fear"
     },
     "concept__genetic_politics": {
         "devname": "concept__genetic_politics",
         "notes": "\n",
         "pubname": "Genetic Politics: genetically pecifying personality profiles to dictate social-issue \"weather\", in the future",
         "tags": "genetics, politics"
-    },
-    "concept__growing_up_story_recipe": {
-        "devname": "concept__growing_up_story_recipe",
-        "notes": "\n",
-        "pubname": "Growing Up Story { fear about the implications of growing up in a bullying society; encouragement about a young person's prospects; strategies for how to prepare iin advance }",
-        "tags": ""
-    },
-    "concept__horror_recipe": {
-        "devname": "concept__horror_recipe",
-        "notes": "This is the feeling the reader should constantly have, when experiencing horror\n",
-        "pubname": "Horror: Something is wrong.  Did you see it?  Wait, what is wrong?  Something is wrong.",
-        "tags": "horror, recipe"
-    },
-    "concept__horror_recipe__places": {
-        "devname": "concept__horror_recipe__places",
-        "notes": "The places of horror, are the places where you make the best prey\n",
-        "pubname": "Places of disempowerment; Places of residual dread",
-        "tags": "horror, recipe"
-    },
-    "concept__horror_recipe__self_awareness": {
-        "devname": "concept__horror_recipe__self_awareness",
-        "notes": "these are the things you feel, when you are suffering horror\n",
-        "pubname": "Betrayal of senses; betrayal of thought; epitome of self-doubt",
-        "tags": "recipe, horror"
     },
     "concept__joke_recipe__misinterpretations_of_pop_culture": {
         "devname": "concept__joke_recipe__misinterpretations_of_pop_culture",
@@ -203,17 +155,17 @@
         "pubname": "A series of minor coincidences, which are thematically related to your thoughts; a spiritual connection",
         "tags": ""
     },
-    "concept__perspective_recipe": {
-        "devname": "concept__perspective_recipe",
-        "notes": "Seeing someone else's pain helps normalize your own pain.  (And if your pain isn't as much as the other person's, it also offers some relief of that pain, by minimizing it)\n",
-        "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
-        "tags": "recipe, perspective"
-    },
     "concept__resolving_paradoxes": {
         "devname": "concept__resolving_paradoxes",
         "notes": "\n",
         "pubname": "Every paradox is resolvable, by moving to a higher level of abstraction",
         "tags": ""
+    },
+    "concept__source_of_cruelty": {
+        "devname": "concept__source_of_cruelty",
+        "notes": "and acting to pre-emptively ward off an attack\n",
+        "pubname": "Cruelty, is a result of feeling anxious and vulnerable",
+        "tags": "cruelty, fear, anxiety"
     },
     "concept__time_travel_splinter_universe": {
         "devname": "concept__time_travel_splinter_universe",
@@ -257,10 +209,16 @@
         "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
         "tags": "darkness, self-reflection"
     },
-    "dev_practice__no_plot_point_explanations": {
-        "devname": "dev_practice__no_plot_point_explanations",
+    "dev__no_plot_point_explanations": {
+        "devname": "dev__no_plot_point_explanations",
         "notes": "People can explain a fraction of a plot point, but the player has to put all of the pieces together themselves.\n\n?\n",
         "pubname": "No dialogue where someone explains a plot point",
+        "tags": ""
+    },
+    "dev__teaching_people_to_name_things": {
+        "devname": "dev__teaching_people_to_name_things",
+        "notes": "The primary work of teaching people to think, can be summarized by teaching people to give good names to things.\n\nTo give something a good name, you must:\n\n1. analysize the thing, it's components, and its interactions with its outer system\n\n2. summarize the above knowledge, in few words\n\n3. consider the people who will need to know this information, and what they'll need to do with that knowledge\n\nDoing those things, requires a person to be able to start a mini-research-project on their own, and come up with some conclusions.  If a person can do all of that, then they can think in a structured way\n",
+        "pubname": "Teaching people to name things",
         "tags": ""
     },
     "dialogue__dead_raven": {
@@ -329,16 +287,40 @@
         "pubname": "Flesh Horse",
         "tags": "horror, horse"
     },
-    "food_lasagnog": {
+    "food__brunch_root": {
+        "devname": "food__brunch_root",
+        "notes": "\n",
+        "pubname": "Brunch Root",
+        "tags": "food"
+    },
+    "food__burrito_tree": {
+        "devname": "food__burrito_tree",
+        "notes": "\n",
+        "pubname": "Burrito Tree",
+        "tags": "food"
+    },
+    "food__dinosaur_burgers": {
+        "devname": "food_types_dinosaur_burgers",
+        "notes": "\n",
+        "pubname": "Dinosaur burgers; Mammoth steaks; Human chicken",
+        "tags": "foods"
+    },
+    "food__human_chicken": {
+        "devname": "food__human_chicken",
+        "notes": "\n",
+        "pubname": "Human Chicken",
+        "tags": "food, horror"
+    },
+    "food__lasagnog": {
         "devname": "food_lasagnog",
         "notes": "\n",
         "pubname": "Lasagnog: lasagna + egnog + holiday cheer",
         "tags": ""
     },
-    "food_types_dinosaur_burgers": {
-        "devname": "food_types_dinosaur_burgers",
+    "food__mammoth_steaks": {
+        "devname": "food__mammoth_steaks",
         "notes": "\n",
-        "pubname": "Dinosaur burgers; Mammoth steaks; Human chicken",
+        "pubname": "Mammoth Steaks",
         "tags": "foods"
     },
     "foods__pizza_vine": {
@@ -353,11 +335,23 @@
         "pubname": "Forgotten_to_death",
         "tags": "death, memory"
     },
+    "framework__plot_coupon": {
+        "devname": "framework__plot_coupon",
+        "notes": "when you need to advance the plot, you can either \"just advance the plot\", but also accept some negative consequence, or you can go and perform some quest and/or do mundane work, in order to \"earn\" the plot advancement\n",
+        "pubname": "Plot coupon: earned with work; bought on devil's credit",
+        "tags": "framework, plot"
+    },
     "friend_of_failure": {
         "devname": "friend_of_failure",
         "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
         "pubname": "Friend of Failure",
         "tags": "failure, motivation, perspective"
+    },
+    "game_pitch__frankenstine_pokemon": {
+        "devname": "game_pitch__frankenstine_pokemon",
+        "notes": "\n",
+        "pubname": "Like pokemon; you're a frankenstein scientist; create your monster; battle for parts; gotta stitch them all",
+        "tags": "game pitch"
     },
     "gods_of_gods_of_gods": {
         "devname": "gods_of_gods_of_gods",
@@ -376,6 +370,18 @@
         "notes": "\n",
         "pubname": "The Historical Post Society; Internet Archeology at its finest; the podcast of a group of digital-human archeologists, who talk about changing social norms",
         "tags": "history, archeology"
+    },
+    "history_records_barbarism": {
+        "devname": "history_records_barbarism",
+        "notes": "\n",
+        "pubname": "A record of civilization is a record of barbarism",
+        "tags": ""
+    },
+    "honker_bonkers": {
+        "devname": "honker_bonkers",
+        "notes": "a name for cars, that are always honking and bonking each other\n",
+        "pubname": "Honker Bonkers; street cars",
+        "tags": "car"
     },
     "hope_is_not_a_strategy": {
         "devname": "hope_is_not_a_strategy",
@@ -455,6 +461,18 @@
         "pubname": "Mother ocean",
         "tags": ""
     },
+    "normalize__change_of_opinion_after_learning_new_information": {
+        "devname": "normalize__change_of_opinion_after_learning_new_information",
+        "notes": "This needs to feel normal and regular and good, in order to help people change their minds when they hear new information\n",
+        "pubname": "Normalize change of opinion after learning new information",
+        "tags": "thinking"
+    },
+    "organization__academy_of_dubious_distinctions": {
+        "devname": "organization__academy_of_dubious_distinctions",
+        "notes": "An large, well funded, prestigious organization, who's in the busienss of presenting people with medals and awards, for stupid things.\n",
+        "pubname": "The Academy of Dubious Distinctions",
+        "tags": "awards, organization"
+    },
     "origin_of_earth_life": {
         "devname": "origin_of_earth_life",
         "notes": "\n",
@@ -472,6 +490,12 @@
         "notes": "the meaning of perfect contentment, is to be so self-satisfied, than any future is acceptable, and any amount of passive observation is pleasing to do--even if it leads to your painful and immediate death.  Someone who is perfectly content has ceased being human, as they are fundamentally undriven by the normal bodily concerns of self-care, and self-preservation.  Being this kind of contented, usually results in death, and it is very dangerous.  Still, it is a goal of several death-cult religious groups",
         "pubname": "To achieve perfect contentment; to desire any future",
         "tags": "contentment, cult"
+    },
+    "philosophy__adaptation_to_misfortune": {
+        "devname": "philosophy__adaptation_to_misfortune",
+        "notes": "Adapting to misfortune IS the meaning, IS the signifigance.  Once the adaptation has happened, you feel the meaning/signifigance--in retrospect, because the \"feeling\" is your literal sense of what that event feels like as you inspect your memories of that time, and construct { delta = after - before }\n",
+        "pubname": "Adaptation to misfortune == meaning; signifigance",
+        "tags": "philosophy, misfortune"
     },
     "power_to_move_mountains": {
         "devname": "power_to_move_mountains",
@@ -503,11 +527,77 @@
         "pubname": "Psychic Tree is able to hide itself",
         "tags": "tree"
     },
-    "quotation_nightvale_e29": {
+    "quotation__nightvale_e29": {
         "devname": "quotation_nightvale_e29",
         "notes": "\n",
         "pubname": "Now, more than ever, we are full of blood, any honey",
         "tags": "nightvale"
+    },
+    "recipe__boldness": {
+        "devname": "recipe__boldness",
+        "notes": "anti-horror, is boldness\n",
+        "pubname": "Boldness by proxy: audience feels heartened by seeing someone continue on, regardless of the setbacks they experience",
+        "tags": "boldness, recipe"
+    },
+    "recipe__catharsis": {
+        "devname": "recipe__catharsis",
+        "notes": "\n",
+        "pubname": "Catharsis by proxy: audience gets catharsis from character living through their struggle",
+        "tags": "catharsis, recipe"
+    },
+    "recipe__character_arc__seeker": {
+        "devname": "recipe__character_arc__seeker",
+        "notes": "\n",
+        "pubname": "f: character arc { the seeker works in many jobs, but never finds the right one; ends up being a storyteller & cook at a small food place, cheering people up }",
+        "tags": "character, food"
+    },
+    "recipe__crew_premise": {
+        "devname": "recipe__crew_premise",
+        "notes": "\n",
+        "pubname": "A crew travels to an unknown land, on a desperate mission",
+        "tags": "crew, recipe"
+    },
+    "recipe__despiration_premise": {
+        "devname": "recipe__despiration_premise",
+        "notes": "X is the thing you want to tell your story about.  You say this person was just really, really desperate, and that starting motivation allows you to ignore the reasons your character should do something other than following your story\n",
+        "pubname": "A person, who is desperate enough to try anything; So they try X",
+        "tags": "recipe, premise"
+    },
+    "recipe__growing_up_story": {
+        "devname": "recipe__growing_up_story",
+        "notes": "\n",
+        "pubname": "Growing Up Story { fear about the implications of growing up in a bullying society; encouragement about a young person's prospects; strategies for how to prepare iin advance }",
+        "tags": "recipe"
+    },
+    "recipe__horror_location": {
+        "devname": "recipe__horror_location",
+        "notes": "The places of horror, are the places where you make the best prey\n",
+        "pubname": "Places of disempowerment; Places of residual dread",
+        "tags": "horror, recipe"
+    },
+    "recipe__horror_mindset": {
+        "devname": "recipe__horror_mindset",
+        "notes": "This is the feeling the reader should constantly have, when experiencing horror\n",
+        "pubname": "Horror: Something is wrong.  Did you see it?  Wait, what is wrong?  Something is wrong.",
+        "tags": "horror, recipe"
+    },
+    "recipe__horror_sensations": {
+        "devname": "recipe__horror_sensations",
+        "notes": "these are the things you feel, when you are suffering horror\n",
+        "pubname": "Betrayal of senses; betrayal of thought; epitome of self-doubt",
+        "tags": "recipe, horror"
+    },
+    "recipe__perspective": {
+        "devname": "recipe__perspective",
+        "notes": "Seeing someone else's pain helps normalize your own pain.  (And if your pain isn't as much as the other person's, it also offers some relief of that pain, by minimizing it)\n",
+        "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
+        "tags": "recipe, perspective"
+    },
+    "recipe_horror__anouncer": {
+        "devname": "recipe_horror__anouncer",
+        "notes": "\n",
+        "pubname": "Anouncer { anounces horrible things } , seque { those horrible things happen }, anouncer { wasn't that nice? }, announcer { laughter }",
+        "tags": "horror, announcer"
     },
     "reincarnation_cycle": {
         "devname": "reincarnation_cycle",
@@ -557,6 +647,12 @@
         "pubname": "SOS; Suicide on Stream, a popular video streamer commits suicide on a live stream, police respond and shoot them",
         "tags": "suicide, cops, mental health"
     },
+    "the_bleeding_tree": {
+        "devname": "the_bleeding_tree",
+        "notes": "A tree which bleeds\n\ntodo: why?\n",
+        "pubname": "The Bleeding Tree",
+        "tags": "tree, blood"
+    },
     "the_demon_core": {
         "devname": "the_demon_core",
         "notes": "\n",
@@ -587,8 +683,8 @@
         "pubname": "The Moment; a cult which uses time travel psychosis to link minds, and establish a human super-computation system",
         "tags": "cult, psychic, computer, time"
     },
-    "the_neo_eon": {
-        "devname": "the_neo_eon",
+    "the_neon_eon": {
+        "devname": "the_neon_eon",
         "notes": "Cyberpunk dystopia\n",
         "pubname": "The Neon Eon; an ager of prosperous tyrrany and hate",
         "tags": "wealth, inequality"
