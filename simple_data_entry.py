@@ -3,10 +3,11 @@ import PySimpleGUI as psg
 
 def create_layout():
     return [
-          [psg.Text('Dev Name'   , size=(15, 1)), psg.InputText(key='_DEVNAME_', size=(300,1))]
-        , [psg.Text('Public Name', size=(15, 1)), psg.InputText(key='_PUBNAME_', size=(300,1))]
-        , [psg.Text('Notes'      , size=(15, 1)), psg.Multiline(key='_NOTES_', size=(300,10))]
-        , [psg.Text('Tags'       , size=(15, 1)), psg.InputText(key='_TAGS_', size=(300,1))]
+          [psg.Text('Dev Name'    , size=(15, 1)), psg.InputText(key='_DEVNAME_' , size=(300, 1))]
+        , [psg.Text('Public Name' , size=(15, 1)), psg.Multiline(key='_PUBNAME_' , size=(300, 4))]
+        , [psg.Text('Notes'       , size=(15, 1)), psg.Multiline(key='_NOTES_'   , size=(300, 10))]
+        , [psg.Text('Feature List', size=(15, 1)), psg.Multiline(key='_FEATURES_', size=(300, 10))]
+        , [psg.Text('Tags'        , size=(15, 1)), psg.InputText(key='_TAGS_'    , size=(300, 1))]
         , [psg.Button('Save'), psg.Button('Cancel')]
     ]
 
@@ -19,12 +20,13 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
     if not layout:
         layout = create_layout()
 
-    window = psg.Window(title, layout, size=(600, 300), return_keyboard_events=True, keep_on_top=True)
+    window = psg.Window(title, layout, size=(600, 500), return_keyboard_events=True, keep_on_top=True)
 
     if entry:
         window.read(timeout=45)
         window['_DEVNAME_'].update(entry['devname'], disabled=True, text_color='gray')
         window['_PUBNAME_'].update(entry['pubname'])
+        window['_FEATURES_'].update(entry['features'])
         window['_NOTES_'].update(entry['notes'])
         window['_TAGS_'].update(entry['tags'])
 
@@ -40,6 +42,7 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
             result = {
                   'devname': values['_DEVNAME_']
                 , 'pubname': values['_PUBNAME_']
+                , 'features': values['_FEATURES_']
                 , 'notes'  : values['_NOTES_']
                 , 'tags'   : values['_TAGS_']
             }
