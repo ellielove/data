@@ -12,6 +12,11 @@ import save_as_file_dialogue as saveAs
 class Application:
 
     @staticmethod
+    def get_current_version() -> float:
+        """This is THE place you need to set the current project version"""
+        return 0.2
+
+    @staticmethod
     def create_menu_bar_layout() -> list:
         return [
             ['&File', ['&Open', 'Save', '&SaveAs', '----', 'Settings', 'E&xit']]
@@ -53,6 +58,54 @@ class Application:
             json.dump(data, outfile, indent=4, sort_keys=True)
         return os.path.isfile(path)
 
+    @staticmethod
+    def manage_project_version(data):
+        """Checks the version of the starting project file, and updates the file if needed"""
+        if data['version'] == Application.get_current_version():
+            print('Project version is up to date { version: %f }' % Application.get_current_version())
+            return
+        print('Updating project version')
+
+        # incremental update of old project versions to new ones
+        # the goal here is to perform a stepwise update, through all
+        # older versions, until we hit current version.
+
+        # ident fns ------------------------------------------------------
+        def project_version_is_below__0_1():
+            if 'version' not in data:
+                print('Project version below 0.1')
+                return True
+            else:
+                return False
+
+        def project_version_is_below__0_2():
+            if 'feature_list' not in data:
+                print('Project version below 0.2')
+                return True
+            else:
+                return False
+
+        # update fns ------------------------------------------------------
+        def update_project_from_version__0_0__to_version__0_1():
+            print('Updating project from { version: 0.0 } to { version: 0.1 }')
+            for entry in data:
+                data[entry]['features'] = ''
+            data['version'] = 0.1
+
+        def update_project_from_version__0_1__to_version__0_2():
+            print('Updating project from { version: 0.1 } to { version: 0.2 }')
+            data['feature_list'] = []
+            data['version'] = 0.2
+
+        while True:
+            if project_version_is_below__0_1():
+                update_project_from_version__0_0__to_version__0_1()
+            elif project_version_is_below__0_2():
+                update_project_from_version__0_1__to_version__0_2()
+            else:
+                print('Project is up to date')
+                break
+
     def __init__(self):
         """init application, but not open window"""
         self.project_data = {}
@@ -74,6 +127,7 @@ class Application:
         )
 
         self.project_data = self.read_project_file(self.save_file_path)
+        self.manage_project_version(self.project_data)
 
     def modify_dictionary_entry(self, entry) -> None:
         """inserts a new entry, or modifies an existing entry, in the program project_data """
@@ -189,6 +243,8 @@ class Application:
             elif event == '_LIST_':
                 if values['_LIST_'] is None or len(values['_LIST_']) == 0:
                     continue
+                # if clicked on the edit-feature-list entry, do that
+                # else:
                 run_simple_data_entry_window(values['_LIST_'][0])
 
         shutdown_sequence()
