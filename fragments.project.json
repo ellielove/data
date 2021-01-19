@@ -6,6 +6,27 @@
         "pubname": "Wyrd has become",
         "tags": "wyrd"
     },
+    "_ASK": {
+        "devname": "_ASK",
+        "features": "ask\n",
+        "notes": "{ request information {\n        {param} : {x}\n    }\n }\n\n\n//inquire == requrest information\n//\n//{param}:{x} is a key-value tuple\n//\n//You can specify a general inquiry with:\n//    inquire{x}\n//\n// this returns:\n//   a subgraph\n//   (possible) a list of measurements proposed for the subgraph\n//   (possible) the outcome of those measurements\n//\n\nASK{X} is a direct request for information.  The param, can be used to specify the type, or amount, of information returned.  Inquire{about}{x} and Inquire{for}{x} have different expectations baked into them.\n",
+        "pubname": "{ask} : { request information { {param}:{x}} }\n",
+        "tags": "ask"
+    },
+    "_CONTEXT": {
+        "devname": "_CONTEXT",
+        "features": "context\n",
+        "notes": "The things that are going on, where things = x.\n\nX, is anything you could possibly be interested in, except X is only created, when it's inquired about.\n\nStarting context is blank, but this is taken to mean that it is unknown, rather than that it doesn't exist\n\nThings can be added to the context, and things can be modified.  Nothing can be removed from the context.  This is a natural law.\n\nThings can be removed from the intersection of the context and the decision, or the intersection of the context and the prediction, but nothing can be removed from the context itself\n",
+        "pubname": "{ context } : { the { x : things } that are going on } \n",
+        "tags": "context"
+    },
+    "_TELL": {
+        "devname": "_TELL",
+        "features": "tell\n",
+        "notes": "when a person says something to someone else.  Includes saying something to themselves.  Includes recording information in a conversatinoal tone.  This action is not a direct statement of data, however the action can relate a \"story\", where the \"story\" is a direct statement of data.\n",
+        "pubname": "{tell} : {say {param}{x}]\n\n",
+        "tags": "tell"
+    },
     "almost_injury__inattentive_driver": {
         "devname": "almost_injury__inattentive_driver",
         "features": "",
