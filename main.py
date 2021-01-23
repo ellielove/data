@@ -147,9 +147,34 @@ class Application:
             self.save_project_file(self.project_data, self.save_file_path)
             self.window.close()
 
+        def selection_is_complete_data_entry(_entry) -> bool:
+            if type(_entry) is float:
+                return False
+
+            has_dev_name = False
+            has_features = False
+            has_pub_name = False
+            has_notes    = False
+            has_tags     = False
+
+            if 'devname' in _entry:
+                has_dev_name = True
+            if 'features' in _entry:
+                has_features = True
+            if 'notes' in _entry:
+                has_notes = True
+            if 'pubname' in _entry:
+                has_pub_name = True
+            if 'tags' in _entry:
+                has_tags = True
+
+            return has_dev_name and has_features and has_notes and has_pub_name and has_tags
+
         def run_simple_data_entry_window(_entry):
             """invokes one life cycle of the data entry window"""
             _selection = self.project_data[_entry] if _entry in self.project_data else ''
+            if not selection_is_complete_data_entry(_selection):
+                return
             _modification = sde.simple_data_entry_window_cycle(_selection)
             # this saves changes after edits AND reads
             self.modify_dictionary_entry(_modification)
