@@ -115,8 +115,10 @@ class Application:
         self.selected_entry = ''
         self.window_size = (400, 600)
         self.save_every_n_ms = 180000  # 3 minutes in ms
+        self.default_timeout_ms = 150
         self.time_since_last_save = 0
         self.double_clicks = 0
+        self.last_clicked_on = ''
 
         psg.theme(self.theme)
         self.layout = self.create_primary_window_layout()
@@ -188,8 +190,8 @@ class Application:
         refresh_output()
 
         while True:
-            event, values = self.window.read(timeout=150)
-            self.time_since_last_save += 250
+            event, values = self.window.read(timeout=self.default_timeout_ms)
+            self.time_since_last_save += self.default_timeout_ms
 
             # this one is going to happen the most
             if event == '__TIMEOUT__':
@@ -268,9 +270,10 @@ class Application:
             elif event == '_LIST_':
                 if values['_LIST_'] is None or len(values['_LIST_']) == 0:
                     continue
-                # if clicked on the edit-feature-list entry, do that
-                # else:
-                run_simple_data_entry_window(values['_LIST_'][0])
+                if self.last_clicked_on == values['_LIST_'][0]:
+                    run_simple_data_entry_window(values['_LIST_'][0])
+                else:
+                    self.last_clicked_on = values['_LIST_'][0]
 
         shutdown_sequence()
 
