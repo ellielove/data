@@ -24,7 +24,7 @@ class FileSaveAsWindow:
         result = ''
         while True:
 
-            event, values = self.window.Read(timeout=150)
+            #event, values = self.window.Read(timeout=150)
             event, values = self.window.Read(timeout=150)
 
             if event is None or event == 'Exit':
