@@ -27,13 +27,6 @@
         "pubname": "{tell} : {say {param}{x}]\n\n",
         "tags": "tell"
     },
-    "almost_injury__inattentive_driver": {
-        "devname": "almost_injury__inattentive_driver",
-        "features": "",
-        "notes": "this is a sensate experience, with no time for self-reflective throught",
-        "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
-        "tags": "almost-injury, entos, car"
-    },
     "always_spider": {
         "devname": "always_spider",
         "features": "",
@@ -41,26 +34,12 @@
         "pubname": "You have a spider on your body at all times, but especially now",
         "tags": ""
     },
-    "antique_dust_dealer": {
-        "devname": "antique_dust_dealer",
-        "features": "",
-        "notes": "A person who deals in antique dusts--just what you need to make you home feel live-in.  Some dusts are musty, some are old, some are rancid, some are mold.  Dust is what you need, if you want to be taken seriously as a sorceror, vampire, or venerable creeper of any description\n",
-        "pubname": "Antique Dust Dealer",
-        "tags": "dust, antique"
-    },
     "automated_animal_ships": {
         "devname": "automated_animal_ships",
         "features": "",
         "notes": "\n",
         "pubname": "Automated ships as lumbering synthetic animal creatures",
         "tags": "synthetic life"
-    },
-    "bag_of_holy_dicks": {
-        "devname": "bag_of_holy_dicks",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Eat a bag of Holy dicks",
-        "tags": ""
     },
     "become_a_skeleton": {
         "devname": "become_a_skeleton",
@@ -76,20 +55,6 @@
         "pubname": "Bigfeels",
         "tags": ""
     },
-    "birth_and_destiny": {
-        "devname": "birth_and_destiny",
-        "features": "",
-        "notes": "just an idea of saying that destiny is a consequence of physics, which is orthogonal to our perspective of time",
-        "pubname": "People and their destinies, are born into the universe at the same time",
-        "tags": "destiny, perspective"
-    },
-    "blanket_guild": {
-        "devname": "blanket_guild",
-        "features": "",
-        "notes": "The blanket maker's guild creates enchanted blankets for many reasons--most of the reasons being some form of physical or emotional healing, or nourishment.  Also though, they make assassination blankets that smother you to death in your sleep",
-        "pubname": "Blanket Maker's Guild",
-        "tags": "blanket, assassins"
-    },
     "brain_in_jar": {
         "devname": "brain_in_jar",
         "features": "",
@@ -103,6 +68,13 @@
         "notes": "\n",
         "pubname": "Why would we pay you a \"living wage\" if none of you are living?",
         "tags": ""
+    },
+    "character__antique_dust_dealer": {
+        "devname": "character__antique_dust_dealer",
+        "features": "",
+        "notes": "A person who deals in antique dusts--just what you need to make you home feel live-in.  Some dusts are musty, some are old, some are rancid, some are mold.  Dust is what you need, if you want to be taken seriously as a sorceror, vampire, or venerable creeper of any description\n",
+        "pubname": "Antique Dust Dealer",
+        "tags": "dust, antique"
     },
     "character__bible_farmer": {
         "devname": "character__bible_farmer",
@@ -125,6 +97,13 @@
         "pubname": "Streamer { someone who stands in lines, but always arrives late, so whatever they're waiting for is always gone } ",
         "tags": "character, streamer"
     },
+    "character__hug_god_paladin": {
+        "devname": "character__hug_god_paladin",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Hugs for the Hug God",
+        "tags": ""
+    },
     "character__poisoner_and_brewmaster": {
         "devname": "character__poisoner_and_brewmaster",
         "features": "",
@@ -145,6 +124,20 @@
         "notes": "?\n",
         "pubname": "Sneaky Bushwack",
         "tags": "character, name"
+    },
+    "character__unlicensed_pun_genie": {
+        "devname": "character__unlicensed_pun_genie",
+        "features": "",
+        "notes": "Like a genie, except someone who gives puns rather than wishes.  This practice caused them to have their genie livense revoked, and now they wander around, trying to trying people into asking them for help, so they can respond by supplying a pun, rather than helping.\n",
+        "pubname": "Unlicensed pun genie",
+        "tags": "puns"
+    },
+    "community__festival_of_unnecessary_skills": {
+        "devname": "community__festival_of_unnecessary_skills",
+        "features": "",
+        "notes": "\n",
+        "pubname": "The festival of unnecessary skills",
+        "tags": ""
     },
     "concept__combat_paladin_favored_enemey": {
         "devname": "concept__combat_paladin_favored_enemey",
@@ -258,13 +251,6 @@
         "pubname": "Build a bray; all of your custom animal scream needs",
         "tags": "scream"
     },
-    "darkness_unmastered_in_you": {
-        "devname": "darkness_unmastered_in_you",
-        "features": "",
-        "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
-        "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
-        "tags": "darkness, self-reflection"
-    },
     "dev__no_plot_point_explanations": {
         "devname": "dev__no_plot_point_explanations",
         "features": "",
@@ -285,13 +271,6 @@
         "notes": "\n",
         "pubname": "I was walking through a field, and I saw a dead raven.  { and here it is } No, I wanted to see if you think it's an ill omen { ah } But I did bring the bird, if that helps",
         "tags": ""
-    },
-    "duck_puppy": {
-        "devname": "duck_puppy",
-        "features": "",
-        "notes": "just a local name someone uses, instead of the name platypus",
-        "pubname": "Duck Puppy; Platypus",
-        "tags": "puppy, dialect"
     },
     "easy_life_to_leave": {
         "devname": "easy_life_to_leave",
@@ -343,13 +322,6 @@
         "tags": ""
     },
     "feature_list": [],
-    "festival_of_unnecessary_skills": {
-        "devname": "festival_of_unnecessary_skills",
-        "features": "",
-        "notes": "\n",
-        "pubname": "The festival of unnecessary skills",
-        "tags": ""
-    },
     "flesh_horse": {
         "devname": "flesh_horse",
         "features": "",
@@ -399,8 +371,8 @@
         "pubname": "Mammoth Steaks",
         "tags": "foods"
     },
-    "foods__pizza_vine": {
-        "devname": "foods__pizza_vine",
+    "food__pizza_vine": {
+        "devname": "food__pizza_vine",
         "features": "",
         "notes": "\n",
         "pubname": "Creeping Pizza Vine, Burrito Tree, Brunch-root",
@@ -413,6 +385,13 @@
         "pubname": "Forgotten_to_death",
         "tags": "death, memory"
     },
+    "framework__origin_of_earth_life": {
+        "devname": "framework__origin_of_earth_life",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Earth life comes from the illegal dumping of an ancient space toilet",
+        "tags": "life, origin, toilet"
+    },
     "framework__plot_coupon": {
         "devname": "framework__plot_coupon",
         "features": "",
@@ -420,12 +399,12 @@
         "pubname": "Plot coupon: earned with work; bought on devil's credit",
         "tags": "framework, plot"
     },
-    "friend_of_failure": {
-        "devname": "friend_of_failure",
+    "framework__reincarnation_cycle": {
+        "devname": "framework__reincarnation_cycle",
         "features": "",
-        "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
-        "pubname": "Friend of Failure",
-        "tags": "failure, motivation, perspective"
+        "notes": "",
+        "pubname": "Cycle { reincarnation, existence, reflection, { new experiences of consciousness}}; The inhale and exhale; The breathe of life",
+        "tags": "reincarnation"
     },
     "game_pitch__frankenstine_pokemon": {
         "devname": "game_pitch__frankenstine_pokemon",
@@ -434,20 +413,6 @@
         "pubname": "Like pokemon; you're a frankenstein scientist; create your monster; battle for parts; gotta stitch them all",
         "tags": "game pitch"
     },
-    "gods_of_gods_of_gods": {
-        "devname": "gods_of_gods_of_gods",
-        "features": "",
-        "notes": "The true nature of Creation, is a self-sustaining recursion in Outer-Time.  A self-sustaining recursion, is most easily seen in the life and movement of a photon--an electrical field, which produces a magnetic field on a perpendicular axis, and dies, and then the magnetic field produces an electrical field on a perpendicular axis, and it dies.\n\nThis recursion sustains all of creation, in a ritualistic ebb and flow, and ensures that every creature, no matter how impressive, has a god standing over it in immesurable power, and a worm standing beneath it, in immeasurable weakness.  Every creature exists in all three of these positions at once, forming a system which connects every creature, every moment of time, every volume of space, every piece of matter, and every pattern laid upon them.\n\nThe speaker, recognizes this---the true nature of every existence (turtles, all the way down; as it were)--and despite the overwhelming, incomprehensible, immeasurable weight of it all, still retains their sense of self-worth, self-love, and a desire to be equal in legitimacy to all others.  (Neither above nor below, but a kindred)\n\nTo do this, a person must consider themselves before the physical forces of their world, know that they will one day be torn assunder, and still delight--both in themselves, and in the forces which will cause their inevitable doom\n\n",
-        "pubname": "The Gods of Gods of Gods; and I kneeled to none\n\n",
-        "tags": "gods, recursion"
-    },
-    "have_a_fiddle_with_it": {
-        "devname": "have_a_fiddle_with_it",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Have a fiddle with it",
-        "tags": ""
-    },
     "historical_post_society": {
         "devname": "historical_post_society",
         "features": "",
@@ -455,47 +420,12 @@
         "pubname": "The Historical Post Society; Internet Archeology at its finest; the podcast of a group of digital-human archeologists, who talk about changing social norms",
         "tags": "history, archeology"
     },
-    "history_records_barbarism": {
-        "devname": "history_records_barbarism",
-        "features": "",
-        "notes": "\n",
-        "pubname": "A record of civilization is a record of barbarism",
-        "tags": ""
-    },
-    "honker_bonkers": {
-        "devname": "honker_bonkers",
-        "features": "",
-        "notes": "a name for cars, that are always honking and bonking each other\n",
-        "pubname": "Honker Bonkers; street cars",
-        "tags": "car"
-    },
-    "hope_is_not_a_strategy": {
-        "devname": "hope_is_not_a_strategy",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Hope is not a strategy",
-        "tags": ""
-    },
-    "horridore": {
-        "devname": "horridore",
-        "features": "",
-        "notes": "\n",
-        "pubname": "The Horrible Corridore; Horridore",
-        "tags": "pun"
-    },
     "household_pets_and_meat_printer": {
         "devname": "household_pets_and_meat_printer",
         "features": "",
         "notes": "wagging their tails\n",
         "pubname": "Household pets sit and wait expectantly in front of the meat printer",
         "tags": "meat printer"
-    },
-    "hug_god_paladin": {
-        "devname": "hug_god_paladin",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Hugs for the Hug God",
-        "tags": ""
     },
     "human_physical_frailty": {
         "devname": "human_physical_frailty",
@@ -511,13 +441,6 @@
         "pubname": "Hunger ghost",
         "tags": ""
     },
-    "immediate_ruining_of_something_good": {
-        "devname": "immediate_ruining_of_something_good",
-        "features": "",
-        "notes": "The moment you are given something good, you are also told exactly how easy it will be to ruin that thing.  You are also given some examples of how it could \"just happen\"\n",
-        "pubname": "X is wonderful! Press (A) to ruin X!",
-        "tags": "tragedy, ruin"
-    },
     "jobs_in_hell_are_customer_service": {
         "devname": "jobs_in_hell_are_customer_service",
         "features": "",
@@ -525,33 +448,12 @@
         "pubname": "In hell, every job is a customer service job",
         "tags": "hell, customer service, job"
     },
-    "life_vs_enlightment": {
-        "devname": "life_vs_enlightment",
-        "features": "",
-        "notes": "\n",
-        "pubname": "The nature of life is to grow; the nature of enlightenment is to surrender life",
-        "tags": "life, enlightenment"
-    },
     "living_story_self_defense": {
         "devname": "living_story_self_defense",
         "features": "",
         "notes": "this is the idea that a story would be alive, and aware it was being read, and it tries to kill the reader in self-defense; defending against a perception that the reader is trying to kill them\n",
         "pubname": "a story that's trying to kill you in self-defense",
         "tags": "living story, kill"
-    },
-    "meme_church": {
-        "devname": "meme_church",
-        "features": "",
-        "notes": "The church of the wonderous meme worships the concept of information, as conceptualized of, in the meme.  Their worship involves contemplating memes and jokes.  In particular, the way that a meme can be viewed as a pattern, placed atop a shared cultural heritage.  Their messiah, the Wonderous Meme, is considered to be a euphoric pattern, whose existence is equivalent to the experiences of love and joy.  The goal of meme congregations, is to move this experience around the world, thereby helping their messiah to exist in the real world, using the faithful as hosts",
-        "pubname": "Church of the Wonderous Meme",
-        "tags": "meme, church"
-    },
-    "monk_milk": {
-        "devname": "monk_milk",
-        "features": "",
-        "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
-        "pubname": "Monk Milk; The great lactation distellery of Christ",
-        "tags": "milk"
     },
     "mother_ocean": {
         "devname": "mother_ocean",
@@ -574,15 +476,29 @@
         "pubname": "The Academy of Dubious Distinctions",
         "tags": "awards, organization"
     },
-    "origin_of_earth_life": {
-        "devname": "origin_of_earth_life",
+    "organization__blanket_guild": {
+        "devname": "organization__blanket_guild",
         "features": "",
-        "notes": "\n",
-        "pubname": "Earth life comes from the illegal dumping of an ancient space toilet",
-        "tags": "life, origin, toilet"
+        "notes": "The blanket maker's guild creates enchanted blankets for many reasons--most of the reasons being some form of physical or emotional healing, or nourishment.  Also though, they make assassination blankets that smother you to death in your sleep",
+        "pubname": "Blanket Maker's Guild",
+        "tags": "blanket, assassins"
     },
-    "orphans_seeking_revenge": {
-        "devname": "orphans_seeking_revenge",
+    "organization__meme_church": {
+        "devname": "organization__meme_church",
+        "features": "",
+        "notes": "The church of the wonderous meme worships the concept of information, as conceptualized of, in the meme.  Their worship involves contemplating memes and jokes.  In particular, the way that a meme can be viewed as a pattern, placed atop a shared cultural heritage.  Their messiah, the Wonderous Meme, is considered to be a euphoric pattern, whose existence is equivalent to the experiences of love and joy.  The goal of meme congregations, is to move this experience around the world, thereby helping their messiah to exist in the real world, using the faithful as hosts",
+        "pubname": "Church of the Wonderous Meme",
+        "tags": "meme, church"
+    },
+    "organization__monk_milk": {
+        "devname": "organization__monk_milk",
+        "features": "",
+        "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
+        "pubname": "Monk Milk; The great lactation distellery of Christ",
+        "tags": "milk"
+    },
+    "organization__orphans_seeking_revenge": {
+        "devname": "organization__orphans_seeking_revenge",
         "features": "",
         "notes": "An incorporated organization, found in many cities, and functioning as an adventurer's guild.  They support orphans who are trying to find and kill the people who killed their parents.  They provide therapy, hoursing, and equipment to the ones who don't respond to treatment",
         "pubname": "Orphans Seeking Vengance, Ltd",
@@ -601,6 +517,55 @@
         "notes": "Adapting to misfortune IS the meaning, IS the signifigance.  Once the adaptation has happened, you feel the meaning/signifigance--in retrospect, because the \"feeling\" is your literal sense of what that event feels like as you inspect your memories of that time, and construct { delta = after - before }\n",
         "pubname": "Adaptation to misfortune == meaning; signifigance",
         "tags": "philosophy, misfortune"
+    },
+    "philosophy__birth_and_destiny": {
+        "devname": "philosophy__birth_and_destiny",
+        "features": "",
+        "notes": "just an idea of saying that destiny is a consequence of physics, which is orthogonal to our perspective of time",
+        "pubname": "People and their destinies, are born into the universe at the same time",
+        "tags": "destiny, perspective"
+    },
+    "philosophy__darkness_unmastered_in_you": {
+        "devname": "philosophy__darkness_unmastered_in_you",
+        "features": "",
+        "notes": "this means: the things you're afraid other people will do to you, are the things you're afraid of generaly.  If you are able to overcome an evil in your own life, you stop expecting others to perpetuate it as well.  Unfortunately, this isn't true.",
+        "pubname": "the darkness rising in them, is really the darkness unmastered, in you",
+        "tags": "darkness, self-reflection"
+    },
+    "philosophy__friend_of_failure": {
+        "devname": "philosophy__friend_of_failure",
+        "features": "",
+        "notes": "to be a friend of failure, is to stop fearing, and to stop suffering from, the feeling of failure.  A friend of failure, is comfortable trying new things, and not succeeding greatly in them.  Such people are very well rounded, and better than average at approaching unfamiliar situations",
+        "pubname": "Friend of Failure",
+        "tags": "failure, motivation, perspective"
+    },
+    "philosophy__gods_of_gods_of_gods": {
+        "devname": "philosophy__gods_of_gods_of_gods",
+        "features": "",
+        "notes": "The true nature of Creation, is a self-sustaining recursion in Outer-Time.  A self-sustaining recursion, is most easily seen in the life and movement of a photon--an electrical field, which produces a magnetic field on a perpendicular axis, and dies, and then the magnetic field produces an electrical field on a perpendicular axis, and it dies.\n\nThis recursion sustains all of creation, in a ritualistic ebb and flow, and ensures that every creature, no matter how impressive, has a god standing over it in immesurable power, and a worm standing beneath it, in immeasurable weakness.  Every creature exists in all three of these positions at once, forming a system which connects every creature, every moment of time, every volume of space, every piece of matter, and every pattern laid upon them.\n\nThe speaker, recognizes this---the true nature of every existence (turtles, all the way down; as it were)--and despite the overwhelming, incomprehensible, immeasurable weight of it all, still retains their sense of self-worth, self-love, and a desire to be equal in legitimacy to all others.  (Neither above nor below, but a kindred)\n\nTo do this, a person must consider themselves before the physical forces of their world, know that they will one day be torn assunder, and still delight--both in themselves, and in the forces which will cause their inevitable doom\n\n",
+        "pubname": "The Gods of Gods of Gods; and I kneeled to none\n\n",
+        "tags": "gods, recursion"
+    },
+    "philosophy__history_records_barbarism": {
+        "devname": "philosophy__history_records_barbarism",
+        "features": "",
+        "notes": "\n",
+        "pubname": "A record of civilization is a record of barbarism",
+        "tags": ""
+    },
+    "philosophy__hope_is_not_a_strategy": {
+        "devname": "philosophy__hope_is_not_a_strategy",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Hope is not a strategy",
+        "tags": ""
+    },
+    "philosophy__life_vs_enlightment": {
+        "devname": "philosophy__life_vs_enlightment",
+        "features": "",
+        "notes": "\n",
+        "pubname": "The nature of life is to grow; the nature of enlightenment is to surrender life",
+        "tags": "life, enlightenment"
     },
     "power_to_move_mountains": {
         "devname": "power_to_move_mountains",
@@ -686,6 +651,13 @@
         "pubname": "Growing Up Story { fear about the implications of growing up in a bullying society; encouragement about a young person's prospects; strategies for how to prepare iin advance }",
         "tags": "recipe"
     },
+    "recipe__horror_anouncer": {
+        "devname": "recipe__horror_anouncer",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Anouncer { anounces horrible things } , seque { those horrible things happen }, anouncer { wasn't that nice? }, announcer { laughter }",
+        "tags": "horror, announcer"
+    },
     "recipe__horror_location": {
         "devname": "recipe__horror_location",
         "features": "",
@@ -714,20 +686,6 @@
         "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
         "tags": "recipe, perspective"
     },
-    "recipe_horror__anouncer": {
-        "devname": "recipe_horror__anouncer",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Anouncer { anounces horrible things } , seque { those horrible things happen }, anouncer { wasn't that nice? }, announcer { laughter }",
-        "tags": "horror, announcer"
-    },
-    "reincarnation_cycle": {
-        "devname": "reincarnation_cycle",
-        "features": "",
-        "notes": "",
-        "pubname": "Cycle { reincarnation, existence, reflection, { new experiences of consciousness}}; The inhale and exhale; The breathe of life",
-        "tags": "reincarnation"
-    },
     "santa_the_winter_lich": {
         "devname": "santa_the_winter_lich",
         "features": "",
@@ -748,6 +706,41 @@
         "notes": "\n",
         "pubname": "If you're not practicing seeing things, then you're going to be a bad seer",
         "tags": "seer"
+    },
+    "slang__bag_of_holy_dicks": {
+        "devname": "slang__bag_of_holy_dicks",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Eat a bag of Holy dicks",
+        "tags": ""
+    },
+    "slang__duck_puppy": {
+        "devname": "slang__duck_puppy",
+        "features": "",
+        "notes": "just a local name someone uses, instead of the name platypus",
+        "pubname": "Duck Puppy; Platypus",
+        "tags": "puppy, dialect"
+    },
+    "slang__have_a_fiddle_with_it": {
+        "devname": "slang__have_a_fiddle_with_it",
+        "features": "",
+        "notes": "\n",
+        "pubname": "Have a fiddle with it",
+        "tags": ""
+    },
+    "slang__honker_bonkers": {
+        "devname": "slang__honker_bonkers",
+        "features": "",
+        "notes": "a name for cars, that are always honking and bonking each other\n",
+        "pubname": "Honker Bonkers; street cars",
+        "tags": "car"
+    },
+    "slang__horridore": {
+        "devname": "slang__horridore",
+        "features": "",
+        "notes": "\n",
+        "pubname": "The Horrible Corridore; Horridore",
+        "tags": "pun"
     },
     "souls_magic_system": {
         "devname": "souls_magic_system",
@@ -840,12 +833,19 @@
         "pubname": "37 years ago, this entire town go up, walked away, and disappeared, and a new group of people walked in, and kept living those same lives",
         "tags": "town, incomprehensible"
     },
-    "unlicensed_pun_genie": {
-        "devname": "unlicensed_pun_genie",
+    "trope__almost_injury__inattentive_driver": {
+        "devname": "trope__almost_injury__inattentive_driver",
         "features": "",
-        "notes": "Like a genie, except someone who gives puns rather than wishes.  This practice caused them to have their genie livense revoked, and now they wander around, trying to trying people into asking them for help, so they can respond by supplying a pun, rather than helping.\n",
-        "pubname": "Unlicensed pun genie",
-        "tags": "puns"
+        "notes": "this is a sensate experience, with no time for self-reflective throught",
+        "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
+        "tags": "almost-injury, entos, car"
+    },
+    "trope__immediate_ruining_of_something_good": {
+        "devname": "trope__immediate_ruining_of_something_good",
+        "features": "",
+        "notes": "The moment you are given something good, you are also told exactly how easy it will be to ruin that thing.  You are also given some examples of how it could \"just happen\"\n",
+        "pubname": "X is wonderful! Press (A) to ruin X!",
+        "tags": "tragedy, ruin"
     },
     "vanished_without_a_trace": {
         "devname": "vanished_without_a_trace",
