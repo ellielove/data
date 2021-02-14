@@ -34,7 +34,7 @@ def simple_data_entry_window_cycle(entry=None, title=None, layout=None):
         event, values = window.read(timeout=150)
 
         # quit without saving info
-        if event == 'Cancel' or event == psg.WINDOW_CLOSED or event == 'Escape:27':
+        if event in (psg.WINDOW_CLOSED, 'Cancel', 'Escape:27'):
             window.close()
             return {'user_quit': True}
 
