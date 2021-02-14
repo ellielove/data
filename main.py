@@ -33,8 +33,8 @@ class Application:
         """this method holds the specification of the layout of the primary window"""
         return [
               [psg.Menu(Application.create_menu_bar_layout(), tearoff=False, pad=(400, 1))]
-            , [psg.Text('Search'), psg.Input(size=(50, 1), enable_events=True, key='_SEARCH_')]
-            , [psg.Listbox([], size=(50, 30), enable_events=True, key='_LIST_')]
+            , [psg.Text('Search'), psg.Input(size=(50, 1), enable_events=True, key='_SEARCHBOX_')]
+            , [psg.Listbox([], size=(50, 30), enable_events=True, key='_LISTBOX_')]
             , [
                   psg.Button('New')
                 , psg.Button('Edit')
@@ -118,10 +118,12 @@ class Application:
         self.default_timeout_ms = 150
         self.time_since_last_save = 0
         self.double_clicks = 0
+        self.scroll_position = 0.0
         self.last_clicked_on = ''
 
         psg.theme(self.theme)
         self.layout = self.create_primary_window_layout()
+        self.listbox = self.layout[2][0]
         self.window = psg.Window(
               self.window_title
             , self.layout
@@ -142,7 +144,17 @@ class Application:
 
         def refresh_output():
             """convenience method, not to be used outside of Application().run()"""
-            self.window['_LIST_'].update(list(self.project_data.keys()))
+            self.window['_LISTBOX_'].update(list(self.project_data.keys()))
+            self.listbox.set_vscroll_position(self.scroll_position)
+            self.listbox.set_value(self.last_clicked_on)
+
+        def save_scroll_position():
+            selected_index = self.listbox.get_indexes()
+            if len(selected_index) == 0:
+                selected_index = 0
+            else:
+                selected_index = int(selected_index[0])
+            self.scroll_position = selected_index / len(self.listbox.Values)
 
         def shutdown_sequence():
             """performs the application shutdown sequence"""
@@ -177,6 +189,7 @@ class Application:
             _selection = self.project_data[_entry] if _entry in self.project_data else ''
             if not selection_is_complete_data_entry(_selection):
                 return
+            save_scroll_position()
             _modification = sde.simple_data_entry_window_cycle(_selection)
             # this saves changes after edits AND reads
             self.modify_dictionary_entry(_modification)
@@ -225,13 +238,13 @@ class Application:
                 continue
 
             # search bar interactions
-            elif event == '_SEARCH_':
-                if values['_SEARCH_'] != '':
-                    search = values['_SEARCH_']
+            elif event == '_SEARCHBOX_':
+                if values['_SEARCHBOX_'] != '':
+                    search = values['_SEARCHBOX_']
                     new_items = [x for x in self.project_data.keys() if search in x]
-                    self.window['_LIST_'].update(new_items)
+                    self.window['_LISTBOX_'].update(new_items)
                 else:
-                    self.window['_LIST_'].update(list(self.project_data.keys()))
+                    self.window['_LISTBOX_'].update(list(self.project_data.keys()))
 
             # NEW
             elif event == 'New':
@@ -239,15 +252,15 @@ class Application:
 
             # EDIT
             elif event == 'Edit':
-                if '_LIST_' in values and values['_LIST_'] != []:
-                    selection = values['_LIST_'][0]
+                if '_LISTBOX_' in values and values['_LISTBOX_'] != []:
+                    selection = values['_LISTBOX_'][0]
                     if selection in self.project_data.keys():
                         run_simple_data_entry_window(selection)
 
             # RENAME
             elif event == 'Rename':
-                if '_LIST_' in values and values['_LIST_'] != []:
-                    selection = values['_LIST_'][0]
+                if '_LISTBOX_' in values and values['_LISTBOX_'] != []:
+                    selection = values['_LISTBOX_'][0]
                     if selection in self.project_data.keys():
                         entry = self.project_data[selection]
                         data = sr.simple_rename_window_cycle(entry)
@@ -258,8 +271,8 @@ class Application:
 
             # DELETE
             elif event == 'Delete':
-                if '_LIST_' in values and values['_LIST_'] != []:
-                    selection = values['_LIST_'][0]
+                if '_LISTBOX_' in values and values['_LISTBOX_'] != []:
+                    selection = values['_LISTBOX_'][0]
                     choice = psg.popup_yes_no('delete: {}'.format(selection))
                     if choice and choice == 'Yes':
                         del self.project_data[selection]
@@ -267,13 +280,15 @@ class Application:
                         refresh_output()
 
             # click on list of items, open editor
-            elif event == '_LIST_':
-                if values['_LIST_'] is None or len(values['_LIST_']) == 0:
+            elif event == '_LISTBOX_':
+                if values['_LISTBOX_'] is None or len(values['_LISTBOX_']) == 0:
                     continue
-                if self.last_clicked_on == values['_LIST_'][0]:
-                    run_simple_data_entry_window(values['_LIST_'][0])
+                if self.last_clicked_on == values['_LISTBOX_'][0]:
+                    run_simple_data_entry_window(values['_LISTBOX_'][0])
+                    save_scroll_position()
+                    refresh_output()
                 else:
-                    self.last_clicked_on = values['_LIST_'][0]
+                    self.last_clicked_on = values['_LISTBOX_'][0]
 
         shutdown_sequence()
 
