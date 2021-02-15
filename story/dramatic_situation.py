@@ -38,8 +38,17 @@ class GraphDatabase:
 
 def create_layout():
     return [
-        [psg.Text('Graph Test')]
-        ,[psg.Graph(canvas_size=(400, 400), graph_bottom_left=(0, 0), graph_top_right=(400,400), background_color='red', key='_GRAPH_', enable_events=True, drag_submits=True)]
+          [psg.Text('Graph Test')]
+        , [psg.Graph(
+            key='_GRAPH_'
+            , canvas_size=(600, 400)
+            , graph_bottom_left=(0, 0)
+            , graph_top_right=(600, 400)
+            , background_color='light gray'
+            , enable_events=True
+            , drag_submits=True
+            , right_click_menu=['&Right', ['IsA', 'HasA']]
+        )]
         , [psg.Button('Save'), psg.Button('Exit')]
     ]
 
@@ -70,7 +79,6 @@ def graph_database_window_cycle():
     graph = window['_GRAPH_']
     drag = DragManager()
     spawn = SpawnManager()
-    last_mouse_pos = (0, 0)
 
     def zero_mouse_positions():
         graph.ClickPosition = (None, None)
@@ -114,7 +122,6 @@ def graph_database_window_cycle():
 
             if drag.object:
                 graph.relocate_figure(drag.object, x, y)
-                graph.update()
             else:
                 draw_circle_at_location(x, y, 10)
 
