@@ -99,9 +99,9 @@
     },
     "character__hug_god_paladin": {
         "devname": "character__hug_god_paladin",
-        "features": "",
-        "notes": "\n",
-        "pubname": "Hugs for the Hug God",
+        "features": "\n",
+        "notes": "The paladin has spikes on their armor, and cannot understand how hugs could ever be bad\n",
+        "pubname": "Hugs for the Hug God\n",
         "tags": ""
     },
     "character__poisoner_and_brewmaster": {
