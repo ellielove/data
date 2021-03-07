@@ -125,6 +125,13 @@
         "pubname": "Professor Blather",
         "tags": "character, name, professor"
     },
+    "character__sausage_dragon": {
+        "devname": "character__sausage_dragon",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "sausage dragon\n",
+        "tags": ""
+    },
     "character__sneaky_bushwack": {
         "devname": "character__sneaky_bushwack",
         "features": "",
@@ -539,6 +546,13 @@
         "pubname": "The spirit world has considerable overlap with the physical world\n",
         "tags": ""
     },
+    "mechanic__tool_use": {
+        "devname": "mechanic__tool_use",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Tools as {precondition/speedmod} for work; tools must be maintained; maintanence takes: {practitioner resources / site}: is a {process}\n",
+        "tags": ""
+    },
     "mother_ocean": {
         "devname": "mother_ocean",
         "features": "",
@@ -580,6 +594,13 @@
         "notes": "This is a religious, cloistering organiation, which specializes in surgically implanting breasts into people who need them, and then causing profound lactation, and bottling the milk to sell as a product.  Monk Milk is famous across the galaxy, and for some people, is the best way to escape an impoverished upbringing",
         "pubname": "Monk Milk; The great lactation distellery of Christ",
         "tags": "milk"
+    },
+    "organization__niche_news": {
+        "devname": "organization__niche_news",
+        "features": "\n",
+        "notes": "an AI generated news show, about you and your life, that always talks about the most recent things you've done, comparing it to historical things.\n\nvery specific news about your dail life; hosted by digi-people, who are synthetic-electronci people\n",
+        "pubname": "Niche news; a digi news show\n",
+        "tags": ""
     },
     "organization__orphans_seeking_revenge": {
         "devname": "organization__orphans_seeking_revenge",
@@ -1041,6 +1062,13 @@
         "features": "\n",
         "notes": "\n",
         "pubname": "You look like you need a hero; You have to be your own;\n",
+        "tags": ""
+    },
+    "trope__comforting_a_person": {
+        "devname": "trope__comforting_a_person",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "comfort, to the person who feels insecure after mediocre performance; you are good enough\n",
         "tags": ""
     },
     "trope__explosions_as_jokes": {
