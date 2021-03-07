@@ -27,6 +27,13 @@
         "pubname": "{tell} : {say {param}{x}]\n\n",
         "tags": "tell"
     },
+    "_THEME": {
+        "devname": "_THEME",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "theme: { a one-word summary of what a story explores; eg: isolation, motherhood, forgiveness }\n",
+        "tags": ""
+    },
     "always_spider": {
         "devname": "always_spider",
         "features": "",
@@ -139,11 +146,25 @@
         "pubname": "The festival of unnecessary skills",
         "tags": ""
     },
+    "concept__animal_sacrifice": {
+        "devname": "concept__animal_sacrifice",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "\"Animal Sacrifice is the human tradition of killing one of your hostages when you feel thankful\"\n",
+        "tags": ""
+    },
     "concept__combat_paladin_favored_enemey": {
         "devname": "concept__combat_paladin_favored_enemey",
         "features": "",
         "notes": "or X.op\n",
         "pubname": "Paladin vs Undead == X vs X.specialty",
+        "tags": ""
+    },
+    "concept__doom_meter": {
+        "devname": "concept__doom_meter",
+        "features": "\n",
+        "notes": "When background levels of doom get high enough, bad things just happen\n",
+        "pubname": "Doom meter; measures background amount of doom\n",
         "tags": ""
     },
     "concept__fear_of_the_supernatural": {
@@ -193,6 +214,13 @@
         "features": "",
         "notes": "\n",
         "pubname": "A series of minor coincidences, which are thematically related to your thoughts; a spiritual connection",
+        "tags": ""
+    },
+    "concept__people_are_a_math_of_their_environment": {
+        "devname": "concept__people_are_a_math_of_their_environment",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "People are a product(x) of their environment; math\n\nThis is a call to describe daily activities and things in math terms\n",
         "tags": ""
     },
     "concept__resolving_paradoxes": {
@@ -343,6 +371,13 @@
         "pubname": "Burrito Tree",
         "tags": "food"
     },
+    "food__crystal_cheeses": {
+        "devname": "food__crystal_cheeses",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Crystal cheeses\n",
+        "tags": ""
+    },
     "food__dinosaur_burgers": {
         "devname": "food_types_dinosaur_burgers",
         "features": "",
@@ -413,6 +448,13 @@
         "pubname": "Like pokemon; you're a frankenstein scientist; create your monster; battle for parts; gotta stitch them all",
         "tags": "game pitch"
     },
+    "goal__help_me_care": {
+        "devname": "goal__help_me_care",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Tell me why the real world is exciting; help me care;\n",
+        "tags": ""
+    },
     "historical_post_society": {
         "devname": "historical_post_society",
         "features": "",
@@ -454,6 +496,13 @@
         "notes": "this is the idea that a story would be alive, and aware it was being read, and it tries to kill the reader in self-defense; defending against a perception that the reader is trying to kill them\n",
         "pubname": "a story that's trying to kill you in self-defense",
         "tags": "living story, kill"
+    },
+    "lore__spirit_world_and_physical_world_overlap": {
+        "devname": "lore__spirit_world_and_physical_world_overlap",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "The spirit world has considerable overlap with the physical world\n",
+        "tags": ""
     },
     "mother_ocean": {
         "devname": "mother_ocean",
@@ -503,6 +552,20 @@
         "notes": "An incorporated organization, found in many cities, and functioning as an adventurer's guild.  They support orphans who are trying to find and kill the people who killed their parents.  They provide therapy, hoursing, and equipment to the ones who don't respond to treatment",
         "pubname": "Orphans Seeking Vengance, Ltd",
         "tags": "orphans,"
+    },
+    "organization__people_farms": {
+        "devname": "organization__people_farms",
+        "features": "\n",
+        "notes": "These people have essentially no freedom, but they're genetically engineered to only desire the kinds of things which are easy to supply them.  Humans that grow up in people farms can't handle independant life.\n",
+        "pubname": "People Farms; Manage the lives of people for economic output; they live in bubble silos, like cattle\n",
+        "tags": ""
+    },
+    "organization__strategic_futures_initiative": {
+        "devname": "organization__strategic_futures_initiative",
+        "features": "\n",
+        "notes": "So, strategic futures... probably isn't what is tounds like to you.\n\nCompanies that \"operate\"{in the medical sense} on futures, actually very specific and tightly regulated forms of time travel, to manipulate possible outcomes in things that are about to happen, (say... in a week).  (The number of seconds you're allowed to project/operate into the future is mostly a consequence of what industry you work in, and how liable you are for damages).\n\nEveryone *predicts* the future.  This means: people make a guess at what they think will happen.  Making predictions is everyone's legal right.\n\nHowever, using good computers, people can make predictions about three weeks intot the future at the level of maximal confidence.\n\nMost of those predictions have no economic values, but predictions about people: what they think, what decisions they'll make--those predictions are worth money.\n\nAnd actually, our currency is itself backed by Ultimate Generic, so one dollare is defined as the current market value of a 95% accurate preciction, divided by entropy caused { 0.95 p(x) / ent(x) }\n\nOkay, so, that's people who operate on futures.  Strategic futures, are when you predict as far forward as you can, and then recursively modify a prediction stream, so you've got a system, which is always seeking out the future whenre you're the most rich, and most able to defend your wealth and status.\n\nThe industry joke is: these systems are all hypothetically fighting each other to death--to a literal death--it's just a literal death that hasn't happened.\n",
+        "pubname": "Strategic Futures Initiative; Meso-corp\n",
+        "tags": ""
     },
     "perfect_contentment": {
         "devname": "perfect_contentment",
@@ -566,6 +629,27 @@
         "notes": "\n",
         "pubname": "The nature of life is to grow; the nature of enlightenment is to surrender life",
         "tags": "life, enlightenment"
+    },
+    "philosophy__old_words": {
+        "devname": "philosophy__old_words",
+        "features": "\n",
+        "notes": "The older a word is, the more fundamental it's subject of discourse\n",
+        "pubname": "Oldwords\n",
+        "tags": ""
+    },
+    "philosophy__stalwart_cheerful_kindness": {
+        "devname": "philosophy__stalwart_cheerful_kindness",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Overwhelm the bastards with cheerful kindness\n",
+        "tags": ""
+    },
+    "place__city_in_a_bottle": {
+        "devname": "place__city_in_a_bottle",
+        "features": "\n\n",
+        "notes": "a city that exists in the outer-most shell of the metaverse, where realities flake off and dissolve into pure entropic foam.\n\nThis city exists inside a bubble, which makes the inside of the city habitable to standard humans.  The city is a utopia which has every possible technology, and the only downside is, they consume entire universes--rendering them into quantum ash--to run the thing.  There are infinite universes without people that they could use, but universes with people are significantly nearer-by, so they usually just destroy inhabited universes.  Even if it continues on forever, the nature of infinity dictates that most of the universes to exist in the infinite swarm, won't be consumed to fuel the city.  And, nobody ever escapes those universes, travels across the meta-verse, locates their pocket dimension, gets past the city guard, and complains, so nobody's really that bothered about it.\n\nThis place is supposed to show up in a story, after someone escapes a Time Fray--this is my maximum-ecological-disaster, where time itself breaks down and the universe separates into a large number of smaller, (generally unstable) universes.  Escaping a Time Fray on foot, is about as easy as \"escaping the universe on foot\".\n\nI don't have the whole story though.  I've just got that fragment.  There's just a person who goes from talking to people, to being trapped in an overtly-shrinking universe (like when doctor Beverly crusher is trapped in a pocket dimension that's shrinking), to finding a group of people who are there performing surgery on spacetime, in order to make sure the Time Fray heals, and doesn't extend out to the rest of the local universe cluster.\n\nThe point-of-view character basically walks into their ship and is mistaken for their new intern, because the idea that someone could walk through a time fray and then into their ship was unthinkable.  Then the new \"intern\" is taken to the city in a bottle where they're told they can stay or be dropped of anywhere they want (except the universe they came from, b/c it's been destroyed in order to cauterize the wound)\n",
+        "pubname": "City in a bottle ; \"Meta-opolis\" ; \"City of String\"\n\n",
+        "tags": ""
     },
     "power_to_move_mountains": {
         "devname": "power_to_move_mountains",
@@ -685,6 +769,13 @@
         "notes": "Seeing someone else's pain helps normalize your own pain.  (And if your pain isn't as much as the other person's, it also offers some relief of that pain, by minimizing it)\n",
         "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
         "tags": "recipe, perspective"
+    },
+    "recipe__sentimentality": {
+        "devname": "recipe__sentimentality",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "being governed by feeling, sensation, or emotional idealism \"driving with emotion\"\n",
+        "tags": ""
     },
     "santa_the_winter_lich": {
         "devname": "santa_the_winter_lich",
@@ -840,12 +931,54 @@
         "pubname": "almost getting run over by an inattentive driver, outside of your apartment",
         "tags": "almost-injury, entos, car"
     },
+    "trope__become_your_own_hero": {
+        "devname": "trope__become_your_own_hero",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "You look like you need a hero; You have to be your own;\n",
+        "tags": ""
+    },
     "trope__immediate_ruining_of_something_good": {
         "devname": "trope__immediate_ruining_of_something_good",
         "features": "",
         "notes": "The moment you are given something good, you are also told exactly how easy it will be to ruin that thing.  You are also given some examples of how it could \"just happen\"\n",
         "pubname": "X is wonderful! Press (A) to ruin X!",
         "tags": "tragedy, ruin"
+    },
+    "trope__live_together_or_die_alone": {
+        "devname": "trope__live_together_or_die_alone",
+        "features": "\n",
+        "notes": "the difficult choice of all people\n",
+        "pubname": "live together or die alone\n",
+        "tags": ""
+    },
+    "trope__not_enough_pity": {
+        "devname": "trope__not_enough_pity",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "they pity you feel is not nearly enough for this situation\n",
+        "tags": ""
+    },
+    "trope__recovery_of_broken_parent_child_relationships": {
+        "devname": "trope__recovery_of_broken_parent_child_relationships",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "The successful, or failed, recovery of a fractured relationship and shattered trust\n",
+        "tags": ""
+    },
+    "trope__science_monastrery ": {
+        "devname": "trope__science_monastrery ",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Science monastery\n",
+        "tags": ""
+    },
+    "trope__support_the_rich": {
+        "devname": "trope__support_the_rich",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "\"In this department, we work to makes ociety comfortable with the concept of abuses of power.\"  \"And with seeing it\"\n",
+        "tags": ""
     },
     "vanished_without_a_trace": {
         "devname": "vanished_without_a_trace",
