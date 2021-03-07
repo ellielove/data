@@ -187,7 +187,7 @@ class Application:
         def run_simple_data_entry_window(_entry):
             """invokes one life cycle of the data entry window"""
             _selection = self.project_data[_entry] if _entry in self.project_data else ''
-            if not selection_is_complete_data_entry(_selection):
+            if _selection != '' and not selection_is_complete_data_entry(_selection):
                 return
             save_scroll_position()
             _modification = sde.simple_data_entry_window_cycle(_selection)

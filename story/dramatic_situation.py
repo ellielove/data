@@ -4,13 +4,6 @@ import os
 import PySimpleGUI as psg
 
 
-class Node:
-    def __init__(self, name, neighbors=None, data=None):
-        self.name = name
-        self.neighbors = neighbors
-        self.data = data
-
-
 class GraphDatabase:
     def __init__(self):
         self.nodes = {}
