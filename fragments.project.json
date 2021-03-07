@@ -181,6 +181,13 @@
         "pubname": "Genetic Politics: genetically pecifying personality profiles to dictate social-issue \"weather\", in the future",
         "tags": "genetics, politics"
     },
+    "concept__hydrogen_bus_as_battery": {
+        "devname": "concept__hydrogen_bus_as_battery",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Hydrogen fuel busses used as batteries\n",
+        "tags": ""
+    },
     "concept__joke_recipe__misinterpretations_of_pop_culture": {
         "devname": "concept__joke_recipe__misinterpretations_of_pop_culture",
         "features": "",
@@ -209,6 +216,13 @@
         "pubname": "Welcome to nightvale, except it takes place in a closed off skyscraper after an apocylapse",
         "tags": ""
     },
+    "concept__mass_casualty": {
+        "devname": "concept__mass_casualty",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "humans don't understand mass casualty events with statistics\n",
+        "tags": ""
+    },
     "concept__nature_of_a_spiritual_connection": {
         "devname": "concept__nature_of_a_spiritual_connection",
         "features": "",
@@ -223,11 +237,25 @@
         "pubname": "People are a product(x) of their environment; math\n\nThis is a call to describe daily activities and things in math terms\n",
         "tags": ""
     },
+    "concept__people_ave_rights": {
+        "devname": "concept__people_ave_rights",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "we are not [things]\n",
+        "tags": ""
+    },
     "concept__resolving_paradoxes": {
         "devname": "concept__resolving_paradoxes",
         "features": "",
         "notes": "\n",
         "pubname": "Every paradox is resolvable, by moving to a higher level of abstraction",
+        "tags": ""
+    },
+    "concept__risk_perception": {
+        "devname": "concept__risk_perception",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Novelty increases perceived risk; understanding leads to acceptance\n",
         "tags": ""
     },
     "concept__source_of_cruelty": {
@@ -236,6 +264,13 @@
         "notes": "and acting to pre-emptively ward off an attack\n",
         "pubname": "Cruelty, is a result of feeling anxious and vulnerable",
         "tags": "cruelty, fear, anxiety"
+    },
+    "concept__thankfulness": {
+        "devname": "concept__thankfulness",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Wir muessen fuer viel dankbar sein\n",
+        "tags": ""
     },
     "concept__time_travel_splinter_universe": {
         "devname": "concept__time_travel_splinter_universe",
@@ -581,12 +616,26 @@
         "pubname": "Adaptation to misfortune == meaning; signifigance",
         "tags": "philosophy, misfortune"
     },
+    "philosophy__art_as_public_play": {
+        "devname": "philosophy__art_as_public_play",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "art as public play; for all ages\n",
+        "tags": ""
+    },
     "philosophy__birth_and_destiny": {
         "devname": "philosophy__birth_and_destiny",
         "features": "",
         "notes": "just an idea of saying that destiny is a consequence of physics, which is orthogonal to our perspective of time",
         "pubname": "People and their destinies, are born into the universe at the same time",
         "tags": "destiny, perspective"
+    },
+    "philosophy__children_are_not_property": {
+        "devname": "philosophy__children_are_not_property",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Your children are not [your] property\n",
+        "tags": ""
     },
     "philosophy__darkness_unmastered_in_you": {
         "devname": "philosophy__darkness_unmastered_in_you",
@@ -637,11 +686,25 @@
         "pubname": "Oldwords\n",
         "tags": ""
     },
+    "philosophy__resistance": {
+        "devname": "philosophy__resistance",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Hope leads to resistance of tyrants\n",
+        "tags": ""
+    },
     "philosophy__stalwart_cheerful_kindness": {
         "devname": "philosophy__stalwart_cheerful_kindness",
         "features": "\n",
         "notes": "\n",
         "pubname": "Overwhelm the bastards with cheerful kindness\n",
+        "tags": ""
+    },
+    "philosophy__who_killed_the_world": {
+        "devname": "philosophy__who_killed_the_world",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Who killed the world?\n",
         "tags": ""
     },
     "place__city_in_a_bottle": {
@@ -693,6 +756,13 @@
         "pubname": "Now, more than ever, we are full of blood, any honey",
         "tags": "nightvale"
     },
+    "recipe__beeblebrox": {
+        "devname": "recipe__beeblebrox",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Outlandish; showy; dramatic\n",
+        "tags": ""
+    },
     "recipe__boldness": {
         "devname": "recipe__boldness",
         "features": "",
@@ -727,6 +797,20 @@
         "notes": "X is the thing you want to tell your story about.  You say this person was just really, really desperate, and that starting motivation allows you to ignore the reasons your character should do something other than following your story\n",
         "pubname": "A person, who is desperate enough to try anything; So they try X",
         "tags": "recipe, premise"
+    },
+    "recipe__emotional_isolation": {
+        "devname": "recipe__emotional_isolation",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Emotional isolation; having zero confidants\n",
+        "tags": ""
+    },
+    "recipe__family_friendly": {
+        "devname": "recipe__family_friendly",
+        "features": "\n\n",
+        "notes": "something a christian friend would feel loved by\n",
+        "pubname": "Childlike wonder; family friendly; faith (reasonable)\n\n",
+        "tags": ""
     },
     "recipe__growing_up_story": {
         "devname": "recipe__growing_up_story",
@@ -770,6 +854,13 @@
         "pubname": "Perspective by proxy: audience sees bad things happen to someone, feels better about their own life",
         "tags": "recipe, perspective"
     },
+    "recipe__self_harm": {
+        "devname": "recipe__self_harm",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "self-harm; a person hits their head against a wall, using neck muscles\n",
+        "tags": ""
+    },
     "recipe__sentimentality": {
         "devname": "recipe__sentimentality",
         "features": "\n",
@@ -797,6 +888,13 @@
         "notes": "\n",
         "pubname": "If you're not practicing seeing things, then you're going to be a bad seer",
         "tags": "seer"
+    },
+    "slang__ack_in_the_box": {
+        "devname": "slang__ack_in_the_box",
+        "features": "\n",
+        "notes": "Like a jack in the box, but with it's own surprise that makes you say \"Ack!\"\n",
+        "pubname": "Ack in the box\n",
+        "tags": ""
     },
     "slang__bag_of_holy_dicks": {
         "devname": "slang__bag_of_holy_dicks",
@@ -832,6 +930,13 @@
         "notes": "\n",
         "pubname": "The Horrible Corridore; Horridore",
         "tags": "pun"
+    },
+    "slang__minigames": {
+        "devname": "slang__minigames",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "mini-games are called migranes\n",
+        "tags": ""
     },
     "souls_magic_system": {
         "devname": "souls_magic_system",
@@ -938,6 +1043,20 @@
         "pubname": "You look like you need a hero; You have to be your own;\n",
         "tags": ""
     },
+    "trope__explosions_as_jokes": {
+        "devname": "trope__explosions_as_jokes",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "sudden explosions as jokes, where people laught about dying\n",
+        "tags": ""
+    },
+    "trope__girl_teaches_math_to_cat": {
+        "devname": "trope__girl_teaches_math_to_cat",
+        "features": "\n",
+        "notes": "character?\n",
+        "pubname": "A girl teaches mathematics to her cat, and talks about animal rights\n",
+        "tags": ""
+    },
     "trope__immediate_ruining_of_something_good": {
         "devname": "trope__immediate_ruining_of_something_good",
         "features": "",
@@ -959,6 +1078,13 @@
         "pubname": "they pity you feel is not nearly enough for this situation\n",
         "tags": ""
     },
+    "trope__people_of_color": {
+        "devname": "trope__people_of_color",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "People of color: live normal lives, have nice families, are nice people\n",
+        "tags": ""
+    },
     "trope__recovery_of_broken_parent_child_relationships": {
         "devname": "trope__recovery_of_broken_parent_child_relationships",
         "features": "\n",
@@ -973,11 +1099,25 @@
         "pubname": "Science monastery\n",
         "tags": ""
     },
+    "trope__smeat_cake": {
+        "devname": "trope__smeat_cake",
+        "features": "\n\n",
+        "notes": "We got you a s'meat cake for your b-day.  It's s'meat\n\nvat grown meat, grown into the likeness, of the face, of the b-day person; the meat is grown to taste like human flesh.\n",
+        "pubname": "S'meat B-Day Cake\n\n",
+        "tags": ""
+    },
     "trope__support_the_rich": {
         "devname": "trope__support_the_rich",
         "features": "\n",
         "notes": "\n",
         "pubname": "\"In this department, we work to makes ociety comfortable with the concept of abuses of power.\"  \"And with seeing it\"\n",
+        "tags": ""
+    },
+    "trope__the_well_of_new": {
+        "devname": "trope__the_well_of_new",
+        "features": "\n",
+        "notes": "notes:  actually, ellie: you need to invent the fine print here\n",
+        "pubname": "The well of new, when comes all that is fresh and original;  be sure to read the fine print\n",
         "tags": ""
     },
     "vanished_without_a_trace": {
