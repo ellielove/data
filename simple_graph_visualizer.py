@@ -40,14 +40,33 @@ def get_test_edges():
     ]
 
 
+def create_menu_bar_layout():
+    return [
+        ['&File', ['New', '&Open', 'Save', '&SaveAs', '----', 'Settings', 'E&xit']]
+    ]
+
+
+def create_toolbar_layout():
+    psg.set_options(auto_size_buttons=True, margins=(0, 0), button_color=psg.COLOR_SYSTEM_DEFAULT)
+    return [[
+         psg.Button('add', key='toolbar.add')
+        , psg.Button('move', key='toolbar.move')
+        , psg.Button('rename', key='toolbar.rename')
+        , psg.Button('')
+        , psg.Button('delete', key='toolbar.delete')
+    ]]
+
+
 def create_layout(size=(400, 400)):
     bg_color = 'gainsboro'
     ts = (size[0]-10, 1)
-    gcs = (size[0], size[1]-30)
+    gcs = (size[0], size[1]-90)
     gbl = (-size[0]/2, -size[1]/2)
     gbr = (size[0]/2, size[1]/2)
     return [
-          [psg.Text(key='_INFO_', size=ts, background_color=bg_color)]
+        # two things in one row
+          [psg.Menu(create_menu_bar_layout(), tearoff=False)]
+        , [psg.Frame('', create_toolbar_layout(), size=(size[0], 1))]
         , [psg.Graph(
               key='_GRAPH_'
             , canvas_size=gcs
@@ -56,6 +75,7 @@ def create_layout(size=(400, 400)):
             , background_color=bg_color
             , change_submits=True
             , drag_submits=True)]
+        , [psg.Text(key='_INFO_', size=ts, background_color=bg_color)]
     ]
 
 
@@ -68,6 +88,9 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     if not layout:
         layout = create_layout(size)
 
+    if not file:
+        file = FILE_PATH
+
     window = psg.Window(title, layout, size=size, return_keyboard_events=True)
     window.read(timeout=45)
 
@@ -78,7 +101,13 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         if path is not None:
             if os.path.isfile(path):
                 with open(path, 'r') as infile:
-                    return json.load(infile)
+                    result = json.load(infile)
+                    # NOTE: right now, this handles a situation where a file is marked as failing
+                    # to load, and accidentally gets saved that way.  We might need a better way to
+                    # handle the problem though
+                    if 'load_failure' in result:
+                        del result['load_failure']
+                    return result
         return {'load_failure': True}
 
     def write_file(path, data) -> bool:
@@ -112,12 +141,21 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     def draw_edge(start, stop):
         window['_GRAPH_'].draw_line(start, stop)
 
-    #data = read_file(file)
-    #if 'load_failure' in data:
-    #    print(f'Failed to load file: {file}')
 
-    DATA['nodes'] = get_test_nodes()
-    DATA['edges'] = get_test_edges()
+    DATA = read_file(file)
+    load_fail = f'Failed to load file: {file}'
+    load_ok = f'File loaded: {file}'
+    message = load_fail if 'load_failure' in DATA else load_ok
+    window['_INFO_'].update(message)
+
+    #if message == load_fail:
+    #    DATA['nodes'] = get_test_nodes()
+    #    DATA['edges'] = get_test_edges()
+
+    if 'nodes' not in DATA:
+        DATA['nodes'] = {}
+    if 'edges' not in DATA:
+        DATA['edges'] = []
 
     draw_subgraph(DATA['nodes'], DATA['edges'])
 
@@ -133,7 +171,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             if mouse_state == EMouse.moving:
                 mouse_state = EMouse.placing
                 pos = (x, y)
-                window['data']['nodes'][pos] = pos
+                DATA['nodes'][pos.__str__()] = pos
                 draw_node(pos, pos)
 
         # mouse up event
