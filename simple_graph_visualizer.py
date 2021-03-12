@@ -1,25 +1,125 @@
+from enum import Enum, auto
+import json
+import os
+
 import PySimpleGUI as psg
+import networkx as nx
+import numpy as np
+
+import matplotlib
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
-def create_layout():
+FILE_PATH = 'test.graph.json'
+
+
+class EMouse(Enum):
+    moving = auto()
+    placing = auto()
+    selecting = auto()
+    dragging = auto()
+    erasing = auto()
+
+
+def get_test_nodes() -> dict:
+    return {
+          'A': (0,  0)
+        , 'B': (200,  200)
+        , 'C': (-200, -200)
+        , 'D': (200, -200)
+        , 'E': (-200,  200)
+    }
+
+
+def get_test_edges():
     return [
-        [psg.Output(size=(60,20))]
+          ('A', 'B'), ('A', 'C')
+        , ('B', 'C')
+        , ('C', 'D')
+        , ('D', 'E')
     ]
 
 
-def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None):
+def create_layout(size=(400, 400)):
+    bg_color = 'gainsboro'
+    ts = (size[0]-10, 1)
+    gcs = (size[0], size[1]-30)
+    gbl = (-size[0]/2, -size[1]/2)
+    gbr = (size[0]/2, size[1]/2)
+    return [
+          [psg.Text(key='_INFO_', size=ts, background_color=bg_color)]
+        , [psg.Graph(
+              key='_GRAPH_'
+            , canvas_size=gcs
+            , graph_bottom_left=gbl
+            , graph_top_right=gbr
+            , background_color=bg_color
+            , change_submits=True
+            , drag_submits=True)]
+    ]
+
+
+def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, size=(600, 500)):
+    DATA = {}
+
     if not title:
         title = 'Simple Graph Visualizer'
 
     if not layout:
-        layout = create_layout()
+        layout = create_layout(size)
 
-    window = psg.Window(title, layout, size=(600,500), return_keyboard_events=True)
+    window = psg.Window(title, layout, size=size, return_keyboard_events=True)
     window.read(timeout=45)
 
+    mouse_state = EMouse.moving
+
+    def read_file(path) -> dict:
+        """returns dict of json data, or returns dict with load_faliure:true as a key"""
+        if path is not None:
+            if os.path.isfile(path):
+                with open(path, 'r') as infile:
+                    return json.load(infile)
+        return {'load_failure': True}
+
+    def write_file(path, data) -> bool:
+        if path is not None:
+            with open(path, 'w') as outfile:
+                json.dump(data, outfile, indent=4, sort_keys=True)
+        return os.path.isfile(path)
+
     def shutdown_sequence():
-        # save
+        result = write_file(FILE_PATH, DATA)
+        if result:
+            print(f'saved data to file: {FILE_PATH}')
+        else:
+            print(f'Error! Could not save file; path={FILE_PATH}, data={DATA}')
         window.close()
+
+    def draw_subgraph(nodes, edges):
+        for edge in edges:
+            a, b = edge
+            pos_a = nodes[a]
+            pos_b = nodes[b]
+            draw_edge(pos_a, pos_b)
+
+        for key in nodes.keys():
+            draw_node(nodes[key], key)
+
+    def draw_node(position, name):
+        window['_GRAPH_'].draw_circle(position, 25, fill_color='white', line_color='black')
+        window['_GRAPH_'].draw_text(name, position, color='black', text_location='center')
+
+    def draw_edge(start, stop):
+        window['_GRAPH_'].draw_line(start, stop)
+
+    #data = read_file(file)
+    #if 'load_failure' in data:
+    #    print(f'Failed to load file: {file}')
+
+    DATA['nodes'] = get_test_nodes()
+    DATA['edges'] = get_test_edges()
+
+    draw_subgraph(DATA['nodes'], DATA['edges'])
 
     while True:
         event, values = window.read(timeout=150)
@@ -27,8 +127,19 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None):
         if event in (psg.WINDOW_CLOSED, 'Cancel', 'Escape:27'):
             break
 
+        # mouse down event on the graph
+        elif event == '_GRAPH_':
+            x, y = values['_GRAPH_']
+            if mouse_state == EMouse.moving:
+                mouse_state = EMouse.placing
+                pos = (x, y)
+                window['data']['nodes'][pos] = pos
+                draw_node(pos, pos)
+
+        # mouse up event
+        elif event.endswith('+UP'):
+            mouse_state = EMouse.moving
+            info = window['_INFO_']
+            info.update(f'placed node at {pos}')
 
     shutdown_sequence()
-
-
-
