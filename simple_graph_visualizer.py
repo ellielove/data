@@ -14,11 +14,17 @@ FILE_PATH = 'test.graph.json'
 
 
 class EMouse(Enum):
-    moving = auto()
-    placing = auto()
-    selecting = auto()
+    idle = auto()
+    down = auto()
     dragging = auto()
-    erasing = auto()
+    up = auto()
+
+
+class ETool(Enum):
+    add = auto()
+    move = auto()
+    rename = auto()
+    delete = auto()
 
 
 def get_test_nodes() -> dict:
@@ -49,10 +55,9 @@ def create_menu_bar_layout():
 def create_toolbar_layout():
     psg.set_options(auto_size_buttons=True, margins=(0, 0), button_color=psg.COLOR_SYSTEM_DEFAULT)
     return [[
-         psg.Button('add', key='toolbar.add')
+          psg.Button('add', key='toolbar.add')
         , psg.Button('move', key='toolbar.move')
         , psg.Button('rename', key='toolbar.rename')
-        , psg.Button('')
         , psg.Button('delete', key='toolbar.delete')
     ]]
 
@@ -94,7 +99,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     window = psg.Window(title, layout, size=size, return_keyboard_events=True)
     window.read(timeout=45)
 
-    mouse_state = EMouse.moving
+    mouse_state = EMouse.idle
+    tool_state = ETool.add
 
     def read_file(path) -> dict:
         """returns dict of json data, or returns dict with load_faliure:true as a key"""
@@ -168,16 +174,36 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         # mouse down event on the graph
         elif event == '_GRAPH_':
             x, y = values['_GRAPH_']
-            if mouse_state == EMouse.moving:
-                mouse_state = EMouse.placing
+            if mouse_state == EMouse.idle:
+                mouse_state = EMouse.down
                 pos = (x, y)
-                DATA['nodes'][pos.__str__()] = pos
-                draw_node(pos, pos)
+                if tool_state == ETool.add:
+                    DATA['nodes'][pos.__str__()] = pos
+                    draw_node(pos, pos)
+                # elif move
+                # elif rename
+                # elif delete
+
+            elif mouse_state == EMouse.dragging:
+                continue
 
         # mouse up event
         elif event.endswith('+UP'):
-            mouse_state = EMouse.moving
+            mouse_state = EMouse.idle
             info = window['_INFO_']
             info.update(f'placed node at {pos}')
+
+        # if it begins with toolbar
+        elif event[::-1].endswith('toolbar'[::-1]):
+            if event.endswith('add'):
+                tool_state = ETool.add
+            elif event.endswith('move'):
+                tool_state = ETool.move
+            elif event.endswith('rename'):
+                tool_state = ETool.rename
+            elif event.endswith('delete'):
+                tool_state = ETool.delete
+            window['_INFO_'].update(f'Tool State: {tool_state}')
+
 
     shutdown_sequence()
