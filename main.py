@@ -7,7 +7,7 @@ import PySimpleGUI as psg
 import simple_data_entry as sde
 import simple_rename as sr
 import save_as_file_dialogue as saveAs
-
+import simple_graph_visualizer as sgv
 
 class Application:
 
@@ -20,6 +20,7 @@ class Application:
     def create_menu_bar_layout() -> list:
         return [
             ['&File', ['&Open', 'Save', '&SaveAs', '----', 'Settings', 'E&xit']]
+            , ['Tools', ['GraphVisualizer']]
         ]
 
     @staticmethod
@@ -196,6 +197,10 @@ class Application:
             self.save_project_file(self.project_data, self.save_file_path)
             refresh_output()
 
+        def run_simple_graph_visualizer_window():
+            print('run simple graph visualizer window')
+            sgv.simple_graph_visualizer_window_cycle()
+
         # activate window with an initial read
         self.window.read(timeout=45)
 
@@ -289,6 +294,10 @@ class Application:
                     refresh_output()
                 else:
                     self.last_clicked_on = values['_LISTBOX_'][0]
+
+            elif event == 'GraphVisualizer':
+                run_simple_graph_visualizer_window()
+
 
         shutdown_sequence()
 
