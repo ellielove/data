@@ -6,9 +6,6 @@ import PySimpleGUI as psg
 import networkx as nx
 import numpy as np
 
-import matplotlib
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-
 
 FILE_PATH = 'test.graph.json'
 
@@ -147,16 +144,11 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     def draw_edge(start, stop):
         window['_GRAPH_'].draw_line(start, stop)
 
-
     DATA = read_file(file)
     load_fail = f'Failed to load file: {file}'
     load_ok = f'File loaded: {file}'
     message = load_fail if 'load_failure' in DATA else load_ok
     window['_INFO_'].update(message)
-
-    #if message == load_fail:
-    #    DATA['nodes'] = get_test_nodes()
-    #    DATA['edges'] = get_test_edges()
 
     if 'nodes' not in DATA:
         DATA['nodes'] = {}
@@ -168,8 +160,13 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     while True:
         event, values = window.read(timeout=150)
 
+        print(event.__str__())
+
         if event in (psg.WINDOW_CLOSED, 'Cancel', 'Escape:27'):
             break
+
+        if event == '__TIMEOUT__':
+            mouse_state = EMouse.idle
 
         # mouse down event on the graph
         elif event == '_GRAPH_':
@@ -193,7 +190,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             info = window['_INFO_']
             info.update(f'placed node at {pos}')
 
-        # if it begins with toolbar
+        # if it begins with 'toolbar'
         elif event[::-1].endswith('toolbar'[::-1]):
             if event.endswith('add'):
                 tool_state = ETool.add
