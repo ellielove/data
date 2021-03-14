@@ -20,6 +20,7 @@ class EMouse(Enum):
 class ETool(Enum):
     add = auto()
     move = auto()
+    select = auto()
     rename = auto()
     delete = auto()
 
@@ -60,8 +61,9 @@ def create_menu_bar_layout():
 def create_toolbar_layout():
     psg.set_options(auto_size_buttons=True, margins=(0, 0), button_color=psg.COLOR_SYSTEM_DEFAULT)
     return [[
-          psg.Button('add', key='toolbar.add')
-        , psg.Button('move', key='toolbar.move')
+          psg.Button('add',    key='toolbar.add')
+        , psg.Button('move',   key='toolbar.move')
+        , psg.Button('select', key='toolbar.select')
         , psg.Button('rename', key='toolbar.rename')
         , psg.Button('delete', key='toolbar.delete')
     ]]
@@ -122,9 +124,13 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     mouse_pos = (0, 0)
     mouse_pos_last = None
 
+    button_default_color = ('black', 'light gray')
+    button_highlight_color = ('black', 'orange')
+
 # --------------------------------------------
     # this sections contains some fns we want encapsulated in our "object" (the graph visualizer)
 
+    # File Access --------------------------------------
     def read_file(path) -> dict:
         """returns dict of json data, or returns dict with load_faliure:true as a key"""
         if path is not None:
@@ -151,6 +157,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             del nodes['lookup']
         return True
 
+    # --------------------------------------
+
     def shutdown_sequence():
         if not prepare_data_for_save():
             print('error preparing data for save!')
@@ -160,6 +168,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         else:
             print(f'Error! Could not save file; path={FILE_PATH}, data={DATA}')
         window.close()
+
+    # graphing --------------------------------------
 
     def draw_subgraph(nodes, edges):
         for edge in edges:
@@ -209,6 +219,12 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         DATA['nodes']['lookup'][fig_ids['text_id']] = name
         DATA['nodes']['lookup'][name] = fig_ids
 
+    def select_node(figure_id, name=None):
+        # lookup node based on figure id
+        # set that node as selected node
+        # this fn can be called multiple times and stack
+        pass
+
     def delete_node(figure_id, name=None):
         nodes = DATA['nodes']
 
@@ -243,13 +259,44 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         if name in nodes:
             del nodes[name]
 
+    # state management --------------------------------------
+
     def set_mouse_state(state):
         nonlocal mouse_state
         mouse_state = state
 
+    def get_button_key_from_tool_state(state):
+        if state == ETool.add:
+            return 'toolbar.add'
+        elif state == ETool.move:
+            return 'toolbar.move'
+        elif state == ETool.select:
+            return 'toolbar.select'
+        elif state == ETool.rename:
+            return 'toolbar.rename'
+        elif state == ETool.delete:
+            return 'toolbar.delete'
+        else:
+            print(f'ERROR! Did not recognize ETool state! "{state}"')
+            return 'unknown'
+
+    def set_button_color(key, color):
+        window[key].update(button_color=color)
+
     def set_tool_state(state):
         nonlocal tool_state
+        last_state = tool_state
         tool_state = state
+
+        # set new state button to active
+        key = get_button_key_from_tool_state(state)
+        set_button_color(key, button_highlight_color)
+
+        # set last state button to inactive
+        key = get_button_key_from_tool_state(last_state)
+        set_button_color(key, button_default_color)
+
+    # program event handling -------------------------------------
 
     def handle_window_event__timeout(event, values):
         set_mouse_state(EMouse.idle)
@@ -278,6 +325,11 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         # handling mouse state
         if mouse_state == EMouse.idle or mouse_state == EMouse.up:
             set_mouse_state(EMouse.down)
+            # check to see if we clicked on anything, and if we did, set that thing
+            # as currently selected
+            figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
+            for f in figs:
+                select_node(f, None)
 
         # handling tool state
         if tool_state == ETool.add:
@@ -289,8 +341,16 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
                 delete_node(f, None)
 
         elif tool_state == ETool.move:
+            # select one node
             return
+
+        elif tool_state == ETool.select:
+            # draw a bounding rect to select multiple
+            return
+
         elif tool_state == ETool.rename:
+            # launch a one-shot window to handle rename
+            # take new name, and put
             return
 
         # else:
@@ -307,10 +367,6 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         #         mouse_state = EMouse.dragging
         #         window['_INFO_'].update(f'mouse_state: {mouse_state}')
 
-        # elif move
-        # elif rename
-        # elif delete
-
         # cache last mouse interaction
         mouse_pos_last = mouse_pos
 
@@ -325,6 +381,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             set_tool_state(ETool.add)
         elif event.endswith('move'):
             set_tool_state(ETool.move)
+        elif event.endswith('select'):
+            set_tool_state(ETool.select)
         elif event.endswith('rename'):
             set_tool_state(ETool.rename)
         elif event.endswith('delete'):
@@ -332,7 +390,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         window['_INFO_'].update(f'Tool State: {tool_state}')
 
 
-# -------------------------------------------------------------
+# Program startup -------------------------------------------------------------
     # this is the section where we load data and test data integrity
     DATA = read_file(file)
     load_fail = f'Failed to load file: {file}'
@@ -357,6 +415,10 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 # -------------------------------------------------------
     # this section pre-loads the data from the last file
     draw_subgraph(DATA['nodes'], DATA['edges'])
+
+# -------------------------------------------------------
+
+    set_tool_state(ETool.select)
 
 # -------------------------------------------------------
     # this section is the application loop
