@@ -21,6 +21,7 @@ class ETool(Enum):
     add = auto()
     move = auto()
     select = auto()
+    connect = auto()
     rename = auto()
     delete = auto()
 
@@ -61,11 +62,12 @@ def create_menu_bar_layout():
 def create_toolbar_layout():
     psg.set_options(auto_size_buttons=True, margins=(0, 0), button_color=psg.COLOR_SYSTEM_DEFAULT)
     return [[
-          psg.Button('add',    key='toolbar.add')
-        , psg.Button('move',   key='toolbar.move')
-        , psg.Button('select', key='toolbar.select')
-        , psg.Button('rename', key='toolbar.rename')
-        , psg.Button('delete', key='toolbar.delete')
+          psg.Button('add',     key='toolbar.add')
+        , psg.Button('move',    key='toolbar.move')
+        , psg.Button('select',  key='toolbar.select')
+        , psg.Button('connect', key='toolbar.connect')
+        , psg.Button('rename',  key='toolbar.rename')
+        , psg.Button('delete',  key='toolbar.delete')
     ]]
 
 
@@ -172,19 +174,25 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     # graphing --------------------------------------
 
     def draw_subgraph(nodes, edges):
+        # lookup information is rebuilt each runtime, and pruned before save
+        lookup = {}
+
         for edge in edges:
             a, b = edge
             pos_a = nodes[a]
             pos_b = nodes[b]
-            draw_edge(pos_a, pos_b)
+            edge_id = draw_edge(pos_a, pos_b)
+            # keep the node names, b/c those should be more stable than positions
+            lookup[edge_id] = [a, b]
+            lookup[a] = edge_id
+            lookup[b] = edge_id
 
-        lookup = {}
         for key in nodes.keys():
             # this node needs to hold the circle_id, and the text_id
             ids = draw_node(nodes[key], key)
-            nodes[key].append(ids)
             lookup[ids['circle_id']] = key
             lookup[ids['text_id']] = key
+            lookup[key] = ids
 
         nodes['lookup'] = lookup
 
@@ -196,7 +204,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         return {'circle_id': cid, 'text_id': tid}
 
     def draw_edge(start, stop):
-        window['_GRAPH_'].draw_line(start, stop)
+        return window['_GRAPH_'].draw_line(start, stop)
 
     def add_node(pos, name=None):
         if not name:
@@ -272,6 +280,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             return 'toolbar.move'
         elif state == ETool.select:
             return 'toolbar.select'
+        elif state == ETool.connect:
+            return 'toolbar.connect'
         elif state == ETool.rename:
             return 'toolbar.rename'
         elif state == ETool.delete:
@@ -383,6 +393,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             set_tool_state(ETool.move)
         elif event.endswith('select'):
             set_tool_state(ETool.select)
+        elif event.endswith('connect'):
+            set_tool_state(ETool.connect)
         elif event.endswith('rename'):
             set_tool_state(ETool.rename)
         elif event.endswith('delete'):
