@@ -129,6 +129,11 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     button_default_color = ('black', 'light gray')
     button_highlight_color = ('black', 'orange')
 
+    node_default_color = {'line_color': 'black', 'fill_color': 'white', 'text_color': 'black'}
+    node_selected_color = {'line_color': 'black', 'fill_color': 'light blue', 'text_color': 'black'}
+
+    currently_selected_nodes = []
+
 # --------------------------------------------
     # this sections contains some fns we want encapsulated in our "object" (the graph visualizer)
 
@@ -189,18 +194,18 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
         for key in nodes.keys():
             # this node needs to hold the circle_id, and the text_id
-            ids = draw_node(nodes[key], key)
+            ids = draw_node(nodes[key], key, node_default_color)
             lookup[ids['circle_id']] = key
             lookup[ids['text_id']] = key
             lookup[key] = ids
 
         nodes['lookup'] = lookup
 
-    def draw_node(position, name):
+    def draw_node(position, name, color):
         """returns a tuple of the circle id and then the text id.  These ideas will be reassigned each runtime
         so we have to retain and use them in memory, but we shouldn't write them to disk"""
-        cid = window['_GRAPH_'].draw_circle(position, 25, fill_color='white', line_color='black')
-        tid = window['_GRAPH_'].draw_text(name, position, color='black', text_location='center')
+        cid = window['_GRAPH_'].draw_circle(position, 25, line_color=color['line_color'], fill_color=color['fill_color'])
+        tid = window['_GRAPH_'].draw_text(name, position, color=color['text_color'], text_location='center')
         return {'circle_id': cid, 'text_id': tid}
 
     def draw_edge(start, stop):
@@ -215,7 +220,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             if type(name) is tuple:
                 name = name.__str__()
 
-        fig_ids = draw_node(pos, name)
+        fig_ids = draw_node(pos, name, node_default_color)
         # add node to area which is saved out. this must be a string
         DATA['nodes'][name] = pos
 
@@ -227,11 +232,61 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         DATA['nodes']['lookup'][fig_ids['text_id']] = name
         DATA['nodes']['lookup'][name] = fig_ids
 
-    def select_node(figure_id, name=None):
+    def redraw_node(figure_id, name, color):
+        """returns new ids"""
         # lookup node based on figure id
-        # set that node as selected node
-        # this fn can be called multiple times and stack
-        pass
+        if figure_id in DATA['nodes']['lookup']:
+            name = DATA['nodes']['lookup'][figure_id]
+        else:
+            print(f'ERROR! Could not find node! figure_id="{figure_id}"')
+            return
+        if name in DATA['nodes']['lookup']:
+            figure_ids = DATA['nodes']['lookup'][name]
+        else:
+            print(f'ERROR! Could not find node! name="{name}"')
+            return
+
+        # remove figures from graph
+        for id in figure_ids:
+            window['_GRAPH_'].DeleteFigure(id)
+
+        # remove lookup data
+        if name:
+            if name in DATA['nodes']['lookup']:
+                del DATA['nodes']['lookup'][name]
+        if figure_ids:
+            for id in figure_ids:
+                if id in DATA['nodes']['lookup']:
+                    del DATA['nodes']['lookup'][id]
+
+        # draw node to graph in selected color
+        fig_ids = draw_node(DATA['nodes'][name], name, color)
+
+        # re-add the new ids to the lookup
+        DATA['nodes']['lookup'][fig_ids['circle_id']] = name
+        DATA['nodes']['lookup'][fig_ids['text_id']] = name
+        DATA['nodes']['lookup'][name] = fig_ids
+        return fig_ids
+
+    def deselect_all_nodes():
+        nonlocal currently_selected_nodes
+
+        for id in currently_selected_nodes:
+            name = DATA['nodes']['lookup'][id]
+            redraw_node(id, name, node_default_color)
+
+        currently_selected_nodes = []
+
+    def select_node(figure_id, name=None):
+        nonlocal currently_selected_nodes
+
+        # lookup node based on figure id
+        if not name:
+            name = DATA['nodes']['lookup'][figure_id]
+        figure_ids = redraw_node(figure_id, name, node_selected_color)
+
+        currently_selected_nodes.append(figure_ids['circle_id'])
+        currently_selected_nodes.append(figure_ids['text_id'])
 
     def delete_node(figure_id, name=None):
         nodes = DATA['nodes']
@@ -245,7 +300,6 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
                         print(f'ERROR! Could not find node connected to id: {figure_id}')
                 else:
                     print(f'ERROR! Could not lookup id: {figure_id}')
-                    print(f'DATA: {DATA}')
 
         # find the other ids we need to remove
         ids = [figure_id]
@@ -356,7 +410,12 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
         elif tool_state == ETool.select:
             # draw a bounding rect to select multiple
-            return
+            figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
+            if len(figs) > 0:
+                for f in figs:
+                    select_node(f)
+            else:
+                deselect_all_nodes()
 
         elif tool_state == ETool.rename:
             # launch a one-shot window to handle rename
