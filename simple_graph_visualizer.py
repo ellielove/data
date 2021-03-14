@@ -24,6 +24,14 @@ class ETool(Enum):
     delete = auto()
 
 
+class Node:
+    def __init__(self, name, pos):
+        self.name = name
+        self.pos = pos
+        self.circle_id = None
+        self.text_id = None
+
+
 def get_test_nodes() -> dict:
     return {
           'A': (0,  0)
@@ -91,7 +99,7 @@ def create_layout(size=(400, 400)):
 
 
 def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, size=(600, 500)):
-# ------------------------------------------------
+    # ------------------------------------------------
     # this section contains program state
     DATA = {}
 
@@ -110,6 +118,9 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
     mouse_state = EMouse.idle
     tool_state = ETool.add
+
+    mouse_pos = (0, 0)
+    mouse_pos_last = None
 
 # --------------------------------------------
     # this sections contains some fns we want encapsulated in our "object" (the graph visualizer)
@@ -136,9 +147,6 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
     def prepare_data_for_save():
         nodes = DATA['nodes']
-        for key in nodes.keys():
-            if len(nodes[key]) >= 2 and nodes[key][2]:
-                del nodes[key][2]
         if 'lookup' in nodes:
             del nodes['lookup']
         return True
@@ -152,10 +160,6 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         else:
             print(f'Error! Could not save file; path={FILE_PATH}, data={DATA}')
         window.close()
-
-    def set_selected_node(name, note):
-        window['name.text'].update(value=name)
-        window['note.text'].update(value=note)
 
     def draw_subgraph(nodes, edges):
         for edge in edges:
@@ -183,6 +187,150 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
     def draw_edge(start, stop):
         window['_GRAPH_'].draw_line(start, stop)
+
+    def add_node(pos, name=None):
+        if not name:
+            name = pos.__str__()
+        else:
+            # we make a point to use strings here, b/c that's
+            # how we ensure we can serialize it to json later
+            if type(name) is tuple:
+                name = name.__str__()
+
+        fig_ids = draw_node(pos, name)
+        # add node to area which is saved out. this must be a string
+        DATA['nodes'][name] = pos
+
+        # add two way lookups for node, so we can find the node in question, when
+        # given a single figure id, and so we can find both figure ids, when given
+        # a node.  This allows us to make sure we can delete the whole node at once,
+        # even if we just get a single figure id (such as, just the id for the text)
+        DATA['nodes']['lookup'][fig_ids['circle_id']] = name
+        DATA['nodes']['lookup'][fig_ids['text_id']] = name
+        DATA['nodes']['lookup'][name] = fig_ids
+
+    def delete_node(figure_id, name=None):
+        nodes = DATA['nodes']
+
+        # find the name of this node, so we can delete it from graph.nodes
+        if not name:
+            if nodes['lookup']:
+                if figure_id in nodes['lookup']:
+                    name = nodes['lookup'][figure_id]
+                    if not name:
+                        print(f'ERROR! Could not find node connected to id: {figure_id}')
+                else:
+                    print(f'ERROR! Could not lookup id: {figure_id}')
+                    print(f'DATA: {DATA}')
+
+        # find the other ids we need to remove
+        ids = [figure_id]
+        if name in nodes['lookup']:
+            figures = nodes['lookup'][name]
+            ids.append(figures['circle_id'])
+            ids.append(figures['text_id'])
+
+        # delete figure from screen
+        for id in ids:
+            window['_GRAPH_'].DeleteFigure(id)
+            # delete lookup for each id
+            if id in nodes['lookup']:
+                del nodes['lookup'][id]
+        # delete lookup for node name
+        if name in nodes['lookup']:
+            del nodes['lookup'][name]
+        # delete node from dict
+        if name in nodes:
+            del nodes[name]
+
+    def set_mouse_state(state):
+        nonlocal mouse_state
+        mouse_state = state
+
+    def set_tool_state(state):
+        nonlocal tool_state
+        tool_state = state
+
+    def handle_window_event__timeout(event, values):
+        set_mouse_state(EMouse.idle)
+
+    def handle_window_event__generic(event, values):
+        # window resize event
+        size = window.get_screen_size()
+        graph_size = (size[0], size[1] - get_graph_height_pad())
+        window['_GRAPH_'].set_size(graph_size)
+
+    def handle_graph_event__mouse_while_down(event, values):
+        """These events are some kind of mouse down event on the graph itself.  Usually, this is
+        a mouse button down event, but it can also be a mouse move event.
+        Mouse up events ARE NOT ALLOWED in this fn"""
+        nonlocal mouse_state
+        nonlocal tool_state
+        nonlocal mouse_pos
+        nonlocal mouse_pos_last
+
+        # current mouse position, and mouse delta
+        mouse_pos = values['_GRAPH_']
+        delta = (0, 0)
+        if mouse_pos_last:
+            delta = (mouse_pos_last[0] - mouse_pos[0], mouse_pos_last[1] - mouse_pos[1])
+
+        # handling mouse state
+        if mouse_state == EMouse.idle or mouse_state == EMouse.up:
+            set_mouse_state(EMouse.down)
+
+        # handling tool state
+        if tool_state == ETool.add:
+            add_node(mouse_pos)
+
+        elif tool_state == ETool.delete:
+            figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
+            for f in figs:
+                delete_node(f, None)
+
+        elif tool_state == ETool.move:
+            return
+        elif tool_state == ETool.rename:
+            return
+
+        # else:
+        #     if mouse_state == EMouse.dragging:
+        #         window['_INFO_'].update(f'mouse_state: {mouse_state}')
+        #         # right now, this just shows that each "node" contains multiple figure ids
+        #         #   1 - a circle
+        #         #   2 - the title text
+        #         # we're better off iterating these individually than trying to make it a tuple
+        #         figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
+        #         for f in figs:
+        #             window['_GRAPH_'].MoveFigure(f, delta[0], delta[1])
+        #     else:
+        #         mouse_state = EMouse.dragging
+        #         window['_INFO_'].update(f'mouse_state: {mouse_state}')
+
+        # elif move
+        # elif rename
+        # elif delete
+
+        # cache last mouse interaction
+        mouse_pos_last = mouse_pos
+
+    def handle_mouse_up_event(event, values):
+        set_mouse_state(EMouse.idle)
+        window['_INFO_'].update(f'mouse_state: {mouse_state}')
+
+        # move any node that's been dragged
+
+    def handle_toolbar_event(event, values):
+        if event.endswith('add'):
+            set_tool_state(ETool.add)
+        elif event.endswith('move'):
+            set_tool_state(ETool.move)
+        elif event.endswith('rename'):
+            set_tool_state(ETool.rename)
+        elif event.endswith('delete'):
+            set_tool_state(ETool.delete)
+        window['_INFO_'].update(f'Tool State: {tool_state}')
+
 
 # -------------------------------------------------------------
     # this is the section where we load data and test data integrity
@@ -219,57 +367,23 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         if event in (psg.WINDOW_CLOSED, 'Cancel', 'Escape:27'):
             break
 
-        if event == '__TIMEOUT__':
-            mouse_state = EMouse.idle
+        elif event == '__TIMEOUT__':
+            handle_window_event__timeout(event, values)
 
         # window resize event
-        if event == '_WINDOW_':
-            size = window.get_screen_size()
-            graph_size = (size[0], size[1] - get_graph_height_pad())
-            window['_GRAPH_'].set_size(graph_size)
+        elif event == '_WINDOW_':
+            handle_window_event__generic(event, values)
 
         # mouse down event on the graph
         elif event == '_GRAPH_':
-            pos = values['_GRAPH_']
-            if mouse_state == EMouse.idle:
-                mouse_state = EMouse.down
-                if tool_state == ETool.add:
-                    DATA['nodes'][pos.__str__()] = pos
-                    draw_node(pos, pos)
-                else:
-                    # right now, this just shows that each "node" contains multiple figure ids
-                    #   1 - a cirlce
-                    #   2 - the title text
-                    # we're better off iterating these individually than trying to make it a tuple
-                    figs = window['_GRAPH_'].get_figures_at_location(pos)
-                    for f in figs:
-                        node_name = DATA['nodes']['lookup'][f]
-                        print(f'node looked up: {node_name}')
-
-                # elif move
-                # elif rename
-                # elif delete
-
-            elif mouse_state == EMouse.dragging:
-                continue
+            handle_graph_event__mouse_while_down(event, values)
 
         # mouse up event
         elif event.endswith('+UP'):
-            mouse_state = EMouse.idle
-            info = window['_INFO_']
-            info.update(f'placed node at {pos}')
+            handle_mouse_up_event(event, values)
 
-        # if it begins with 'toolbar'
-        elif event[::-1].endswith('toolbar'[::-1]):
-            if event.endswith('add'):
-                tool_state = ETool.add
-            elif event.endswith('move'):
-                tool_state = ETool.move
-            elif event.endswith('rename'):
-                tool_state = ETool.rename
-            elif event.endswith('delete'):
-                tool_state = ETool.delete
-            window['_INFO_'].update(f'Tool State: {tool_state}')
-
+        # toolbar events
+        elif event.startswith('toolbar'):
+            handle_toolbar_event(event, values)
 
     shutdown_sequence()
