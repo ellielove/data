@@ -30,18 +30,20 @@ class Application:
         ]
 
     @staticmethod
-    def create_primary_window_layout() -> list:
+    def create_primary_window_layout(size) -> list:
         """this method holds the specification of the layout of the primary window"""
+        full_width_one_line = (size[0], 10)
+        list_box_size = (size[0], size[1] - 90)
         return [
               [psg.Menu(Application.create_menu_bar_layout(), tearoff=False, pad=(400, 1))]
-            , [psg.Text('Search'), psg.Input(size=(50, 1), enable_events=True, key='_SEARCHBOX_')]
-            , [psg.Listbox([], size=(50, 30), enable_events=True, key='_LISTBOX_')]
             , [
                   psg.Button('New')
                 , psg.Button('Edit')
                 , psg.Button('Rename', button_color=(psg.theme_background_color(), 'orange'))
                 , psg.Button('Delete', button_color=(psg.theme_background_color(), 'red'))
             ]
+            , [psg.Text('Search'), psg.Input(size=full_width_one_line, enable_events=True, key='_SEARCHBOX_')]
+            , [psg.Listbox([], size=list_box_size, enable_events=True, key='_LISTBOX_')]
         ]
 
     @staticmethod
@@ -123,13 +125,16 @@ class Application:
         self.last_clicked_on = ''
 
         psg.theme(self.theme)
-        self.layout = self.create_primary_window_layout()
-        self.listbox = self.layout[2][0]
+        self.layout = self.create_primary_window_layout(self.window_size)
         self.window = psg.Window(
               self.window_title
             , self.layout
             , size=self.window_size
+            , resizable=True
         )
+
+        self.listbox = self.window['_LISTBOX_']
+
 
         self.project_data = self.read_project_file(self.save_file_path)
         self.manage_project_version(self.project_data)
