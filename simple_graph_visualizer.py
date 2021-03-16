@@ -3,8 +3,6 @@ import json
 import os
 
 import PySimpleGUI as psg
-import networkx as nx
-import numpy as np
 
 
 FILE_PATH = 'test.graph.json'
@@ -72,7 +70,7 @@ def create_toolbar_layout():
 
 
 def get_graph_height_pad():
-    return 150
+    return 120
 
 
 def create_layout(size=(400, 400)):
@@ -119,6 +117,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     window = psg.Window(title, layout, size=size, return_keyboard_events=True, resizable=True)
     window.read(timeout=45)
     window.bind('<Configure>', '_WINDOW_')
+
+    last_window_size = size
 
     mouse_state = EMouse.idle
     tool_state = ETool.add
@@ -268,17 +268,23 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         DATA['nodes']['lookup'][name] = fig_ids
         return fig_ids
 
+    def deselect_node(id, name):
+        redraw_node(id, name, node_default_color)
+
     def deselect_all_nodes():
         nonlocal currently_selected_nodes
 
         for id in currently_selected_nodes:
             name = DATA['nodes']['lookup'][id]
-            redraw_node(id, name, node_default_color)
+            deselect_node(id, name)
 
         currently_selected_nodes = []
 
     def select_node(figure_id, name=None):
         nonlocal currently_selected_nodes
+
+        if figure_id in currently_selected_nodes:
+            currently_selected_nodes.remove(figure_id)
 
         # lookup node based on figure id
         if not name:
@@ -287,6 +293,14 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
         currently_selected_nodes.append(figure_ids['circle_id'])
         currently_selected_nodes.append(figure_ids['text_id'])
+
+    def select_nodes_at_position(pos):
+        figs = window['_GRAPH_'].get_figures_at_location(pos)
+        if len(figs) > 0:
+            for f in figs:
+                select_node(f)
+        else:
+            deselect_all_nodes()
 
     def delete_node(figure_id, name=None):
         nodes = DATA['nodes']
@@ -366,10 +380,13 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         set_mouse_state(EMouse.idle)
 
     def handle_window_event__generic(event, values):
-        # window resize event
-        size = window.get_screen_size()
-        graph_size = (size[0], size[1] - get_graph_height_pad())
-        window['_GRAPH_'].set_size(graph_size)
+        nonlocal last_window_size
+        if window.size != last_window_size:
+            # window resize event
+            sz = window.size
+            graph_size = (sz[0], sz[1] - get_graph_height_pad())
+            window['_GRAPH_'].set_size(graph_size)
+            last_window_size = sz
 
     def handle_graph_event__mouse_while_down(event, values):
         """These events are some kind of mouse down event on the graph itself.  Usually, this is
@@ -381,6 +398,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         nonlocal mouse_pos_last
 
         # current mouse position, and mouse delta
+        mouse_pos_last = mouse_pos
         mouse_pos = values['_GRAPH_']
         delta = (0, 0)
         if mouse_pos_last:
@@ -405,39 +423,21 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
                 delete_node(f, None)
 
         elif tool_state == ETool.move:
-            # select one node
-            return
+            if len(currently_selected_nodes) == 0:
+                select_nodes_at_position(mouse_pos)
+
+            if delta[0] * delta[1] > 1:
+                for node in currently_selected_nodes:
+                    print(f'Move:  id={node}, delta=({delta[0]}, {delta[1]})')
+                    window['_GRAPH_'].MoveFigure(node, delta[0], delta[1])
 
         elif tool_state == ETool.select:
-            # draw a bounding rect to select multiple
-            figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
-            if len(figs) > 0:
-                for f in figs:
-                    select_node(f)
-            else:
-                deselect_all_nodes()
+            select_nodes_at_position(mouse_pos)
 
         elif tool_state == ETool.rename:
             # launch a one-shot window to handle rename
             # take new name, and put
             return
-
-        # else:
-        #     if mouse_state == EMouse.dragging:
-        #         window['_INFO_'].update(f'mouse_state: {mouse_state}')
-        #         # right now, this just shows that each "node" contains multiple figure ids
-        #         #   1 - a circle
-        #         #   2 - the title text
-        #         # we're better off iterating these individually than trying to make it a tuple
-        #         figs = window['_GRAPH_'].get_figures_at_location(mouse_pos)
-        #         for f in figs:
-        #             window['_GRAPH_'].MoveFigure(f, delta[0], delta[1])
-        #     else:
-        #         mouse_state = EMouse.dragging
-        #         window['_INFO_'].update(f'mouse_state: {mouse_state}')
-
-        # cache last mouse interaction
-        mouse_pos_last = mouse_pos
 
     def handle_mouse_up_event(event, values):
         set_mouse_state(EMouse.idle)
