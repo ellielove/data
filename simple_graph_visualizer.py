@@ -107,6 +107,7 @@ def create_layout(size=(400, 400)):
 
 
 def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, size=(600, 500)):
+    log.debug('\n\n\n\n')
     log.debug('simple_graph_visualizer_window_cycle()')
     # ------------------------------------------------
     # this section contains program state
@@ -396,8 +397,19 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         if delta[0] * delta[1] < 1:
             return
 
+        nodes_to_update = []
         for figure in id_list:
             window['_GRAPH_'].MoveFigure(figure, delta[0], delta[1])
+
+            if figure in DATA['nodes']['lookup']:
+                name = DATA['nodes']['lookup'][figure]
+                if name not in nodes_to_update:
+                    nodes_to_update.append(name)
+
+        for node in nodes_to_update:
+            pos = DATA['nodes'][node]
+            DATA['nodes'][node] = (pos[0] + delta[0], pos[1] + delta[1])
+
 
     # state management --------------------------------------
 
