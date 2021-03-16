@@ -1,10 +1,12 @@
 from enum import Enum, auto
 import json
+import logging as log
 import os
 
 import PySimpleGUI as psg
 
 
+log.basicConfig(filename='graph_visualizer.log', level=log.DEBUG)
 FILE_PATH = 'test.graph.json'
 
 
@@ -52,12 +54,14 @@ def get_test_edges():
 
 
 def create_menu_bar_layout():
+    log.debug('create_menu_bar_layout()')
     return [
         ['&File', ['New', '&Open', 'Save', '&SaveAs', '----', 'Settings', 'E&xit']]
     ]
 
 
 def create_toolbar_layout():
+    log.debug('create_toolbar_layout()')
     psg.set_options(auto_size_buttons=True, margins=(0, 0), button_color=psg.COLOR_SYSTEM_DEFAULT)
     return [[
           psg.Button('add',     key='toolbar.add')
@@ -70,10 +74,12 @@ def create_toolbar_layout():
 
 
 def get_graph_height_pad():
+    log.debug('get_graph_height_pad()')
     return 120
 
 
 def create_layout(size=(400, 400)):
+    log.debug('create_layout()')
     bg_color = 'gainsboro'
 
     one_line_window_width = (size[0], 1)
@@ -101,6 +107,7 @@ def create_layout(size=(400, 400)):
 
 
 def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, size=(600, 500)):
+    log.debug('simple_graph_visualizer_window_cycle()')
     # ------------------------------------------------
     # this section contains program state
     DATA = {}
@@ -117,6 +124,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
     window = psg.Window(title, layout, size=size, return_keyboard_events=True, resizable=True)
     window.read(timeout=45)
     window.bind('<Configure>', '_WINDOW_')
+    log.debug(':  Window created and configured')
 
     last_window_size = size
 
@@ -134,51 +142,64 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
     currently_selected_nodes = []
 
+    log.debug(':  basic setup complete')
+
 # --------------------------------------------
     # this sections contains some fns we want encapsulated in our "object" (the graph visualizer)
 
     # File Access --------------------------------------
     def read_file(path) -> dict:
-        """returns dict of json data, or returns dict with load_faliure:true as a key"""
+        """returns dict of json data, or returns dict with load_failure:true as a key"""
+        log.debug(f'read_file(),  path="{path}"')
         if path is not None:
             if os.path.isfile(path):
                 with open(path, 'r') as infile:
                     result = json.load(infile)
+                    if not result:
+                        log.error(f'Could not load json object from path="{path}"')
                     # NOTE: right now, this handles a situation where a file is marked as failing
                     # to load, and accidentally gets saved that way.  We might need a better way to
                     # handle the problem though
                     if 'load_failure' in result:
                         del result['load_failure']
                     return result
+        log.error(f'Could not read from path="{path}"')
         return {'load_failure': True}
 
     def write_file(path, data) -> bool:
+        log.debug(f'write_file(),  path="{path}"')
         if path is not None:
             with open(path, 'w') as outfile:
-                json.dump(data, outfile, indent=4, sort_keys=True)
+                try:
+                    json.dump(data, outfile, indent=4, sort_keys=True)
+                except TypeError:
+                    log.fatal(f'FATAL ERROR: Cannot save file to json; dumping:\n\n"{data}"')
         return os.path.isfile(path)
 
     def prepare_data_for_save():
-        nodes = DATA['nodes']
-        if 'lookup' in nodes:
-            del nodes['lookup']
+        log.debug(f'prepare_data_for_save()')
+        if 'lookup' in DATA['nodes']:
+            del DATA['nodes']['lookup']
         return True
 
     # --------------------------------------
 
     def shutdown_sequence():
+        log.debug('shutdown_sequence()')
         if not prepare_data_for_save():
-            print('error preparing data for save!')
+            log.fatal(f':  Error! Cannot save data! dump:\n\n"{DATA}"')
         result = write_file(FILE_PATH, DATA)
         if result:
-            print(f'saved data to file: {FILE_PATH}')
+            log.debug(f':  saved data to file: {FILE_PATH}')
         else:
-            print(f'Error! Could not save file; path={FILE_PATH}, data={DATA}')
+            log.error(f':  Error! Could not save file; path={FILE_PATH}, data={DATA}')
         window.close()
+        log.debug(':  window closed')
 
     # graphing --------------------------------------
 
     def draw_subgraph(nodes, edges):
+        log.debug(f'draw_subgraph(), nodes="{nodes}", edges="{edges}"')
         # lookup information is rebuilt each runtime, and pruned before save
         lookup = {}
 
@@ -212,6 +233,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         return window['_GRAPH_'].draw_line(start, stop)
 
     def add_node(pos, name=None):
+        log.debug(f'add_node(), pos="{pos}", name="{name}"')
         if not name:
             name = pos.__str__()
         else:
@@ -240,10 +262,10 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         else:
             print(f'ERROR! Could not find node! figure_id="{figure_id}"')
             return
+
         if name in DATA['nodes']['lookup']:
             figure_ids = DATA['nodes']['lookup'][name]
         else:
-            print(f'ERROR! Could not find node! name="{name}"')
             return
 
         # remove figures from graph
@@ -291,8 +313,9 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             name = DATA['nodes']['lookup'][figure_id]
         figure_ids = redraw_node(figure_id, name, node_selected_color)
 
-        currently_selected_nodes.append(figure_ids['circle_id'])
-        currently_selected_nodes.append(figure_ids['text_id'])
+        if figure_ids:
+            currently_selected_nodes.append(figure_ids['circle_id'])
+            currently_selected_nodes.append(figure_ids['text_id'])
 
     def select_nodes_at_position(pos):
         figs = window['_GRAPH_'].get_figures_at_location(pos)
@@ -303,17 +326,15 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             deselect_all_nodes()
 
     def delete_node(figure_id, name=None):
+        log.debug(f'delete_node(), figure_id="{figure_id}", name="{name}"')
         nodes = DATA['nodes']
 
         # find the name of this node, so we can delete it from graph.nodes
         if not name:
-            if nodes['lookup']:
-                if figure_id in nodes['lookup']:
-                    name = nodes['lookup'][figure_id]
-                    if not name:
-                        print(f'ERROR! Could not find node connected to id: {figure_id}')
-                else:
-                    print(f'ERROR! Could not lookup id: {figure_id}')
+            if figure_id in nodes['lookup']:
+                name = nodes['lookup'][figure_id]
+                if not name:
+                    print(f'ERROR! Could not find node connected to id: {figure_id}')
 
         # find the other ids we need to remove
         ids = [figure_id]
@@ -334,6 +355,49 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         # delete node from dict
         if name in nodes:
             del nodes[name]
+
+    def maintain_currently_selected_node_list(current):
+        # each Node in our graph, is composed of multiple figures, generally,
+        # a cicle and some text.  Each figure, has an id with the canvas
+        # redrawing a figure tosses out the old one, and gives us a new id
+        # moving does not toss out the old one
+        # here, we ensure that every node we're tracking, actually has all of
+        # its parts in the tracking list
+        if not current:
+            return
+
+        updated = []
+        for id in current:
+            if id not in updated:
+                updated.append(id)
+
+            name = ids = None
+            if id in DATA['nodes']['lookup']:
+                name = DATA['nodes']['lookup'][id]
+            if name and name in DATA['nodes']['lookup']:
+                ids = DATA['nodes']['lookup'][name]
+
+            if ids:
+                if ids['circle_id'] not in updated:
+                    updated.append(ids['circle_id'])
+
+                if ids['text_id'] not in updated:
+                    updated.append(ids['text_id'])
+
+        current = updated
+
+    def move_nodes(id_list, delta):
+        if not isinstance(id_list, list):
+            log.error(f'ERROR! fn:move_nodes needs a LIST as first param')
+
+        if not isinstance(delta, tuple):
+            log.error(f'ERROR! fn:move_nodes needs a TUPLE(x,y) as second param')
+
+        if delta[0] * delta[1] < 1:
+            return
+
+        for figure in id_list:
+            window['_GRAPH_'].MoveFigure(figure, delta[0], delta[1])
 
     # state management --------------------------------------
 
@@ -359,7 +423,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             return 'unknown'
 
     def set_button_color(key, color):
-        window[key].update(button_color=color)
+        return window[key].update(button_color=color)
 
     def set_tool_state(state):
         nonlocal tool_state
@@ -383,10 +447,9 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         nonlocal last_window_size
         if window.size != last_window_size:
             # window resize event
-            sz = window.size
-            graph_size = (sz[0], sz[1] - get_graph_height_pad())
+            graph_size = (window.size[0], window.size[1] - get_graph_height_pad())
             window['_GRAPH_'].set_size(graph_size)
-            last_window_size = sz
+            last_window_size = window.size
 
     def handle_graph_event__mouse_while_down(event, values):
         """These events are some kind of mouse down event on the graph itself.  Usually, this is
@@ -426,10 +489,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             if len(currently_selected_nodes) == 0:
                 select_nodes_at_position(mouse_pos)
 
-            if delta[0] * delta[1] > 1:
-                for node in currently_selected_nodes:
-                    print(f'Move:  id={node}, delta=({delta[0]}, {delta[1]})')
-                    window['_GRAPH_'].MoveFigure(node, delta[0], delta[1])
+            maintain_currently_selected_node_list(currently_selected_nodes)
+            move_nodes(currently_selected_nodes, delta)
 
         elif tool_state == ETool.select:
             select_nodes_at_position(mouse_pos)
@@ -439,11 +500,11 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
             # take new name, and put
             return
 
+        # basically anything that causes this to be called will require an update
+        window['_GRAPH_'].update()
+
     def handle_mouse_up_event(event, values):
         set_mouse_state(EMouse.idle)
-        window['_INFO_'].update(f'mouse_state: {mouse_state}')
-
-        # move any node that's been dragged
 
     def handle_toolbar_event(event, values):
         if event.endswith('add'):
@@ -463,6 +524,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
 # Program startup -------------------------------------------------------------
     # this is the section where we load data and test data integrity
+    log.debug(f':  loading data: path="{file}"')
     DATA = read_file(file)
     load_fail = f'Failed to load file: {file}'
     load_ok = f'File loaded: {file}'
@@ -485,6 +547,7 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
 # -------------------------------------------------------
     # this section pre-loads the data from the last file
+    log.debug(f':  building subgraph from loaded document')
     draw_subgraph(DATA['nodes'], DATA['edges'])
 
 # -------------------------------------------------------
@@ -493,6 +556,8 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
 
 # -------------------------------------------------------
     # this section is the application loop
+
+    log.debug(f':  beginning application loop')
 
     while True:
         event, values = window.read(timeout=150)
@@ -519,4 +584,5 @@ def simple_graph_visualizer_window_cycle(file=None, title=None, layout=None, siz
         elif event.startswith('toolbar'):
             handle_toolbar_event(event, values)
 
+    log.debug(f':  application loop breakout')
     shutdown_sequence()
