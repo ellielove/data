@@ -76,6 +76,27 @@
         "pubname": "Why would we pay you a \"living wage\" if none of you are living?",
         "tags": ""
     },
+    "character__adventure_trio_1": {
+        "devname": "character__adventure_trio_1",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "space wizard; magic cyborg; cat person;\n",
+        "tags": ""
+    },
+    "character__allbark": {
+        "devname": "character__allbark",
+        "features": "\n",
+        "notes": "no bite\n",
+        "pubname": "a (non-dog-shaped) droid, who growls and barks like an attack dog; allbark\n",
+        "tags": ""
+    },
+    "character__antibody_incubator": {
+        "devname": "character__antibody_incubator",
+        "features": "\n",
+        "notes": "Someone who has infinite disease resistance, who cannot put it to profitable use in other ways, so the incubate antibodies to all kinds of diseases, by becoming infected with the dieases themselves.  They can't be hurt from the disease, but they can infect others\n",
+        "pubname": "Person who incubates antibodies in themselves for work; \"Congratulations on your remarkable survival\"\n",
+        "tags": ""
+    },
     "character__antique_dust_dealer": {
         "devname": "character__antique_dust_dealer",
         "features": "",
@@ -89,6 +110,27 @@
         "notes": "\n",
         "pubname": "I am a simple bible farmer, come to you from the great good lord",
         "tags": "bible, character, farmer"
+    },
+    "character__brutality_fairy": {
+        "devname": "character__brutality_fairy",
+        "features": "\n",
+        "notes": "a fairy who comes and bestows or rewards brutality in the night\n",
+        "pubname": "The brutality fairy;\n",
+        "tags": ""
+    },
+    "character__chat": {
+        "devname": "character__chat",
+        "features": "\n",
+        "notes": "getting one chat angry can make a whole host of chat angry, so it's best to placate them when possible;  a chat is represented by a friendly ghost image;\n",
+        "pubname": "Chat; ghostlike creatures who say something pointless if you talk to them, but feel really sad if you don't pay attention to them, or if you're mean to them\n",
+        "tags": ""
+    },
+    "character__chris_tatos": {
+        "devname": "character__chris_tatos",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Chris Tatos; Chris P. Tatos; Chris Pipo Tatos\n",
+        "tags": "pun"
     },
     "character__detective_noir": {
         "devname": "character__detective_noir",
@@ -104,11 +146,32 @@
         "pubname": "Streamer { someone who stands in lines, but always arrives late, so whatever they're waiting for is always gone } ",
         "tags": "character, streamer"
     },
+    "character__everburning_us_flag": {
+        "devname": "character__everburning_us_flag",
+        "features": "\n",
+        "notes": "A character who is the speaker for liberty, who is physically an ever-burning United States flag\n",
+        "pubname": "Burning US Flag; Character\n",
+        "tags": ""
+    },
     "character__hug_god_paladin": {
         "devname": "character__hug_god_paladin",
         "features": "\n",
         "notes": "The paladin has spikes on their armor, and cannot understand how hugs could ever be bad\n",
         "pubname": "Hugs for the Hug God\n",
+        "tags": ""
+    },
+    "character__junior_god": {
+        "devname": "character__junior_god",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Jr. GOD\n",
+        "tags": ""
+    },
+    "character__orc_mathematician": {
+        "devname": "character__orc_mathematician",
+        "features": "\n",
+        "notes": "Someone who has a hard life, trying to use thinking to improve the lives of their community members, who is ostracised because of it\n",
+        "pubname": "An orc, who is developing mathematics for their clan; however the clan is resistant to the concept of knowledge work\n",
         "tags": ""
     },
     "character__poisoner_and_brewmaster": {
@@ -139,12 +202,33 @@
         "pubname": "Sneaky Bushwack",
         "tags": "character, name"
     },
+    "character__stitch_monster": {
+        "devname": "character__stitch_monster",
+        "features": "\n",
+        "notes": "a monster that sews new pieces into itself, which takes victims in order to grow\n",
+        "pubname": "Stitch Monster\n",
+        "tags": ""
+    },
     "character__unlicensed_pun_genie": {
         "devname": "character__unlicensed_pun_genie",
         "features": "",
         "notes": "Like a genie, except someone who gives puns rather than wishes.  This practice caused them to have their genie livense revoked, and now they wander around, trying to trying people into asking them for help, so they can respond by supplying a pun, rather than helping.\n",
         "pubname": "Unlicensed pun genie",
         "tags": "puns"
+    },
+    "character__unskilled_hero": {
+        "devname": "character__unskilled_hero",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "A hero, who is bad at heroic skills\n",
+        "tags": ""
+    },
+    "character__wyrd_seeker": {
+        "devname": "character__wyrd_seeker",
+        "features": "\n",
+        "notes": "A pilgrim of the WYRD\n",
+        "pubname": "Wyrd Seeker\n",
+        "tags": ""
     },
     "community__festival_of_unnecessary_skills": {
         "devname": "community__festival_of_unnecessary_skills",
@@ -251,6 +335,13 @@
         "pubname": "we are not [things]\n",
         "tags": ""
     },
+    "concept__people_of_agency": {
+        "devname": "concept__people_of_agency",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "people who have and use agency\n",
+        "tags": ""
+    },
     "concept__resolving_paradoxes": {
         "devname": "concept__resolving_paradoxes",
         "features": "",
@@ -292,6 +383,13 @@
         "notes": "Check(X): return X == true\n\n",
         "pubname": "To Check: when you look, and see if something is true",
         "tags": "logic"
+    },
+    "consume_product__skin_in_a_bottle": {
+        "devname": "consume_product__skin_in_a_bottle",
+        "features": "\n",
+        "notes": "A makeup product\n",
+        "pubname": "It's literally; my skin; in a bottle\n",
+        "tags": ""
     },
     "consumer_product__lookaway": {
         "devname": "consumer_product__lookaway",
@@ -376,6 +474,27 @@
         "notes": "the name of a pet store in hell\n",
         "pubname": "objectively evil pets for very bad people",
         "tags": "evil, pets"
+    },
+    "f__in_this_slum": {
+        "devname": "f__in_this_slum",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "In this slum, we've all done unpleasant things\n",
+        "tags": ""
+    },
+    "f__sock_puppet_companion": {
+        "devname": "f__sock_puppet_companion",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "F: sock puppet companion\n",
+        "tags": ""
+    },
+    "f__sought_more_pain": {
+        "devname": "f__sought_more_pain",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "When given the option, she leapt at the opportunity for more pain\n",
+        "tags": ""
     },
     "faculty_and_anti_faculty": {
         "devname": "faculty_and_anti_faculty",
@@ -651,6 +770,13 @@
         "pubname": "People and their destinies, are born into the universe at the same time",
         "tags": "destiny, perspective"
     },
+    "philosophy__character_choices": {
+        "devname": "philosophy__character_choices",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Characters who make choices the audience would make; no characters who make choices the audience *wouldn't* make\n",
+        "tags": ""
+    },
     "philosophy__children_are_not_property": {
         "devname": "philosophy__children_are_not_property",
         "features": "\n",
@@ -714,6 +840,13 @@
         "pubname": "Hope leads to resistance of tyrants\n",
         "tags": ""
     },
+    "philosophy__satisfying_lives": {
+        "devname": "philosophy__satisfying_lives",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "people who are well-satisfied, succeeding at small, trivial goals, and relish/savor the outcomes\n",
+        "tags": ""
+    },
     "philosophy__stalwart_cheerful_kindness": {
         "devname": "philosophy__stalwart_cheerful_kindness",
         "features": "\n",
@@ -755,6 +888,13 @@
         "notes": "# todo: develop this process\t\n",
         "pubname": "screening incoming people for various traits",
         "tags": "process"
+    },
+    "profession__emoter": {
+        "devname": "profession__emoter",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Professional ghasper and laugher and weeper\n",
+        "tags": ""
     },
     "project_self_but_not_impose": {
         "devname": "project_self_but_not_impose",
@@ -931,6 +1071,13 @@
         "pubname": "Duck Puppy; Platypus",
         "tags": "puppy, dialect"
     },
+    "slang__food_brother": {
+        "devname": "slang__food_brother",
+        "features": "\n",
+        "notes": "Or food sister, or food friend;  Someone you eat with regularly\n",
+        "pubname": "food brother\n",
+        "tags": ""
+    },
     "slang__have_a_fiddle_with_it": {
         "devname": "slang__have_a_fiddle_with_it",
         "features": "",
@@ -1050,6 +1197,13 @@
         "pubname": "37 years ago, this entire town go up, walked away, and disappeared, and a new group of people walked in, and kept living those same lives",
         "tags": "town, incomprehensible"
     },
+    "trope__adverdrone": {
+        "devname": "trope__adverdrone",
+        "features": "\n",
+        "notes": "they're made especially cute, so you feel guilty for not watching the ads, because you know that not watching the ads makes them die.\n",
+        "pubname": "Adverdrone; robot, animal intellect; has to extract advert attention or die\n",
+        "tags": ""
+    },
     "trope__almost_injury__inattentive_driver": {
         "devname": "trope__almost_injury__inattentive_driver",
         "features": "",
@@ -1062,6 +1216,13 @@
         "features": "\n",
         "notes": "\n",
         "pubname": "You look like you need a hero; You have to be your own;\n",
+        "tags": ""
+    },
+    "trope__books_from_the_dread_library": {
+        "devname": "trope__books_from_the_dread_library",
+        "features": "\n",
+        "notes": "like Leitner books, or other dark magic books\n",
+        "pubname": "books from the dread library\n",
         "tags": ""
     },
     "trope__comforting_a_person": {
@@ -1085,6 +1246,13 @@
         "pubname": "A girl teaches mathematics to her cat, and talks about animal rights\n",
         "tags": ""
     },
+    "trope__girl_who_is_overlooked": {
+        "devname": "trope__girl_who_is_overlooked",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "The girl who is overlooked\n",
+        "tags": ""
+    },
     "trope__immediate_ruining_of_something_good": {
         "devname": "trope__immediate_ruining_of_something_good",
         "features": "",
@@ -1092,11 +1260,39 @@
         "pubname": "X is wonderful! Press (A) to ruin X!",
         "tags": "tragedy, ruin"
     },
+    "trope__intelligent_house_tells_its_history": {
+        "devname": "trope__intelligent_house_tells_its_history",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Intelligent house tells new owners of murder, commited in house previously\n",
+        "tags": ""
+    },
+    "trope__laurel_yanney_twins": {
+        "devname": "trope__laurel_yanney_twins",
+        "features": "\n",
+        "notes": "Twins who seem indistinguishable, whose names are also indistinguishable, even though it seems like the names are quite different\n",
+        "pubname": "Laurel; Yanny; Twins\n",
+        "tags": ""
+    },
     "trope__live_together_or_die_alone": {
         "devname": "trope__live_together_or_die_alone",
         "features": "\n",
         "notes": "the difficult choice of all people\n",
         "pubname": "live together or die alone\n",
+        "tags": ""
+    },
+    "trope__maimed_people_good_people": {
+        "devname": "trope__maimed_people_good_people",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "smart, kind, good people; who have partial limbs\n",
+        "tags": ""
+    },
+    "trope__named_stuffed_animals": {
+        "devname": "trope__named_stuffed_animals",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "Named Stuffed Animals\n",
         "tags": ""
     },
     "trope__not_enough_pity": {
@@ -1112,6 +1308,27 @@
         "notes": "\n",
         "pubname": "People of color: live normal lives, have nice families, are nice people\n",
         "tags": ""
+    },
+    "trope__pets_as_family": {
+        "devname": "trope__pets_as_family",
+        "features": "\n",
+        "notes": "pets as family members, rather than as subordinates\n",
+        "pubname": "pets as family;\n",
+        "tags": ""
+    },
+    "trope__philosophi_fiend": {
+        "devname": "trope__philosophi_fiend",
+        "features": "\n",
+        "notes": "a philosopher demon\n",
+        "pubname": "Philosophifiend\t\n",
+        "tags": ""
+    },
+    "trope__princess_trapped_in_own_head": {
+        "devname": "trope__princess_trapped_in_own_head",
+        "features": "\n",
+        "notes": "inside a dream scape in her head.  She can't find her way out\n",
+        "pubname": "a princess, trapped inside her own head\n",
+        "tags": "princess"
     },
     "trope__recovery_of_broken_parent_child_relationships": {
         "devname": "trope__recovery_of_broken_parent_child_relationships",
@@ -1134,6 +1351,20 @@
         "pubname": "S'meat B-Day Cake\n\n",
         "tags": ""
     },
+    "trope__solemn_master_with_huge_bulge": {
+        "devname": "trope__solemn_master_with_huge_bulge",
+        "features": "\n",
+        "notes": "A completely played-straight solemn, wise character, who never says anything sexual or arousing, but who has a comically huge crotch bulge, so it's just hard to listen to them\n",
+        "pubname": "A calm, solemn jedi master with a HUGE bulge in his pants; I can't take my eyes off it\n",
+        "tags": ""
+    },
+    "trope__subliminal_fortuneteller": {
+        "devname": "trope__subliminal_fortuneteller",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "people who can sense possible futures, and actively steer their lives to avoid bad futures\n",
+        "tags": ""
+    },
     "trope__support_the_rich": {
         "devname": "trope__support_the_rich",
         "features": "\n",
@@ -1141,11 +1372,25 @@
         "pubname": "\"In this department, we work to makes ociety comfortable with the concept of abuses of power.\"  \"And with seeing it\"\n",
         "tags": ""
     },
+    "trope__the_mad_lord_speaks": {
+        "devname": "trope__the_mad_lord_speaks",
+        "features": "\n",
+        "notes": "a certain leader who will not be named; his philosophy of life; his hatred of kindness; his contentept of those he defeats\n",
+        "pubname": "the mad lord speaks to the people; to make them afraid; to blame them for their suffering\n",
+        "tags": ""
+    },
     "trope__the_well_of_new": {
         "devname": "trope__the_well_of_new",
         "features": "\n",
         "notes": "notes:  actually, ellie: you need to invent the fine print here\n",
         "pubname": "The well of new, when comes all that is fresh and original;  be sure to read the fine print\n",
+        "tags": ""
+    },
+    "trope__unbelieved_fortune_teller": {
+        "devname": "trope__unbelieved_fortune_teller",
+        "features": "\n",
+        "notes": "\n",
+        "pubname": "A psychic who sees truth, but who cannot influence people's behaviour\n",
         "tags": ""
     },
     "vanished_without_a_trace": {
